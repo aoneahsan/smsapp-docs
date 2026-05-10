@@ -1,0 +1,11 @@
+{
+  "label": "Reference",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "reference/index"
+  },
+  "description": "Information-oriented lookup — routes, permissions, data model, env vars, quotas, security rules."
+}

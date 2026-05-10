@@ -1,0 +1,7 @@
+{
+  "label": "Sending SMS",
+  "position": 2,
+  "collapsible": true,
+  "collapsed": true,
+  "description": "Single sends, silent batch sends, templates, drafts, scheduling, retries."
+}

@@ -1,0 +1,11 @@
+{
+  "label": "How-to guides",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "how-to/index"
+  },
+  "description": "Problem-oriented recipes for users who already know the product."
+}

@@ -1,0 +1,25 @@
+/* TEAM */
+Lead developer: Ahsan Mahmood
+Contact: aoneahsan [at] gmail.com
+LinkedIn: https://linkedin.com/in/aoneahsan
+GitHub: https://github.com/aoneahsan
+Portfolio: https://aoneahsan.com
+NPM: https://npmjs.com/~aoneahsan
+Phone / WhatsApp: +923046619706
+Location: Karachi, Pakistan (Asia/Karachi, UTC+5)
+
+/* SITE */
+Last update: 2026-05-10
+Language: English
+Doctype: Static site (Docusaurus 3)
+Generator: Docusaurus
+Source: https://github.com/aoneahsan/smsapp-docs (public)
+License: MIT
+Hosting: Firebase Hosting
+DNS: Cloudflare
+
+/* PRODUCT */
+Product: SMS Mobile App
+Site: https://smsapp.aoneahsan.com
+Platforms: Web dashboard, Android app, browser extension (Chrome / Firefox / Edge)
+SMS transport: Native Android SmsManager (your SIM card; no cloud relay)

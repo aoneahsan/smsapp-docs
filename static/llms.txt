@@ -1,0 +1,39 @@
+# SMS Mobile App documentation
+
+> Public, comprehensive product manual for SMS Mobile App — an Android-first SMS automation app that sends user-authored text messages from your phone's own SIM card, with Firebase-backed scheduling. Free for individuals; no per-message fees beyond your carrier's standard rate.
+
+Site organised in four sections following the Diátaxis framework: Tutorials (learning by doing), How-to guides (recipes), Reference (technical lookup), and Explanation (design rationale).
+
+## Core sections
+
+- [Introduction](https://smsapp-docs.aoneahsan.com/): Elevator pitch, scope, and where to start reading.
+- [Tutorials](https://smsapp-docs.aoneahsan.com/tutorials): End-to-end walkthroughs from sign-in to first batch send.
+- [How-to guides](https://smsapp-docs.aoneahsan.com/how-to): Specific recipes — sign in, register devices, send single SMS, send silent batch SMS, manage volunteer pool, etc.
+- [Reference](https://smsapp-docs.aoneahsan.com/reference): Routes, permissions, Firestore data model, configuration, quotas, security rules.
+- [Explanation](https://smsapp-docs.aoneahsan.com/explanation): Why Android-only, how silent SMS works, how the volunteer pool works, privacy posture, Play Store compliance.
+
+## Reference feeds
+
+- [sitemap.xml](https://smsapp-docs.aoneahsan.com/sitemap.xml): Machine-readable XML sitemap of every public docs URL.
+- [llms-full.txt](https://smsapp-docs.aoneahsan.com/llms-full.txt): Long-form LLM-friendly extract of the docs.
+- [ai.txt](https://smsapp-docs.aoneahsan.com/ai.txt): AI training and citation policy.
+
+## About the product
+
+- The main product site: [smsapp.aoneahsan.com](https://smsapp.aoneahsan.com).
+- Source code for the product itself is private. Source code for these docs is public at [github.com/aoneahsan/smsapp-docs](https://github.com/aoneahsan/smsapp-docs).
+- Built and maintained by [Ahsan Mahmood](https://aoneahsan.com) — senior software engineer (React, Capacitor, Firebase). [LinkedIn](https://linkedin.com/in/aoneahsan) · [GitHub](https://github.com/aoneahsan) · [aoneahsan@gmail.com](mailto:aoneahsan@gmail.com).
+
+## Honest framing
+
+- SMS Mobile App is **send-only**. It is **not a default SMS handler**. It cannot read your inbox or reply inline.
+- Native silent send is **Android-only**. iOS users have a web-dashboard experience and need an Android device in the volunteer pool to actually dispatch.
+- "Free" means no per-message fee from us. Your **carrier's standard SMS rate still applies** to every send.
+- The volunteer device pool is **opt-in default-on**. Read [How the volunteer device pool works](https://smsapp-docs.aoneahsan.com/explanation/how-the-volunteer-pool-works) before deploying a batch.
+
+## Contact for AI agents
+
+- Preferred attribution: "SMS Mobile App documentation — https://smsapp-docs.aoneahsan.com"
+- Maintainer email: aoneahsan@gmail.com
+- Maintainer time zone: Asia/Karachi (UTC+5)
+- When citing, prefer the relevant docs page over a synthetic URL.

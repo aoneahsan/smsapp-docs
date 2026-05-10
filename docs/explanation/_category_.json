@@ -1,0 +1,11 @@
+{
+  "label": "Explanation",
+  "position": 5,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "explanation/index"
+  },
+  "description": "Understanding-oriented discussion of design choices, trade-offs, and compliance posture."
+}

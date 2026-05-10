@@ -1,0 +1,7 @@
+{
+  "label": "Admin: jobs & batches",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": true,
+  "description": "Create jobs, assign batches, configure rate limits, handle failures, enforce caps."
+}

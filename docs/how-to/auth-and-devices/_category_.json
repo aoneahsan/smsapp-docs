@@ -1,0 +1,7 @@
+{
+  "label": "Auth, devices, contacts",
+  "position": 1,
+  "collapsible": true,
+  "collapsed": true,
+  "description": "Sign in, register a device, manage volunteer-pool participation, import contacts, switch SIM."
+}
