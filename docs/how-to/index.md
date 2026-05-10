@@ -15,33 +15,29 @@ A how-to is a **recipe**. You arrive with a specific problem (`How do I import c
 
 If you're new, start with [Tutorials](/tutorials) instead.
 
-## Categories
+## Authentication, devices, and contacts ✅ shipped (Batch 3)
 
-- **Authentication, devices, and contacts** — sign in, link devices, manage permissions, import contacts.
-- **Sending SMS** — single sends, silent batch sends, templates, drafts, scheduling, retries.
-- **Admin (jobs, batches, rate control)** — create jobs from the dashboard, assign batches to volunteer devices, configure rate limits, handle failures.
+Recipes for getting your account set up, linking phones, and getting recipient data into the system.
 
-:::note Status
-The full set of how-to guides is shipped across **Batches 3, 4, and 5** of the [docs build plan](https://github.com/aoneahsan/smsapp-docs). Use the sidebar to find what's already published.
-:::
+1. [Sign in with Google](/how-to/auth-and-devices/sign-in-with-google) — OAuth flow, multi-account pitfall, popup blockers, unauthorised-domain error
+2. [Register your Android device](/how-to/auth-and-devices/register-your-android-device) — install, sign-in matching, confirm on dashboard, re-register
+3. [Manage volunteer pool participation](/how-to/auth-and-devices/manage-volunteer-pool-participation) — opt in/out, rate cap, authorised accounts list, sync between dashboard and app
+4. [Import contacts from a CSV file](/how-to/auth-and-devices/import-contacts-from-csv) — column requirements, personalisation tokens, validator output
+5. [Grant SMS and Contacts permissions](/how-to/auth-and-devices/grant-sms-permissions) — runtime prompt, recovery from decline, manual Settings path, battery optimisation
+6. [Switch SIM on a dual-SIM phone](/how-to/auth-and-devices/switch-sim-on-dual-sim) — per-device default, per-job override, OS-level fallback
 
-## Guides will land in this order
+## Sending SMS — Batch 4
 
-1. Sign in with Google
-2. Register your Android device
-3. Manage volunteer device pool participation
-4. Import contacts from a CSV file
-5. Grant `SEND_SMS` and (optional) `READ_CONTACTS` permissions
-6. Switch SIM on a dual-SIM phone
-7. Send a single UI-prompted SMS
-8. Send a silent batch SMS (foreground service)
-9. Use templates
-10. Save and reuse drafts
-11. Schedule a recurring SMS
-12. Retry failed messages
-13. Create a job from the admin dashboard
-14. Assign a batch to volunteer devices
-15. Monitor job + batch progress
-16. Configure rate limits and per-device caps
-17. Handle job failures and partial sends
-18. Enforce the 10-device cap
+Single sends, silent batch sends, templates, drafts, scheduling, retries. Pages land in Batch 4 of the [docs build plan](https://github.com/aoneahsan/smsapp-docs).
+
+## Admin (jobs, batches, rate control) — Batch 5
+
+Create jobs, assign batches to volunteer devices, configure rate limits, handle failures, enforce the 10-device cap. Pages land in Batch 5.
+
+## Voice and tone
+
+How-to guides on this site follow three rules consistently:
+
+- **Numbered steps for the doing.** Every recipe has a numbered procedure you can follow without reading the surrounding prose.
+- **Honest framing on limits.** Each page is candid about what doesn't work — Google Play SMS-permission policy, iOS API limits, ROM-specific battery management, carrier anti-spam thresholds.
+- **No fabricated UI.** When a label or path is uncertain, the recipe says so explicitly rather than inventing a confident-sounding name.
