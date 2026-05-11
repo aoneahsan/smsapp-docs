@@ -66,8 +66,29 @@ const config: Config = {
     ],
   ],
 
+  themes: [
+    [
+      // Free, self-hosted in-browser fuzzy search. No Algolia signup. Indexes
+      // every doc + page during `yarn build`; ships a small client-side bundle
+      // that fetches the JSON index lazily on first focus.
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['en'],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        searchBarPosition: 'right',
+        indexBlog: false,
+        indexPages: true,
+        docsRouteBasePath: '/',
+      },
+    ],
+  ],
+
   themeConfig: {
-    image: 'img/og-default.png',
+    // SVG fallback until Batch 10 generates a 1200x630 PNG social card.
+    // Most platforms render SVG; Twitter falls back to no image gracefully.
+    image: 'img/logo.svg',
     metadata: [
       { name: 'author', content: AUTHOR_NAME },
       { name: 'keywords', content: 'sms automation, android sms, capacitor sms, firebase sms, sim sms sender, scheduled sms android, batch sms android, smsapp documentation' },

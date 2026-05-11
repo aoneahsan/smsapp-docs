@@ -126,6 +126,118 @@
   vertical-align: middle;
 }
 
+/* ---------------------------------------------------------------------
+ * Landing-page polish (Batch 9). Motion-safe.
+ *
+ * The four-quadrant Diátaxis grid is the page's differentiation anchor —
+ * cards announce each section with a distinct accent strip. Reveal-on-
+ * mount keeps the page feeling alive without animation spam. Decorative
+ * gradient strips run across major boundaries.
+ * ------------------------------------------------------------------- */
+
+/* Quadrant grid for the homepage. */
+.diataxis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.diataxis-card {
+  display: block;
+  padding: 1.25rem 1.25rem 1.1rem;
+  background: var(--doc-card-bg);
+  border: 1px solid var(--doc-card-border);
+  border-radius: 12px;
+  text-decoration: none !important;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.diataxis-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--radix-violet-9), var(--radix-violet-7));
+  opacity: 0.85;
+}
+
+.diataxis-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--radix-violet-8);
+  box-shadow: 0 6px 20px -10px rgba(110, 86, 207, 0.45);
+}
+
+.diataxis-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.diataxis-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.55;
+}
+
+.diataxis-card .diataxis-card__when {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+  color: var(--radix-violet-11);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* Honest-framing callout: a quiet quote-style block for "what this isn't" copy. */
+.honest-framing {
+  margin: 2rem 0;
+  padding: 1.25rem 1.4rem;
+  border-left: 3px solid var(--radix-violet-9);
+  background: var(--doc-card-bg);
+  border-radius: 0 8px 8px 0;
+}
+
+.honest-framing h2 {
+  margin-top: 0 !important;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.honest-framing ul {
+  margin: 0.6rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.honest-framing li {
+  margin: 0.35rem 0;
+}
+
+/* Subtle reveal-on-mount. CSS-only; motion-safe. */
+.reveal-on-mount {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: doc-reveal 480ms ease-out forwards;
+}
+.reveal-on-mount.delay-1 { animation-delay: 80ms; }
+.reveal-on-mount.delay-2 { animation-delay: 160ms; }
+.reveal-on-mount.delay-3 { animation-delay: 240ms; }
+.reveal-on-mount.delay-4 { animation-delay: 320ms; }
+
+@keyframes doc-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Respect prefers-reduced-motion across the whole site. */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -135,5 +247,9 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .reveal-on-mount {
+    opacity: 1;
+    transform: none;
   }
 }

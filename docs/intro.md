@@ -7,66 +7,85 @@ sidebar_label: Introduction
 hide_table_of_contents: false
 keywords: [sms automation, android sms, sim sms sender, scheduled sms, batch sms, capacitor sms, firebase sms]
 last_update:
-  date: 2026-05-10
+  date: 2026-05-11
   author: Ahsan Mahmood
 ---
 
+import Link from '@docusaurus/Link';
+
+<div className="reveal-on-mount">
+
 # SMS Mobile App documentation
 
-**SMS Mobile App is an Android-first SMS automation app that schedules and sends user-authored text messages from your phone's own SIM card, using Firebase to coordinate jobs across the web dashboard, browser extension, and Android app.** Recipients see your real mobile number; you pay only your carrier's standard SMS rate; nothing is routed through a third-party SMS gateway.
+**An Android-first SMS automation app that sends user-authored text messages from your phone's own SIM card.** Schedule one-off reminders, recurring sends, or batches of hundreds — coordinated by a Firebase-backed dashboard. Recipients see your real mobile number. No cloud SMS gateway. You pay only what your carrier charges for an SMS.
 
-This site is the **official, comprehensive product manual**. Marketing pages live at [smsapp.aoneahsan.com](https://smsapp.aoneahsan.com). Source code for SMS Mobile App is private; the source for these docs is public at [github.com/aoneahsan/smsapp-docs](https://github.com/aoneahsan/smsapp-docs).
+</div>
 
-## What this site covers
+<div className="reveal-on-mount delay-1">
 
-- Every public route on the web dashboard
-- Every screen in the Android app
-- Every Firestore collection touched by the user-facing layer
-- Every Android permission we ask for and why
-- The compliance story: send-only, never a default SMS handler, no inbox, no read-SMS
+This site is the **official, comprehensive product manual**. The marketing site lives at [smsapp.aoneahsan.com](https://smsapp.aoneahsan.com); the source for these docs is public at [github.com/aoneahsan/smsapp-docs](https://github.com/aoneahsan/smsapp-docs). The product's own source remains private.
 
-## What it doesn't cover
-
-- Internal architecture details that aren't user-visible
-- Any feature that hasn't shipped — the product reflects what's running in production today
-- Cloud SMS gateway integration (we don't have one — that's the differentiator)
+</div>
 
 ## Where to start
 
-The documentation is organised in four sections following the [Diátaxis framework](https://diataxis.fr/):
+<div className="diataxis-grid reveal-on-mount delay-2">
 
-| Section | When to read | Style |
-|---|---|---|
-| **[Tutorials](/tutorials)** | You're brand-new and want to learn by doing. | A guided lesson. |
-| **[How-to guides](/how-to)** | You know the product and need a recipe for one specific task. | Numbered steps, no fluff. |
-| **[Reference](/reference)** | You need exact details — a permission name, a Firestore field, a route URL. | Tables and lists. |
-| **[Explanation](/explanation)** | You want to understand WHY the product works the way it does. | Discussion. |
+<Link className="diataxis-card" to="/tutorials">
+  <h3>Tutorials</h3>
+  <p>End-to-end lessons. Sign in, register your Android device, send your first scheduled SMS in five minutes.</p>
+  <span className="diataxis-card__when">If you're new — start here</span>
+</Link>
 
-If you're not sure where to look, start with [**Get started in 5 minutes**](/tutorials).
+<Link className="diataxis-card" to="/how-to">
+  <h3>How-to guides</h3>
+  <p>Eighteen recipes for specific tasks: send a silent batch, schedule a weekly recurring SMS, switch SIM on dual-SIM phones, handle failures.</p>
+  <span className="diataxis-card__when">If you have a specific problem</span>
+</Link>
+
+<Link className="diataxis-card" to="/reference">
+  <h3>Reference</h3>
+  <p>Exhaustive lookup — every route, every permission, every Firestore field, every config knob, every rate-limit number.</p>
+  <span className="diataxis-card__when">If you need exact details</span>
+</Link>
+
+<Link className="diataxis-card" to="/explanation">
+  <h3>Explanation</h3>
+  <p>Why Android-only, how the volunteer pool works, the privacy posture, the Play Store compliance runbook — design rationale in essay form.</p>
+  <span className="diataxis-card__when">If you want to understand WHY</span>
+</Link>
+
+</div>
+
+If you're not sure which one to open first, [**Get started in 5 minutes**](/tutorials/get-started-in-5-minutes) is the friendliest path.
 
 ## At a glance
 
 | | |
 |---|---|
-| Platforms | Web dashboard, Android app, Chrome / Firefox / Edge extension |
-| SMS transport | Native Android `SmsManager` via your SIM card. No cloud gateway. |
-| Cost | Free for individuals. Carrier's standard SMS rate per message. |
-| Permissions | `SEND_SMS` (required). `READ_CONTACTS` (optional, for the recipient picker). |
-| Auth | Sign in with Google. |
-| Data | Firestore for jobs, batches, devices, drafts, templates. Files via FilesHub. |
-| iOS | Web dashboard works. Native silent send is **Android-only**. |
+| **Platforms** | Web dashboard, Android app, Chrome / Firefox / Edge extension |
+| **SMS transport** | Native Android `SmsManager` via your SIM card. No cloud gateway. |
+| **Cost** | Free for individuals. Carrier's standard SMS rate per message. |
+| **Permissions** | `SEND_SMS` (required). `READ_CONTACTS` (optional, for recipient autocomplete). |
+| **Auth** | Sign in with Google. |
+| **Data** | Firestore for jobs, batches, devices, drafts, templates. Files via FilesHub. |
+| **iOS** | Web dashboard works. Native silent send is **Android-only**. |
 
-## Honest framing
+<div className="honest-framing">
 
-A few things that competitors fudge but this app is straightforward about:
+## Honest framing — what this app isn't
+
+A few things competitors fudge but this app is straightforward about:
 
 - **We are not a default SMS handler.** Android reserves features like reading the inbox or replying inline for the default SMS app. SMS Mobile App is purposely a sender, not a replacement messaging app.
 - **Carrier rates still apply.** "Free" means we don't charge per message. Your carrier still does.
-- **iOS is a web-dashboard experience only.** iOS doesn't expose a programmatic SMS sender; the app sending happens on Android devices.
-- **Volunteer device pool is opt-in default-on.** See the [Explanation](/explanation) section before you deploy a batch — it explains who actually sends the SMS when you fire a job.
+- **iOS is a web-dashboard experience only.** iOS does not expose a programmatic SMS sender; the actual sending happens on Android devices.
+- **The volunteer device pool is opt-in default-on.** Read [How the volunteer device pool works](/explanation/volunteer-device-pool) before you fire a batch — it explains who actually dispatches each message when you click Send.
 
-## Credits
+</div>
 
-Built and maintained by **Ahsan Mahmood** — a senior software engineer specialising in cross-platform mobile and web (React, Capacitor, Firebase). [Portfolio](https://aoneahsan.com) · [LinkedIn](https://linkedin.com/in/aoneahsan) · [GitHub](https://github.com/aoneahsan) · [aoneahsan@gmail.com](mailto:aoneahsan@gmail.com).
+## Built by
 
-If these docs help you, the kindest thing you can do is link to them from your own writing — backlinks are how this small project becomes findable.
+The product, the docs, and the Android plugin behind silent send are all written and maintained by **[Ahsan Mahmood](/about)** — a senior software engineer focused on cross-platform mobile and web (React, Capacitor, Firebase). [Portfolio](https://aoneahsan.com) · [LinkedIn](https://linkedin.com/in/aoneahsan) · [GitHub](https://github.com/aoneahsan) · [aoneahsan@gmail.com](mailto:aoneahsan@gmail.com).
+
+If these docs help, the kindest thing you can do is link to them from your own writing — backlinks are how this small project becomes findable.
