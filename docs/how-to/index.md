@@ -26,9 +26,16 @@ Recipes for getting your account set up, linking phones, and getting recipient d
 5. [Grant SMS and Contacts permissions](/how-to/auth-and-devices/grant-sms-permissions) — runtime prompt, recovery from decline, manual Settings path, battery optimisation
 6. [Switch SIM on a dual-SIM phone](/how-to/auth-and-devices/switch-sim-on-dual-sim) — per-device default, per-job override, OS-level fallback
 
-## Sending SMS — Batch 4
+## Sending SMS ✅ shipped (Batch 4)
 
-Single sends, silent batch sends, templates, drafts, scheduling, retries. Pages land in Batch 4 of the [docs build plan](https://github.com/aoneahsan/smsapp-docs).
+Single sends, silent batch sends, templates, drafts, scheduling, retries.
+
+1. [Send a single UI-prompted SMS](/how-to/sending-sms/send-a-single-ui-prompted-sms) — when to use UI-prompted vs silent, the system-composer flow, lock-screen behaviour
+2. [Send a silent batch SMS](/how-to/sending-sms/send-a-silent-batch-sms) — the Android foreground service, why it's mandatory, rate caps, offline queueing, pause/resume/cancel
+3. [Use templates](/how-to/sending-sms/use-templates) — save reusable bodies with `{{token}}` substitution, apply to single sends or batches, edit/version/delete
+4. [Save and reuse drafts](/how-to/sending-sms/save-and-reuse-drafts) — auto-save, manual save with names, cross-device sync, draft-vs-template distinction
+5. [Schedule a recurring SMS](/how-to/sending-sms/schedule-a-recurring-sms) — Daily/Weekly/Monthly/Custom cron, end-conditions, timezone behaviour, DST handling
+6. [Retry failed messages](/how-to/sending-sms/retry-failed-messages) — transient-vs-permanent classification, exponential backoff, manual retry, when retry is the wrong fix
 
 ## Admin (jobs, batches, rate control) — Batch 5
 
