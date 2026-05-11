@@ -37,9 +37,16 @@ Single sends, silent batch sends, templates, drafts, scheduling, retries.
 5. [Schedule a recurring SMS](/how-to/sending-sms/schedule-a-recurring-sms) — Daily/Weekly/Monthly/Custom cron, end-conditions, timezone behaviour, DST handling
 6. [Retry failed messages](/how-to/sending-sms/retry-failed-messages) — transient-vs-permanent classification, exponential backoff, manual retry, when retry is the wrong fix
 
-## Admin (jobs, batches, rate control) — Batch 5
+## Admin (jobs, batches, rate control) ✅ shipped (Batch 5)
 
-Create jobs, assign batches to volunteer devices, configure rate limits, handle failures, enforce the 10-device cap. Pages land in Batch 5.
+Create jobs, assign batches, monitor live progress, configure the three-layer rate-limit system, handle partial-send failures, work within the 10-device cap.
+
+1. [Create a job from the admin dashboard](/how-to/admin/create-a-job-from-the-admin-dashboard) — 5 job types unified in one composer, **Create on behalf of** for admin-role accounts, immutable audit trail
+2. [Assign a batch to volunteer devices](/how-to/admin/assign-a-batch-to-volunteer-devices) — auto-assignment weighted by rate cap + freshness, manual override per device, reassign-pending mid-flight
+3. [Monitor job + batch progress](/how-to/admin/monitor-job-progress) — four monitoring views (Jobs list, Batch detail, Device detail, Audit log), live per-recipient table, aggregate metrics, filters + CSV export
+4. [Configure rate limits](/how-to/admin/configure-rate-limits) — per-batch / per-device / per-account three-layer system + auto-backoff under carrier throttling, fair-use review for raising the per-account ceiling
+5. [Handle failures and partial sends](/how-to/admin/handle-failures-and-partial-sends) — four failure-cluster patterns (per-device, per-region, per-time, per-recipient), decision tree per pattern, Salvage workflow
+6. [Enforce the 10-device cap](/how-to/admin/enforce-the-10-device-cap) — the hard ceiling on devices per batch, why it exists, what fits inside, Campaign chunking for larger workloads, fair-use review for higher caps
 
 ## Voice and tone
 
