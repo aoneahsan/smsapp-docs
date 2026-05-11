@@ -1,6 +1,6 @@
 ---
 title: Privacy and data handling explained
-description: What SMS Mobile App stores, what stays on-device only, what we never collect, and how to inspect and delete your data at any time.
+description: What SMS Mobile App stores in Firestore, what stays on-device only, what we deliberately never collect, and how account deletion erases everything within 24 hours.
 sidebar_position: 5
 sidebar_label: Privacy & data handling
 slug: privacy-and-data-handling

@@ -75,6 +75,33 @@ Allow: /
 User-agent: Diffbot
 Allow: /
 
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Mistral-AI-User
+Allow: /
+
+User-agent: Kagibot
+Allow: /
+
+User-agent: FacebookExternalHit
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
 # --- Block third-party SEO scrapers (no traffic value, high bandwidth) -
 User-agent: AhrefsBot
 Disallow: /

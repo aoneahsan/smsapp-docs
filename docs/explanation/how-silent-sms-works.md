@@ -1,6 +1,6 @@
 ---
 title: How silent SMS works on Android
-description: The Android primitives that let SMS Mobile App dispatch messages without a user tap per message — SmsManager, the foreground service, claim cycle, and why each piece is necessary.
+description: The Android primitives behind silent-batch send — SmsManager, the foreground service, the three-phase claim cycle, and why each piece is mandatory.
 sidebar_position: 3
 sidebar_label: How silent SMS works
 slug: how-silent-sms-works

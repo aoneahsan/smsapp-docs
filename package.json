@@ -35,7 +35,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "indexnow": "node -e \"const k='8e87c3ef6a229adecc30897529af80dc';const u=Array.from((require('fs').readFileSync('build/sitemap.xml','utf8').matchAll(/<loc>([^<]+)<\\/loc>/g))).map(m=>m[1]);require('https').request({hostname:'api.indexnow.org',path:'/IndexNow',method:'POST',headers:{'Content-Type':'application/json'}},r=>{r.on('data',d=>process.stdout.write(d));r.on('end',()=>console.log('\\nindexnow status',r.statusCode))}).end(JSON.stringify({host:'smsapp-docs.aoneahsan.com',key:k,keyLocation:'https://smsapp-docs.aoneahsan.com/'+k+'.txt',urlList:u}))\""
   },
   "dependencies": {
     "@docusaurus/core": "3.10.1",

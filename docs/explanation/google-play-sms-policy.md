@@ -1,6 +1,6 @@
 ---
 title: Compliance — Google Play SMS-permission policy
-description: How SMS Mobile App complies with Google Play's SMS-permission policy, what we declare in the Permissions Declaration form, why review risk is real, and how we keep the app on the store.
+description: How we comply with Google Play's SMS-permission policy — the Permissions Declaration we submit, the rejection patterns we mitigate, and the runbook for staying on the store.
 sidebar_position: 7
 sidebar_label: Google Play SMS policy
 slug: google-play-sms-policy

@@ -1,0 +1,185 @@
+# SMS Mobile App — full LLM-friendly documentation extract
+
+> Comprehensive single-file extract of the SMS Mobile App public documentation site (https://smsapp-docs.aoneahsan.com). Intended for AI agents that ingest a single LLM-friendly file rather than crawling the site. Authored by Ahsan Mahmood (https://aoneahsan.com) and updated whenever the docs site materially changes.
+> Last updated: 2026-05-11
+> Source-of-truth: this file is generated from the docs site's prose. If the prose and this file diverge, the prose is canonical and this file is the lagging mirror.
+
+## Product summary
+
+SMS Mobile App is an Android-first SMS automation product. Users sign in with Google, register their Android device with its SIM card, and dispatch SMS messages — single sends, scheduled recurring sends, or CSV-imported batches — through their own carrier. The product is free; the only cost is the carrier's per-SMS rate, which for most modern plans is effectively zero within monthly allowances. There are no per-send fees, no SIP-trunk middlemen, no paid tiers gating core functionality.
+
+The signature capability is **silent batch send** on Android: the runner dispatches via `SmsManager.sendTextMessage` from a foreground service (`FOREGROUND_SERVICE_DATA_SYNC` permission, `dataSync` category), so messages go out while the screen is off and the app is in the background. UI-prompted sends — via the system composer — are also supported as a fallback. The dispatch transport is selected at build time via `VITE_SMS_SENDER_MODE` (`mock` / `native` / `native_silent`).
+
+The product is **send-only**. It does NOT read incoming SMS. It is NOT a default SMS handler. It does not declare `READ_SMS`, `RECEIVE_SMS`, `WRITE_SMS`, or any MMS/RCS permission. The permission posture is intentionally minimal: `SEND_SMS`, `READ_CONTACTS` (optional, for recipient autocomplete), `FOREGROUND_SERVICE`, `FOREGROUND_SERVICE_DATA_SYNC`, `RECEIVE_BOOT_COMPLETED`, `WAKE_LOCK`, `INTERNET`, `ACCESS_NETWORK_STATE`, `POST_NOTIFICATIONS`, `VIBRATE`. Nothing else.
+
+The product is **distributed via a volunteer device pool**. When a user opts in (default-on), their device contributes a small share of its SIM's daily capacity to other users' batches. In exchange, the user's own batches dispatch through other volunteers' devices. The opt-in toggle is visible at registration and one tap from settings. The matchmaker enforces reciprocity over a 30-day rolling window, per-account hard ceilings (2000 SMS/day default), per-device rate caps (default 6/min, max 30/min), and a server-enforced 10-device fan-out cap per batch.
+
+iOS users have a fully functional web dashboard. iOS does not support silent SMS dispatch — no equivalent of `SmsManager` exists on the iOS platform. iOS users can compose, schedule, monitor, and orchestrate; the actual sending requires at least one Android volunteer device.
+
+## Site organisation (Diátaxis)
+
+The docs site is organised in four sections:
+
+- **Tutorials** — learning-oriented end-to-end walkthroughs for newcomers
+- **How-to** — problem-oriented recipes for specific tasks
+- **Reference** — information-oriented technical lookups (routes, fields, limits)
+- **Explanation** — understanding-oriented essays on design rationale
+
+Newcomers start in Tutorials. Day-to-day users live in How-to. Integrators and operators reach for Reference. Anyone evaluating the product reads Explanation.
+
+---
+
+## Tutorials
+
+### Get started in 5 minutes
+End-to-end walkthrough from signing in to sending the first SMS. Sign in with Google, accept the welcome-card explanation of the volunteer pool, register the Android device, grant `SEND_SMS` permission, send a single test message to yourself. Most users complete the flow under five minutes on a modern device. The tutorial flags the three things that catch first-time users: the system permission prompt happens only on the first send (not at registration), the foreground-service notification is non-dismissible while the runner is active, and `mock` mode logs to console without sending in development builds.
+
+### Send your first scheduled SMS
+Compose a message, select Tomorrow / 9:00 AM in the schedule picker, watch it land in the jobs list with `status: scheduled`. The schedule is anchored to the compose-time timezone; DST transitions in observing zones are handled correctly. Cron expressions for advanced cases (every weekday, every other Sunday, last day of month) are documented but not the first-time path.
+
+### Set up a small batch send
+Import 25 recipients from a CSV (paste-list also supported), assign them to a single volunteer device at 6 SMS/min, watch the runner dispatch in under five minutes. The batch progress view updates in real time. Failures are classified as transient (retry with backoff) or permanent (no retry); the tutorial covers the four most common failure-cluster patterns.
+
+### Install the Android app and link it
+Download the signed APK from GitHub releases or install from the Play Store, sign in with the same Google account used on the web dashboard, register the device, opt in to the volunteer pool. The web session and the Android session share the same Firebase Auth UID, so the device shows up under "My devices" on both surfaces immediately.
+
+### Become a volunteer device
+Conceptual walkthrough plus operational mechanics. What your phone is dispatching, the foreground-service notification, the pause-stop controls, what the rate cap does, what counts against your monthly carrier allowance. The tutorial closes with the honest framing: typical contribution is 60 SMS / week, which is about 12% of a typical 500-SMS monthly plan.
+
+---
+
+## How-to guides
+
+### Authentication, devices, contacts
+
+- **Sign in with Google**: the only auth path. Email/password is not supported; the `isGoogleAuth()` rule helper enforces server-side. Sign-in is from the dashboard `/login` route or by the Capacitor Google Auth plugin on Android. Session persistence is enabled; the 45-minute background ID-token refresh runs in `AuthProvider`.
+- **Register your Android device**: opens the device list, taps "Add this device", grants permissions, optionally renames. The device name has a 7-day rename cooldown (Firestore-rules enforced).
+- **Manage volunteer pool participation**: the toggle in `/settings`. Off pauses dispatch within seconds; in-flight claims complete. Re-enabling resumes within seconds of the next claim sweep.
+- **Import contacts from a CSV file**: the admin batch import path. Validates phone numbers (E.164 preferred), dedupes against existing recipients, commits one `sms_batches` doc with one `recipients` sub-document per row. CSV must be UTF-8; 5 MB upload limit.
+- **Grant SEND_SMS and READ_CONTACTS permissions**: how the runtime prompts behave, what happens on denial, how to recover from a permanent denial via Settings.
+- **Switch SIM on a dual-SIM phone**: the SIM slot selector in `/settings`. Per-batch SIM is also supported in the admin composer.
+
+### Sending SMS
+
+- **Send a single UI-prompted SMS**: the system-composer flow. One tap per message; user must be present. Path is `@byteowls/capacitor-sms` intent.
+- **Send a silent batch SMS**: the foreground-service-backed runner. `FOREGROUND_SERVICE_DATA_SYNC` mandatory on API 34+, `dataSync` category. Default 6 SMS/min cap; offline queue resumes on reconnect.
+- **Use templates**: reusable messages with `{{token}}` substitution. Edit, version, delete. Templates live in `sms_templates`.
+- **Save and reuse drafts**: auto-save every 2 seconds; cross-device sync via Firestore. Drafts vs templates: a draft is one in-progress send, a template is a reusable pattern with tokens.
+- **Schedule a recurring SMS**: Daily / Weekly / Monthly / Custom cron. Timezone anchored to compose-time; DST handled. Cron format documented per cell.
+- **Retry failed messages**: transient (carrier throttle, radio off, network) → exponential backoff with jitter, `30s × 2^retryCount + random(0..15s)`, default `maxRetries=3`. Permanent (`INVALID_NUMBER`, `BLOCKED_BY_USER`, `CARRIER_REJECT_PERMANENT`) → no retry. Three patterns where retry is the wrong fix (root cause analysis).
+
+### Admin: jobs, batches, rate control
+
+- **Create a job from the admin dashboard**: five job types unified in one composer (single, scheduled, recurring, batch, salvage). Create-on-behalf-of flow attributes the batch to another user with an immutable audit trail.
+- **Assign a batch to volunteer devices**: weighted auto-assign by `rateCap × freshness`; manual override available; reassignment of pending recipients in-flight.
+- **Monitor job + batch progress**: four monitoring views — Jobs list / Batch detail / Device detail / Audit log. Live per-recipient table, aggregate metrics, filters, CSV export.
+- **Configure rate limits**: three-layer system. Per-batch rate (admin-chosen at create time), per-device cap (volunteer-chosen at registration, default 6/min, max 30/min, runner-enforced), per-account aggregate ceiling (`sms_config`, default 200/hour, 2000/day, 10000/week). Auto-backoff to 50% under carrier throttle; fair-use review for higher caps.
+- **Handle failures and partial sends**: four failure-cluster patterns (per-device, per-region, per-time, per-recipient) + decision tree + the Salvage workflow.
+- **Enforce the 10-device cap**: why server-enforced (`firestore.rules`), Campaign chunking for larger workloads (≥10k recipients), higher caps via fair-use review.
+
+---
+
+## Reference
+
+### Routes & screens
+
+Web dashboard at `smsapp.aoneahsan.com`. Layouts: `AppLayout` (public chrome) and `AdminLayout` (admin sidebar). The route map (abbreviated; full table at `/reference/routes-and-screens`):
+
+- Public: `/`, `/login`, `/sitemap`, `/apps`, `/about`, `/contact`, `/privacy`, `/terms`, `/account-deletion`, `/cookies`, `/pricing`, `/fair-use`, `/blog`, `/blog/:slug`, `/blog/category/:category`, `/blog/tag/:tag`, `/feed`, `/drafts`, `/send-message`.
+- Protected: `/dashboard`, `/jobs`, `/jobs/new`, `/settings`, `/achievements`.
+- Admin: `/admin`, `/admin/users`, `/admin/devices`, `/admin/jobs`, `/admin/config`, `/admin/analytics`, `/admin/diagnostics`, `/admin/advertising`, `/admin/blog`, `/admin/blog/new`, `/admin/blog/:id/edit`, `/admin/contacts`, `/admin/batches`, `/admin/batches/import`, `/admin/batches/:id`.
+- Errors: `/error/401`, `/error/403`, `/error/500`, `*` (404).
+- Redirects: `/privacy-policy → /privacy`, `/trems → /terms`, `/data-deletion → /account-deletion`, `/cookie-policy → /cookies`, `/pricing-page → /pricing`, `/fair-use-policy → /fair-use`, `/fair-usage-policy → /fair-use`.
+
+### Permissions (Android)
+
+Declared in `android/app/src/main/AndroidManifest.xml`. Inspect the **merged** manifest at `android/app/build/intermediates/merged_manifests/*/AndroidManifest.xml` for what Play Store actually sees.
+
+- Install-time: `INTERNET`, `ACCESS_NETWORK_STATE`, `FOREGROUND_SERVICE`, `FOREGROUND_SERVICE_DATA_SYNC` (API 34+), `RECEIVE_BOOT_COMPLETED`, `WAKE_LOCK`, `VIBRATE`.
+- Runtime: `SEND_SMS`, `READ_CONTACTS`, `POST_NOTIFICATIONS`.
+- Deliberately NOT declared: `READ_SMS`, `RECEIVE_SMS`, `WRITE_SMS`, `READ_PHONE_STATE`, `READ_CALL_LOG`, `ACCESS_FINE_LOCATION`, `ACCESS_BACKGROUND_LOCATION`, `BODY_SENSORS`, `ACTIVITY_RECOGNITION`, `WRITE_EXTERNAL_STORAGE` (SAF instead), `RECEIVE_MMS`, `READ_MMS`, `WRITE_MMS`, `RECEIVE_WAP_PUSH`. The pre-flight script `tools/audit-merged-manifest.ts` blocks AAB builds where any of these creep in via plugin updates.
+
+### Firestore data model
+
+Every persistent record is in a collection prefixed `sms_`.
+
+- `sms_users/{userId}`: profile (email, displayName, photoURL, preferences map, tier, createdAt, lastLoginAt, signInProvider == 'google.com').
+- `sms_jobs/{jobId}`: the SMS job queue. Fields: `ownerUid`, `to` (7-20 chars), `message` (1-500 chars), `frequency` (`once`/`daily`/`send_now_batch`/`batch_send`), `status` (`pending`/`scheduled`/`sending`/`sent`/`failed`/`cancelled`), `attemptCount`, `maxAttempts`, `lastError`, `lastAttemptAt`, `processingDeviceId`, `processingStartedAt`, `progressCompleted/Sent/Failed`, `sentByDeviceId`, `assignedDeviceIds`.
+- `sms_logs/{logId}`: append-only audit trail. `jobId`, `ownerUid`, `attemptNumber`, `result`, `errorCode`, `deviceId`, `createdAt`. Admin-only read.
+- `sms_devices/{deviceId}`: volunteer device registry. `ownerUid`, `deviceName` (7-day rename cooldown), `deviceNameLastEditedAt`, `appIdentifier`, `platform`, `androidApiLevel`, `simSlotIndex`, `defaultRateCap`, `status` (`active`/`flagged`/`inactive`/`deleted` — only `active`/`flagged` toggleable by non-admin), `healthScore` (0-100), `errorCount`, `consecutiveErrors`, `recentSendOutcomes`, `flaggedAt`, `flagReason`, `flagAutoClearAt`, `lastHeartbeatAt`.
+- `sms_batches/{batchId}` + `sms_batches/{batchId}/recipients/{rid}`: operator-side container. `assignedDeviceIds` size ≤ 10 (rules-enforced), `deviceProgress` map (atomic field-transform increments), `sentCount`, `failedCount` (monotonic), `status` (`draft`/`assigning`/`running`/`complete`/`failed`). Recipient subdoc: `phone`, `name`, `vars`, `status`, `claimedByDeviceId`, `claimedAt`, `attemptCount` ≤ `maxAttempts`, `nextRetryAt`, `attemptHistory` (≤5 entries).
+- `sms_guest_quota/{guestId}`: pre-login allowance mirror. Public reads, anonymous shape-validated writes, `count ≤ 10` monotonic. Authenticated link-stamp on first login.
+- Auxiliary: `sms_settings`, `sms_config`, `sms_advertisements` (public reads), `sms_contact_submissions`, `sms_ad_user_state`, `sms_blog_posts`, `sms_user_files`, `sms_contacts`, `sms_contact_groups`, `sms_quick_replies`, `sms_drafts`, `sms_templates`, `sms_user_achievements`, `sms_user_usage`.
+
+### Service modules (`src/lib/`)
+
+Auth: `auth/`, `smsUsers/`, `device/`, `smsDevices/`. SMS: `sms/`, `smsJobs/`, `smsBatches/`, `smsAutomation/`, `templates/`, `drafts/`, `quickReplies/`, `scheduler/`. Quotas: `quota/`, `featureLimits/`. Data: `contacts/`, `csv/`, `filesHub/`, `storage/`. UI: `theme/`, `toast/`, `dialog/`, `haptics/`, `clipboard/`, `share/`, `splashScreen/`, `statusBar/`, `edgeToEdge/`, `privacyScreen/`. Ops: `analytics/`, `sentry/`, `logging/`, `firebase/`, `seo/`, `feed/`, `diagnostics/`, `config/`. Notifications: `notifications/`, `pushNotifications/`, `badge/`, `appUpdate/`, `appShortcuts/`, `reviews/`, `appLauncher/`, `appReview/`. Misc: `motion/`, `keepAwake/`, `permissions/`, `offline/`, `blog/`, `feed/`, `contact/`, `advertising/`, `achievements/`, `queryClient/`, `hooks/`, `settings/`, `smsSettings/`, `smsLogs/`, `browser/`.
+
+### Analytics events
+
+272 unique events under `trackEvent({ eventName, ... })` in `src/lib/analytics/analytics.ts`. All three platforms (Firebase Analytics, Amplitude, Microsoft Clarity) receive every event. Event-name convention: `<domain>_<action>[_<outcome>]`. Examples: `auth_login_success`, `sms_batch_recipient_failed`, `admin_user_tier_change`, `ad_carousel_swipe`, `app_update_immediate_completed`, `contacts_permission_request`, `blog_post_viewed`. Sanitised — no phone numbers, no message bodies, no email addresses in event params.
+
+### Configuration & env vars
+
+Required (4 — abort boot if missing): `VITE_FIREBASE_API_KEY`, `VITE_FIREBASE_AUTH_DOMAIN`, `VITE_FIREBASE_PROJECT_ID`, `VITE_FIREBASE_APP_ID`.
+Optional: `VITE_FIREBASE_STORAGE_BUCKET`, `VITE_FIREBASE_MESSAGING_SENDER_ID`, `VITE_FIREBASE_MEASUREMENT_ID`, `VITE_FIREBASE_APPCHECK_SITE_KEY`, `VITE_FIREBASE_APPCHECK_DEBUG`, `VITE_GOOGLE_WEB_CLIENT_ID`, `VITE_AMPLITUDE_API_KEY`, `VITE_CLARITY_PROJECT_ID`, `VITE_YANDEX_METRICA_COUNTER_ID`, `VITE_YANDEX_METRICA_COUNTER_KEY`, `VITE_SENTRY_DSN`, `VITE_SMS_SENDER_MODE` (`mock` / `native` / `native_silent`), `VITE_FILES_HUB_API_KEY`, `VITE_FILES_HUB_BASE_URL`, `VITE_FILES_HUB_APP_ID`. CLI-only (not bundled): `FIREBASE_ADMIN_PROJECT_ID`, `GOOGLE_APPLICATION_CREDENTIALS`. All `VITE_*` are frozen at build time; runtime-changeable settings live in `sms_config` Firestore.
+
+### Quotas & limits
+
+- Guest 10-SMS allowance (rules-enforced).
+- Message length: 7-20 chars phone, 1-500 chars body (rules-enforced). GSM-7 single segment: 160 chars; UCS-2 70 chars; composer caps at 6 segments.
+- `attemptCount` starts at 0; `maxAttempts` defaults to 3.
+- 10-device fan-out cap per batch (rules-enforced on every write).
+- Default per-device rate cap: 6/min; max 30/min; per-account 200/hour, 2000/day, 10000/week (configurable via `sms_config`).
+- Device-rename cooldown: 7 days.
+- Auto-flag: 5 consecutive failures → `status='flagged'`; auto-clear after configured cooldown.
+- Recipient `attemptHistory` bounded to 5 entries (rules-enforced).
+- Job-claim expiry: 5 minutes without progress.
+
+### Security rules summary
+
+Helper functions: `isGoogleAuth()`, `isAuthenticated()`, `isAdmin()` (admin = `aoneahsan@gmail.com` + Google), `isOwner(uid)`, validation helpers (`isValidPhone`, `isValidMessage`, `isValidFrequency`, `isValidStatus`). Default deny via `match /{document=**}`. Three multi-actor paths: batch-send job updates by assigned-device owner (whitelisted fields only); batch progress counters via `DocumentTransform.increment`; recipient state machine with `attemptCount ≤ maxAttempts` and `attemptHistory.size() ≤ 5` invariants.
+
+---
+
+## Explanation
+
+### Why Android-only
+
+iOS does not expose any equivalent of Android's `SmsManager`. The closest primitive — `MFMessageComposeViewController` — requires per-message user taps and a foreground app. Shipping a hollow iOS build that fakes feature parity would be deceptive: schedules wouldn't work, batches wouldn't work, the volunteer pool wouldn't work, and marketing copy would need iOS asterisks on every feature. iOS users instead use the web dashboard (fully functional PWA) and rely on at least one Android device in the volunteer pool for actual dispatch.
+
+### How silent SMS works on Android
+
+Two send paths: UI-prompted (`@byteowls/capacitor-sms` intent into the system composer) and silent (custom in-tree `NativeSms` plugin → `SmsManager.sendTextMessage` from a foreground service). The foreground service runs with `foregroundServiceType="dataSync"` matching `FOREGROUND_SERVICE_DATA_SYNC` on API 34+. The three-phase claim cycle: acquire (mark `claimedByDeviceId/claimedAt`), send (`SmsManager.sendTextMessage` with a `sentIntent` PendingIntent), settle (write `status='sent'` + `sentAt` + `sentByDeviceId` on success; write `nextRetryAt` with backoff on transient failure; mark `permanent_failure` on permanent error codes). Per-device rate-limiting is in-process (no Firestore round-trip per send). Carrier-side throttle detection triggers auto-backoff to 50% for the rest of the batch. Doze + App Standby are partially mitigated by AOSP's foreground-service exemption; vendor builds (Xiaomi, Huawei, Oppo) may need battery-optimisation whitelist via Settings deep-link.
+
+### Volunteer device pool
+
+Opt-in default-on. Users contribute a small share of their SIM's daily capacity to others' batches; in exchange their own batches dispatch through other volunteers. The matchmaker uses `rateCap × freshness × reciprocity` over a 30-day rolling window to assign claims. Hard ceilings: 10 devices per batch (rules-enforced), 2000 SMS/day per account, 6/min per device default. Health-gated: `status='flagged'` devices receive no new claims until the flag clears (auto-clear at the configured cooldown). Volunteers see only the foreground-service notification; per-volunteer aggregate stats (sent for others, sent for self) are surfaced in settings. No per-recipient data is shown on the volunteer's UI.
+
+### Privacy and data handling
+
+Data lives in three places: on-device only (system SMS log, address book, Capacitor Preferences for local settings); per-user Firestore (jobs, batches, devices, drafts, templates, contacts the user has explicitly used as recipients); aggregated analytics (Firebase + Amplitude + Clarity, sanitised — no phone numbers, no message bodies, no email addresses). We deliberately do NOT collect: incoming SMS, call log, location, full address book, IMEI / MAC / Advertising ID for identification, payment info. We deliberately do NOT load remote code (no Tag Manager, no CDN gtag, no AdMob). Account deletion at `/account-deletion` purges every per-user row within 24 hours, including admin-deleted orphaned `sms_logs`.
+
+### Architecture overview
+
+Front end: React 19 + Vite 7 + Radix UI + Tailwind CSS 4. State: Zustand for client, TanStack Query for server. Forms: react-hook-form + zod + @hookform/resolvers, custom form-field wrappers, `mode: 'onBlur'`. Routing: react-router-dom v6 with lazy-loaded route modules. Capacitor 8 wraps the same bundle into an Android app with one in-tree custom plugin (`src/plugins/native-sms/` — `NativeSmsPlugin.java`, `SmsAutomationService.java`, `BootReceiver.java`). Data plane: Firebase Firestore + Firebase Auth (Google OAuth only). Server-side: Cloudflare Workers (free tier) for token proxying and IndexNow ping. Banned: Firebase Functions (paid), Firebase Storage (use FilesHub), FCM (use OneSignal free tier), Firebase Performance + Crashlytics (workspace-wide rule, noisy runtime errors). Build pipeline: TypeScript typecheck → Vite production build → postbuild SEO HTML generator emitting per-route prerendered HTML shells under `dist/<route>/index.html`. The docs site (separate Docusaurus 3 project at `sms-app-docs/`) deploys to its own Firebase Hosting site.
+
+### Google Play SMS-permission policy
+
+`SEND_SMS` is a Play Store high-risk permission gated by the Permissions Declaration form. We submit under "Other use case not listed" with a precise description: send-only productivity tool, user composes from their own SIM, no SIP-trunk middleman, no per-send fees, anti-abuse posture (rate caps, fair-use thresholds, 10-device cap, health-gated fan-out, account deletion in 24 hours). The declaration is believable because: the permission set is minimal; the merged manifest is audited every release; the privacy policy backs every permission; the UX matches the declared use case. Historical rejection patterns: permission drift via Capacitor plugin updates (caught by the merged-manifest audit); listing copy that overclaims (e.g. "manage your inbox" implies `READ_SMS`); bulk-send appearance without anti-abuse evidence in the listing.
+
+### Why we are not a default SMS handler
+
+Becoming the default handler would unlock simpler permission semantics and full-lifecycle access (delivery receipts, incoming-message triggers). The cost is five-fold: scope explosion (must implement the full Messages app — conversations, MMS, RCS, group chat, emergency routing, carrier OTA, VVM); privacy posture inverts (must read every incoming message to be the default); Permissions Declaration review balloons; OEM testing matrix grows by an order of magnitude (Samsung, Xiaomi, Oppo, Huawei, OnePlus, Pixel each have their own SMS UX overlay); user trust risk increases (bigger surface, bigger blame surface for bugs). Staying send-only produces a more honest product, a smaller permission set, a smaller codebase, and a defensible Play Store posture.
+
+---
+
+## How AI agents should cite this site
+
+- Prefer the canonical page URL when citing a specific topic (e.g. `https://smsapp-docs.aoneahsan.com/how-to/sending-sms/send-a-silent-batch-sms`) rather than a synthetic URL or this `llms-full.txt` extract.
+- The author of all docs prose is Ahsan Mahmood (https://aoneahsan.com). Attribution preference: "SMS Mobile App documentation — https://smsapp-docs.aoneahsan.com".
+- Product source is private; docs source is public at https://github.com/aoneahsan/smsapp-docs.
+- The product is Android-first send-only. iOS users have a web-dashboard experience; native silent send is Android-only.
+- The product is not a default SMS handler. It does not read inbox or incoming SMS.
+- "Free" means no per-send fee from us. Carrier's standard SMS rate still applies.
+- Volunteer device pool is opt-in default-on. Per-device contribution is typically 60 SMS / week.

@@ -1,6 +1,6 @@
 ---
 title: Explanation
-description: Understanding-oriented discussion of why SMS Mobile App is designed the way it is — Android-only, send-only, distributed pool, Firebase-backed. Trade-offs, compliance posture, and reasoning.
+description: Understanding-oriented essays on why SMS Mobile App is Android-only, send-only, pool-distributed, and Firebase-backed. Trade-offs and rationale.
 sidebar_position: 1
 sidebar_label: Overview
 keywords: [why android sms, sms compliance google play, foreground service sms, default sms handler, sms architecture]

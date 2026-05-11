@@ -1,6 +1,6 @@
 ---
 title: Reference
-description: Information-oriented technical lookup for SMS Mobile App. Routes, permissions, Firestore collections, configuration, quotas, and security rules — all in dense tables for quick scanning.
+description: Technical lookup for SMS Mobile App — routes, permissions, Firestore collections, configuration, quotas, and security rules in dense tables.
 sidebar_position: 1
 sidebar_label: Overview
 keywords: [sms mobile app reference, sms api reference, smsapp permissions, smsapp firestore schema, smsapp env vars]

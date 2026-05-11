@@ -1,6 +1,6 @@
 ---
 title: Architecture overview
-description: The end-to-end architecture of SMS Mobile App — Capacitor + Vite front end, Firebase data plane, the custom NativeSms Android plugin, and the Cloudflare Workers we use instead of paid Firebase Functions.
+description: The end-to-end stack — Capacitor + Vite front end, Firebase data plane, the custom NativeSms Android plugin, and Cloudflare Workers in place of paid Functions.
 sidebar_position: 6
 sidebar_label: Architecture overview
 slug: architecture-overview
