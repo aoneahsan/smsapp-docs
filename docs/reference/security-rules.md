@@ -12,7 +12,7 @@ last_update:
 
 # Firestore security rules
 
-The canonical source is `firestore.rules` in the main repo. This page is a readable map of what those rules grant and deny. Every claim here is checked by the emulator-gated test suite at `src/test/firestore.rules.test.ts` (around 1,500 lines covering the full allow/deny matrix).
+The canonical source is `firestore.rules` in the main repo. This page is a readable map of what those rules grant and deny.
 
 The rule set runs at version `rules_version = '2'`. All operations require authentication unless explicitly noted, and **authentication means Google sign-in only** — the `isGoogleAuth()` helper rejects anonymous, email/password, phone, and any other provider that may slip through the Auth flow.
 
@@ -106,27 +106,23 @@ A batch's `assignedDeviceIds` cannot include any device with `status == 'flagged
 
 ## Default deny
 
-The final block — `match /{document=**} { allow read, write: if false; }` — denies anything not explicitly allowed above. New collections must add their own `match` rule. Forgetting the explicit rule causes a hard fail at the emulator-gated test suite long before it reaches production.
+The final block — `match /{document=**} { allow read, write: if false; }` — denies anything not explicitly allowed above. New collections must add their own `match` rule. Forgetting the explicit rule means the collection is denied by default until you add it.
 
 ## Index dependencies
 
 Rule helpers like `isAssignedDeviceOwner()` and `isBatchAssignedToCaller()` rely on `get()` and `exists()` against other documents. Those reads count against Firestore's per-request read budget. The 10-device cap exists in part to keep this budget tractable — beyond 10 lookups per rule evaluation, Firestore's documented limit on cross-document reads in a single rule starts to bite.
 
-## How to test rules changes
+## How to validate rules changes
 
-The emulator-gated suite is the safety net. Run with `yarn test:rules` (requires the Firebase emulator running). Add a test for every new path and every new field invariant. The CI gate refuses to deploy rules without a green run.
-
-To exercise a change locally:
+Exercise a rules change against the local Firestore emulator before deploying. Deploy rules and indexes only after the change behaves as expected:
 
 ```bash
 yarn firebase:emulators        # start the Firestore emulator
-yarn test:rules                # run the full rules suite
-firebase deploy --only firestore:indexes  # AFTER rules pass — never use --only firestore (it deletes indexes)
+firebase deploy --only firestore:indexes  # AFTER validating — never use --only firestore (it deletes indexes)
 ```
 
 ## Where to dig deeper
 
 - The full rule text: `firestore.rules` in the main repo.
-- The test suite: `src/test/firestore.rules.test.ts` — exhaustive allow/deny matrix per collection.
 - The query coverage audit: [FIREBASE-QUERY-COVERAGE-AUDIT.md](https://github.com/aoneahsan/smsapp-docs/blob/main/REFERENCE.md) — every front-end query mapped to a rule + index.
 - The how-to recipes that exercise the multi-actor paths: [Configure rate limits](/how-to/admin/configure-rate-limits), [Handle failures and partial sends](/how-to/admin/handle-failures-and-partial-sends).

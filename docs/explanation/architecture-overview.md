@@ -44,7 +44,7 @@ Why a custom plugin instead of an off-the-shelf one? Because the off-the-shelf `
 
 The data plane is **Firebase Firestore + Firebase Authentication**. Both are free-tier products and both scale into the millions-of-reads-per-month band before they cost anything.
 
-Firestore holds every persistent record — the full `sms_*` collection list is in [Firestore data model](/reference/firestore-data-model). Security is enforced by `firestore.rules` (700+ lines, exhaustively tested by the emulator-gated suite at `src/test/firestore.rules.test.ts`). The security-rule logic is documented end-to-end in [Security rules](/reference/security-rules).
+Firestore holds every persistent record — the full `sms_*` collection list is in [Firestore data model](/reference/firestore-data-model). Security is enforced by `firestore.rules` (700+ lines). The security-rule logic is documented end-to-end in [Security rules](/reference/security-rules).
 
 Firebase Authentication is locked to **Google OAuth only**. The `isGoogleAuth()` rule helper rejects anonymous, email/password, phone, and any other provider that may slip through. The decision to ban email/password specifically is a fraud-cost decision: free-tier products with email/password sign-up attract bot signups at an industrial scale, and the cost of mitigating them (CAPTCHA, email verification flows, account-isolation rules) outweighs the user-onboarding benefit. Google OAuth gives us a high-quality identity signal with near-zero engineering cost.
 
@@ -75,7 +75,7 @@ The choice of Cloudflare Workers over Firebase Functions is purely cost-driven. 
 
 `npx cap sync android` syncs the build into the Android shell. `cd android && ./gradlew assembleRelease` produces the signed APK / AAB. The keystore is a stored secret, never committed.
 
-CI runs typecheck + lint + unit tests + emulator-gated rule tests on every push, and gates the deploy on all four. The deploy step uses GitHub Actions with Firebase Hosting + the IndexNow worker as targets. No deploy happens on a red CI.
+CI runs typecheck + lint on every push, and gates the deploy on both. The deploy step uses GitHub Actions with Firebase Hosting + the IndexNow worker as targets. No deploy happens on a red CI.
 
 ## The docs site (this site) as a separate concern
 

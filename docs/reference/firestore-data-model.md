@@ -184,4 +184,4 @@ Deploy with `firebase deploy --only firestore:indexes`. Never `firebase deploy -
 
 TypeScript types: `src/types/sms.ts`, `src/types/admin.ts`, `src/types/batch.ts`. Service modules that own each collection's reads/writes: `src/lib/smsJobs/`, `src/lib/smsBatches/`, `src/lib/smsDevices/`, `src/lib/smsUsers/`, `src/lib/contacts/`, `src/lib/drafts/`, `src/lib/templates/`, `src/lib/quota/`. Rules: `firestore.rules`.
 
-Adding a new collection touches all three: the type, the service module, and a fresh `match /sms_xxx/{id}` block in `firestore.rules`. The emulator-gated suite in `src/test/firestore.rules.test.ts` (~1500 lines) is where the rule's allow/deny matrix is exercised.
+Adding a new collection touches all three: the type, the service module, and a fresh `match /sms_xxx/{id}` block in `firestore.rules`.
