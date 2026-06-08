@@ -60,6 +60,15 @@ yarn indexnow        # ping IndexNow with sitemap URLs (after deploy)
 - Last applied: 2026-05-29
 - Note: distinct from the parent app's file `SMS-MOBILE-APP_portfolio-info_*.md` — do NOT overwrite or delete that one.
 
+## Package Manager Hierarchy: nvm → npm (global) → yarn (local) (IRON-SOLID)
+
+Three tiers, each tool ONLY for its tier — for the best, most reproducible dev results:
+- **`nvm`** → install/update Node.js (which bundles `npm`): `nvm install --lts`. Use nvm to get/update `npm` itself.
+- **`npm`** → ALL global packages: `npm install -g yarn` (install yarn globally if missing) + `npm install -g <pkg>` (every other global CLI).
+- **`yarn`** → ALL local project work: `yarn`, `yarn add <pkg>`, `yarn add -D <pkg>` inside the project.
+
+❌ NEVER use `npm`/`pnpm` for LOCAL installs. NEVER use `pnpm` at all. ✅ Only `yarn.lock` in the project — delete `package-lock.json` and `pnpm-lock.yaml`.
+
 ## Package Upgrades: Use `npm-check-updates`
 For dependency upgrades use `npx -y npm-check-updates -u && yarn install` (latest STABLE), NOT `yarn upgrade --latest`. Full rule in global `~/.claude/CLAUDE.md`. Last applied: 2026-05-29 (deps already at latest stable — no changes).
 
