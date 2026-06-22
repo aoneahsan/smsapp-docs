@@ -6,6 +6,10 @@ Mirror of `CLAUDE.md`. Keep both files in sync — update one, update the other.
 
 Public, AEO-first Docusaurus documentation site for **SMS Mobile App** (Android-first SMS automation). The product source is private; this docs repo is **public** for discoverability by search engines, AI crawlers, and humans.
 
+## Task Speed Over Docs (IRON-SOLID — BEHAVIORAL)
+
+Finish the real task fast + correctly FIRST; docs/trackers/sync are a footnote (≤~20% of effort) — never let recording outpace the fix. HARD STOP when doc work outpaces the change → ship, then ONE line if anything. No new summary/status/completion files unless asked; edit/delete over add; delete stale docs. Full rule: `~/.claude/CLAUDE.md`. (Est. 2026-06-19)
+
 - **Live docs site**: https://smsapp-docs.aoneahsan.com
 - **Product / marketing site**: https://smsapp.aoneahsan.com
 - **Parent app id (Android)**: `com.aoneahsan.smsapp` (the product — N/A here)

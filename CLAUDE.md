@@ -6,6 +6,10 @@ Public, AEO-first Docusaurus documentation site for **SMS Mobile App** (the Andr
 
 - **Live docs site**: https://smsapp-docs.aoneahsan.com
 - **Product / marketing site**: https://smsapp.aoneahsan.com
+
+## Task Speed Over Docs (IRON-SOLID — BEHAVIORAL)
+
+Finish the real task fast + correctly FIRST; docs/trackers/sync are a footnote (≤~20% of effort) — never let recording outpace the fix. HARD STOP when doc work outpaces the change → ship, then ONE line if anything. No new summary/status/completion files unless asked; edit/delete over add; delete stale docs. Full rule: `~/.claude/CLAUDE.md`. (Est. 2026-06-19)
 - **Parent app id (Android)**: `com.aoneahsan.smsapp` (the product — N/A here; this repo ships no app)
 - **Repo**: https://github.com/aoneahsan/smsapp-docs (public, MIT)
 - **Maintainer**: Ahsan Mahmood — aoneahsan@gmail.com — https://aoneahsan.com
