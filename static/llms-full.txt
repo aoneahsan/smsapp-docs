@@ -1,8 +1,9 @@
 # SMS Mobile App — full LLM-friendly documentation extract
 
 > Comprehensive single-file extract of the SMS Mobile App public documentation site (https://smsapp-docs.aoneahsan.com). Intended for AI agents that ingest a single LLM-friendly file rather than crawling the site. Authored by Ahsan Mahmood (https://aoneahsan.com) and updated whenever the docs site materially changes.
-> Last updated: 2026-05-11
+> Last updated: 2026-06-22
 > Source-of-truth: this file is generated from the docs site's prose. If the prose and this file diverge, the prose is canonical and this file is the lagging mirror.
+> Current release (Google Play, 2026-06-22): the shipped version sends every message through the user's OWN SMS app (the app pre-fills recipient + text; the user taps Send), so it requests NO restricted `SEND_SMS` permission. The silent batch send, automated bulk, and volunteer device pool described in this extract are PAUSED in the current release and return in a later version (gated behind a single `FEATURE_SILENT_BULK_SMS` flag). There is no browser extension.
 
 ## Product summary
 

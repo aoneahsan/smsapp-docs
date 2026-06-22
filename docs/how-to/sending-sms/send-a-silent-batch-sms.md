@@ -6,11 +6,15 @@ sidebar_label: Send a silent batch SMS
 slug: send-a-silent-batch-sms
 keywords: [silent sms android, foreground service sms, batch sms sender, sms mobile app silent send, native sms plugin android]
 last_update:
-  date: 2026-05-11
+  date: 2026-06-22
   author: Ahsan Mahmood
 ---
 
+import V1Status from '@site/docs/_partials/_v1-release-status.mdx';
+
 # Send a silent batch SMS
+
+<V1Status />
 
 A silent batch SMS dispatches without opening the device's system composer — the SMS Mobile App hands each message directly to Android's `SmsManager` API through a custom NativeSms plugin, paced by a foreground service that's visible in your notification shade. This is the right mode for batches, scheduled jobs, and any flow where opening a system composer per message is impractical.
 

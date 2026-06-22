@@ -6,11 +6,15 @@ sidebar_label: Google Play SMS policy
 slug: google-play-sms-policy
 keywords: [google play sms permission policy, send_sms play store, permissions declaration sms, play store sms rejection]
 last_update:
-  date: 2026-05-11
+  date: 2026-06-22
   author: Ahsan Mahmood
 ---
 
+import V1Status from '@site/docs/_partials/_v1-release-status.mdx';
+
 # Compliance — Google Play SMS-permission policy
+
+<V1Status />
 
 `SEND_SMS` is a Google Play **high-risk permission**. Apps that request it must pass an extra review gate called the **Permissions Declaration** form. The form has rejected many SMS apps and continues to reject them on every policy update. This page explains how SMS Mobile App passes the gate, the trade-offs in the declaration, and the runbook for surviving policy revisions.
 

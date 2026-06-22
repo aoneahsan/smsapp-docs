@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 
 const SITE_URL = 'https://smsapp-docs.aoneahsan.com'
 const APP_URL = 'https://smsapp.aoneahsan.com'
+const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp'
 const AUTHOR_NAME = 'Ahsan Mahmood'
 const AUTHOR_URL = 'https://aoneahsan.com'
 const AUTHOR_LINKEDIN = 'https://linkedin.com/in/aoneahsan'
@@ -133,7 +134,9 @@ export default function DocItemLayoutWrapper(props: Record<string, unknown>) {
         url: APP_URL,
         applicationCategory: 'CommunicationApplication',
         operatingSystem: 'Android',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+        downloadUrl: PLAY_URL,
+        installUrl: PLAY_URL,
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: PLAY_URL },
         publisher: { '@id': `${SITE_URL}/#org` },
         author: { '@id': `${SITE_URL}/#person-author` },
       }

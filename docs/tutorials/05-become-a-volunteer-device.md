@@ -6,11 +6,15 @@ sidebar_label: Become a volunteer device
 slug: become-a-volunteer-device
 keywords: [volunteer sms device, opt-in sms pool, sms mobile app volunteer, opt out batch sms, fair-use sms]
 last_update:
-  date: 2026-05-10
+  date: 2026-06-22
   author: Ahsan Mahmood
 ---
 
+import V1Status from '@site/docs/_partials/_v1-release-status.mdx';
+
 # Become a volunteer device (or opt out)
+
+<V1Status />
 
 A volunteer device is an Android phone you've enrolled in the shared sender pool, allowing batch jobs created on the dashboard to fan out across multiple SIMs instead of all going through one phone. Volunteering is opt-in default-on: the moment you install the Android app and sign in, your phone is a candidate volunteer unless you toggle it off.
 

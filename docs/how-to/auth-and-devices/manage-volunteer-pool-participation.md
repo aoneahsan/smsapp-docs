@@ -6,11 +6,15 @@ sidebar_label: Manage volunteer participation
 slug: manage-volunteer-pool-participation
 keywords: [volunteer device opt out, sms volunteer pool, per-device rate cap, sms mobile app participation, fair-use sms]
 last_update:
-  date: 2026-05-10
+  date: 2026-06-22
   author: Ahsan Mahmood
 ---
 
+import V1Status from '@site/docs/_partials/_v1-release-status.mdx';
+
 # Manage volunteer pool participation
+
+<V1Status />
 
 Volunteer participation controls which accounts can dispatch SMS through your phone. Newly registered devices opt in by default — only your own account can target them initially, but if you accept an organisation invite or a co-signing flow, additional accounts gain the right to assign jobs to your phone too. This recipe covers the inspection, adjustment, and opt-out of those settings.
 

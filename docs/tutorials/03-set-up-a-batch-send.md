@@ -6,11 +6,15 @@ sidebar_label: Set up a batch send
 slug: set-up-a-batch-send
 keywords: [bulk sms android, batch sms csv, sms mobile app batch, csv import sms, fire sms batch]
 last_update:
-  date: 2026-05-10
+  date: 2026-06-22
   author: Ahsan Mahmood
 ---
 
+import V1Status from '@site/docs/_partials/_v1-release-status.mdx';
+
 # Set up a small batch SMS send
+
+<V1Status />
 
 A batch send dispatches the same SMS body to many recipients in sequence, paced and tracked by your Android phone, with delivery status reported back to the dashboard per recipient. This tutorial sets up a 10-row batch — small enough to verify your workflow without burning through your carrier's daily SMS allowance.
 

@@ -1,0 +1,9 @@
+:::info Current release (what ships today)
+
+The version on Google Play today sends each message through **your own SMS app**: SMS Mobile App pre-fills the recipient and text, and **you tap Send**, so the message leaves from your SIM. This release requests **no** `SEND_SMS` permission and is not a default SMS handler.
+
+The **silent / unattended send, automated bulk batches, and the volunteer device pool** described below are **paused in the current release**. They depend on the restricted `SEND_SMS` permission plus a Google Play "Device automation" review, and return in a later version. The code stays in the app behind a single feature flag (`FEATURE_SILENT_BULK_SMS`) — nothing is deleted, so this documentation stays accurate for when it returns.
+
+What works today with no restricted permission: compose and send (through your SMS app), drafts, templates, quick replies, the optional contact picker, and foreground scheduling that opens the composer for a due message while the app is open.
+
+:::

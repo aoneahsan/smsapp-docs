@@ -6,11 +6,15 @@ sidebar_label: How silent SMS works
 slug: how-silent-sms-works
 keywords: [android silent sms, smsmanager sendtextmessage, foreground service sms, android background sms automation]
 last_update:
-  date: 2026-05-11
+  date: 2026-06-22
   author: Ahsan Mahmood
 ---
 
+import V1Status from '@site/docs/_partials/_v1-release-status.mdx';
+
 # How silent SMS works on Android
+
+<V1Status />
 
 The product's signature capability — dispatching SMS from an automation runner without a user tap per message — rests on a small stack of Android primitives wired together carefully. Each piece is independently boring; the combination is the product. This page walks through the stack from API level down to behavioural details, and explains why each part exists.
 

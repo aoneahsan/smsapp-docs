@@ -7,25 +7,28 @@ sidebar_label: Introduction
 hide_table_of_contents: false
 keywords: [sms automation, android sms, sim sms sender, scheduled sms, batch sms, capacitor sms, firebase sms]
 last_update:
-  date: 2026-05-11
+  date: 2026-06-22
   author: Ahsan Mahmood
 ---
 
 import Link from '@docusaurus/Link';
+import V1Status from '@site/docs/_partials/_v1-release-status.mdx';
 
 <div className="reveal-on-mount">
 
 # SMS Mobile App documentation
 
-**An Android-first SMS automation app that sends user-authored text messages from your phone's own SIM card.** Schedule one-off reminders, recurring sends, or batches of hundreds — coordinated by a Firebase-backed dashboard. Recipients see your real mobile number. No cloud SMS gateway. You pay only what your carrier charges for an SMS.
+**An Android-first SMS automation app that sends user-authored text messages from your phone's own SIM card.** Schedule one-off reminders and recurring sends, compose from reusable templates, and coordinate everything from a Firebase-backed dashboard. Recipients see your real mobile number. No cloud SMS gateway. You pay only what your carrier charges for an SMS.
 
 </div>
 
 <div className="reveal-on-mount delay-1">
 
-This site is the **official, comprehensive product manual**. The marketing site lives at [smsapp.aoneahsan.com](https://smsapp.aoneahsan.com); the source for these docs is public at [github.com/aoneahsan/smsapp-docs](https://github.com/aoneahsan/smsapp-docs). The product's own source remains private.
+This site is the **official, comprehensive product manual**. The marketing site lives at [smsapp.aoneahsan.com](https://smsapp.aoneahsan.com); install from [Google Play](https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp); the source for these docs is public at [github.com/aoneahsan/smsapp-docs](https://github.com/aoneahsan/smsapp-docs). The product's own source remains private.
 
 </div>
+
+<V1Status />
 
 ## Where to start
 
@@ -63,13 +66,13 @@ If you're not sure which one to open first, [**Get started in 5 minutes**](/tuto
 
 | | |
 |---|---|
-| **Platforms** | Web dashboard, Android app, Chrome / Firefox / Edge extension |
-| **SMS transport** | Native Android `SmsManager` via your SIM card. No cloud gateway. |
+| **Platforms** | Web dashboard + Android app. (No browser extension.) |
+| **SMS transport** | Current release: opens your own SMS app — you tap Send, so it leaves from your SIM with no cloud gateway. A later release adds native `SmsManager` silent send. |
 | **Cost** | Free for individuals. Carrier's standard SMS rate per message. |
-| **Permissions** | `SEND_SMS` (required). `READ_CONTACTS` (optional, for recipient autocomplete). |
+| **Permissions** | Current release: no restricted permission. `READ_CONTACTS` optional (recipient autocomplete). `SEND_SMS` returns with the future silent-send release. |
 | **Auth** | Sign in with Google. |
-| **Data** | Firestore for jobs, batches, devices, drafts, templates. Files via FilesHub. |
-| **iOS** | Web dashboard works. Native silent send is **Android-only**. |
+| **Data** | Firestore for jobs, devices, drafts, templates. Files via FilesHub. |
+| **iOS** | Web dashboard works. Native send is **Android-only**. |
 
 <div className="honest-framing">
 
@@ -80,7 +83,7 @@ A few things competitors fudge but this app is straightforward about:
 - **We are not a default SMS handler.** Android reserves features like reading the inbox or replying inline for the default SMS app. SMS Mobile App is purposely a sender, not a replacement messaging app.
 - **Carrier rates still apply.** "Free" means we don't charge per message. Your carrier still does.
 - **iOS is a web-dashboard experience only.** iOS does not expose a programmatic SMS sender; the actual sending happens on Android devices.
-- **The volunteer device pool is opt-in default-on.** Read [How the volunteer device pool works](/explanation/volunteer-device-pool) before you fire a batch — it explains who actually dispatches each message when you click Send.
+- **The volunteer device pool and bulk batches are paused in the current release.** They depend on the restricted `SEND_SMS` permission and return in a later version — today every send goes through your own SMS app. See [How the volunteer device pool works](/explanation/volunteer-device-pool) for how it behaves when re-enabled.
 
 </div>
 

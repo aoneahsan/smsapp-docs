@@ -6,11 +6,15 @@ sidebar_label: Volunteer device pool
 slug: volunteer-device-pool
 keywords: [volunteer sms device, opt-in sms pool, distributed sms send, fair use sms automation]
 last_update:
-  date: 2026-05-11
+  date: 2026-06-22
   author: Ahsan Mahmood
 ---
 
+import V1Status from '@site/docs/_partials/_v1-release-status.mdx';
+
 # How the volunteer device pool works
+
+<V1Status />
 
 SMS Mobile App is free because the dispatching infrastructure is **distributed across volunteer devices** instead of being centralised on cloud-hosted SIP trunks. Every install can opt to contribute a small share of its SIM's send capacity to other users' batches in exchange for the same access to the pool itself. This page covers how the pool works, why we chose **opt-in default-on**, and what the volunteer's phone is actually doing.
 

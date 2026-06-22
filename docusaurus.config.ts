@@ -9,6 +9,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const SITE_URL = 'https://smsapp-docs.aoneahsan.com';
 const APP_URL = 'https://smsapp.aoneahsan.com';
+const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp';
 const REPO_URL = 'https://github.com/aoneahsan/smsapp-docs';
 const AUTHOR_NAME = 'Ahsan Mahmood';
 const AUTHOR_PORTFOLIO = 'https://aoneahsan.com';
@@ -125,7 +126,7 @@ const config: Config = {
               name: 'SMS Mobile App',
               url: APP_URL,
               logo: `${APP_URL}/icons/icon-512.png`,
-              sameAs: [APP_URL, REPO_URL, AUTHOR_PORTFOLIO],
+              sameAs: [APP_URL, PLAY_URL, REPO_URL, AUTHOR_PORTFOLIO],
             },
             {
               '@type': 'Person',
@@ -164,6 +165,7 @@ const config: Config = {
         { type: 'docSidebar', sidebarId: 'referenceSidebar', position: 'left', label: 'Reference' },
         { type: 'docSidebar', sidebarId: 'explanationSidebar', position: 'left', label: 'Explanation' },
         { href: APP_URL, label: 'Open the app', position: 'right' },
+        { href: PLAY_URL, label: 'Google Play', position: 'right' },
         { href: REPO_URL, 'aria-label': 'GitHub repository', className: 'header-github-link', position: 'right' },
       ],
     },
@@ -184,6 +186,7 @@ const config: Config = {
           title: 'The app',
           items: [
             { label: 'Open the app', href: APP_URL },
+            { label: 'Get it on Google Play', href: PLAY_URL },
             { label: 'Apps & download', href: `${APP_URL}/apps` },
             { label: 'Pricing', href: `${APP_URL}/pricing` },
             { label: 'Privacy policy', href: `${APP_URL}/privacy` },

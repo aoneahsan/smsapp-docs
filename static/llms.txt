@@ -2,6 +2,8 @@
 
 > Public, comprehensive product manual for SMS Mobile App — an Android-first SMS automation app that sends user-authored text messages from your phone's own SIM card, with Firebase-backed scheduling. Free for individuals; no per-message fees beyond your carrier's standard rate.
 
+Current release (Google Play, as of 2026-06-22): every message is sent through the user's OWN SMS app — the app pre-fills the recipient and text and the user taps Send — so the build requests NO restricted `SEND_SMS` permission and is not a default SMS handler. Silent/unattended send, automated bulk batches, and the volunteer device pool documented below are PAUSED in the current release and return in a later version (gated behind a single `FEATURE_SILENT_BULK_SMS` flag). There is no browser extension.
+
 Site organised in four sections following the Diátaxis framework: Tutorials (learning by doing), How-to guides (recipes), Reference (technical lookup), and Explanation (design rationale).
 
 ## Core sections

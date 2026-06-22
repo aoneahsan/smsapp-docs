@@ -6,11 +6,15 @@ sidebar_label: Install the Android app
 slug: install-the-android-app
 keywords: [install sms mobile app android, link android sms app, send sms permission android, smsapp google play, android sender device]
 last_update:
-  date: 2026-05-10
+  date: 2026-06-22
   author: Ahsan Mahmood
 ---
 
+import V1Status from '@site/docs/_partials/_v1-release-status.mdx';
+
 # Install the Android app and link it to your account
+
+<V1Status />
 
 The SMS Mobile App for Android is the device that actually sends the texts — installing it links your phone's SIM to the web dashboard so jobs you create online dispatch from your real number. Without an Android phone in the loop, you can sign in to the dashboard but you can't send anything.
 
@@ -24,7 +28,7 @@ If your phone runs an aggressive battery-management ROM (Xiaomi MIUI, Huawei EMU
 
 ## Step 1 — Install from Google Play
 
-Open Google Play on your phone and search for **SMS Mobile App** (the one published by Ahsan Mahmood). The listing shows the app icon, screenshots, and the **Install** button.
+Open the [SMS Mobile App listing on Google Play](https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp) — or open Google Play on your phone and search for **SMS Mobile App** (published by Ahsan Mahmood). The listing shows the app icon, screenshots, and the **Install** button.
 
 Tap **Install**, accept the storage download, and wait. Play takes a few seconds to download the APK and a few more to install it. When the **Open** button appears, the install succeeded.
 
@@ -39,6 +43,10 @@ The app talks to Firebase Authentication using the Capacitor Google Auth plugin,
 If you have multiple Google accounts on the phone and pick the wrong one, sign out from the home-screen menu and try again. Mismatched accounts are the single most common cause of "the dashboard says I have no devices" later.
 
 ## Step 3 — Grant the Send SMS permission
+
+:::note
+This step applies to the future release that re-enables direct `SEND_SMS` sending. **The current Play Store version never shows this prompt** — it opens your own SMS app pre-filled and you tap Send, so the message goes from your SIM with no SMS permission. You can skip to Step 4 below.
+:::
 
 The first time you trigger any send action, the app prompts the standard Android permission dialog for `SEND_SMS`. The dialog is the system one — you can read what it says: "Allow SMS Mobile App to send SMS messages?" with **Allow** and **Don't allow** buttons.
 
