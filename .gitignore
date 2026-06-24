@@ -3,6 +3,13 @@
 
 # Production build output
 /build
+dist/
+www/
+.output/
+.vite/
+.next/
+.wxt/
+coverage/
 
 # Docusaurus generated files
 .docusaurus
@@ -19,10 +26,8 @@
 
 # Misc
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+*.log
+*.iml
 
 npm-debug.log*
 yarn-debug.log*
@@ -32,3 +37,7 @@ yarn-error.log*
 .vscode/
 .idea/
 *.swp
+
+# Custom ignore rules (global standard)
+*.ignore.*
+project-record-ignore/
