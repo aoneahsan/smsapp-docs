@@ -83,7 +83,7 @@ Standalone git repo (real `.git` dir), branch `main`. **No remote configured** a
 Diagnostic + fix playbook: `~/.claude/rules/seo-aeo-ranking.md`. This repo already implements most of §3/§4/§5 (AI-bot allowlist, machine-readable files, per-page JSON-LD, prerendered static HTML via Docusaurus SSG). Last applied: 2026-05-29.
 
 ## Gitignore Hygiene (IRON-SOLID)
-`.gitignore` stays current with the project structure — ignore only recoverable artifacts (build/`dist`/`www`/`node_modules`/logs/caches/IDE), never lose source. Custom rules always present: `*.ignore.*`, `project-record-ignore/`. This is a **PRIVATE** repo -> `.env`/secrets/keystores ARE tracked in git.
+`.gitignore` stays current with the project structure — ignore only recoverable artifacts (build/`dist`/`www`/`node_modules`/logs/caches/IDE), never lose source. Custom rules always present: `*.ignore.*`, `project-record-ignore/`. This is a **PUBLIC** repo -> secrets/`.env`/keystores are NEVER tracked.
 Full rule + private/public protocol: `~/.claude/rules/project-config.md`.
 Gitignore Last Verified: 2026-06-24
 

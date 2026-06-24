@@ -38,6 +38,17 @@ yarn-error.log*
 .idea/
 *.swp
 
+# Secrets — PUBLIC repo, NEVER commit
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+key.properties
+keystore.properties
+*service-account*.json
+.npmrc
+
 # Custom ignore rules (global standard)
 *.ignore.*
 project-record-ignore/
