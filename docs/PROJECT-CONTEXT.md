@@ -1,6 +1,6 @@
 # SMSApp documentation context
 
-**Last updated:** 2026-09-15
+**Last updated:** 2026-10-14
 
 This public Docusaurus repository documents the private sibling SMSApp product. It does not define product behavior: verified app source, release evidence, and `../sms-app/docs/PROJECT-CONTEXT.md` are authoritative.
 
@@ -11,6 +11,8 @@ This public Docusaurus repository documents the private sibling SMSApp product. 
 - `static/CNAME` and external DNS provide the canonical custom domain.
 - Search is local/in-browser; the site does not require an external search service.
 - Canonical metadata, structured data, sitemap output, robots directives, and AI-discovery files must describe the same visible release behavior.
+
+The 2026-10-14 maintenance pass passed immutable install, typecheck, production build and a controlled local Chrome render. GitHub Pages deployed the public docs commit, but no Android real-SIM acceptance or legacy Firebase backend deployment was performed. The owner plans a later Supabase redevelopment; current Firebase descriptions document the existing application only.
 
 ## Current product reference
 

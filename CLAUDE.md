@@ -1,6 +1,6 @@
 # SMSApp documentation — project guidance
 
-**Last updated:** 2026-09-15
+**Last updated:** 2026-10-14
 **Scope:** this public documentation repository only. Fleet-wide rules are inherited; do not copy them here.
 
 ## Start here
@@ -10,7 +10,7 @@
 3. Inspect the relevant implementation or app documentation before changing factual public claims.
 4. Read [`docs/MANUAL-TASKS.md`](docs/MANUAL-TASKS.md) before deployment, DNS, analytics, or indexing work.
 
-| Context budget last verified | 2026-09-15 — CLAUDE.md 7,279 B; no PENDING-TASKS.md; re-check due 2026-09-25 |
+| Context budget last verified | 2026-10-14 — root pair reviewed; next routine pass 2026-11-13 |
 |---|---|
 
 ## Repository identity
@@ -59,7 +59,7 @@ yarn typecheck
 yarn build
 ```
 
-Do not start Docusaurus dev/preview/watch servers. `yarn indexnow` is a post-deployment external action; run it only when the canonical site has actually changed and the sitemap is live.
+Use the built-site preview for the required controlled-browser check; do not treat a dev/watch server as release evidence. `yarn indexnow` is a post-deployment external action; run it only when the canonical site has actually changed and the sitemap is live.
 
 The historic local-build note about a parent-workspace submodule error is not a permanent exemption. Try one clean production build. If the current environment still reproduces the external workspace failure, record the exact command and error; do not modify unrelated parent Git metadata to hide it.
 
