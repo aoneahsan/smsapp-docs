@@ -6,7 +6,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 
 const SITE_URL = 'https://smsapp-docs.aoneahsan.com'
 const APP_URL = 'https://smsapp.aoneahsan.com'
-const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp'
 const AUTHOR_NAME = 'Ahsan Mahmood'
 const AUTHOR_URL = 'https://aoneahsan.com'
 const AUTHOR_LINKEDIN = 'https://linkedin.com/in/aoneahsan'
@@ -122,7 +121,7 @@ export default function DocItemLayoutWrapper(props: Record<string, unknown>) {
     : undefined
 
   // SoftwareApplication schema is emitted on the docs homepage so AI
-  // engines can answer "what is SMS Mobile App?" with a structured
+  // engines can answer "what is SMSApp?" with a structured
   // entity. Subsequent pages reference the same entity via @id linking
   // back through the WebSite graph in docusaurus.config.ts.
   const isHome = metadata.permalink === '/' || metadata.permalink === ''
@@ -130,13 +129,18 @@ export default function DocItemLayoutWrapper(props: Record<string, unknown>) {
     ? {
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
-        name: 'SMS Mobile App',
+        name: 'SMSApp',
         url: APP_URL,
         applicationCategory: 'CommunicationApplication',
         operatingSystem: 'Android',
-        downloadUrl: PLAY_URL,
-        installUrl: PLAY_URL,
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: PLAY_URL },
+        softwareRequirements: 'Owner-provided Android APK and an SMS-capable SIM',
+        featureList: [
+          'Owner-managed Android SMS dispatch',
+          'Web administration panel',
+          'Device-scoped contact synchronization',
+          'CSV recipient import',
+          'Pakistani ordinary-mobile destination policy',
+        ],
         publisher: { '@id': `${SITE_URL}/#org` },
         author: { '@id': `${SITE_URL}/#person-author` },
       }

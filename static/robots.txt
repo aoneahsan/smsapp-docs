@@ -1,4 +1,4 @@
-# SMS Mobile App documentation — public docs site
+# SMSApp documentation — public docs site
 # https://smsapp-docs.aoneahsan.com
 # Maintained by Ahsan Mahmood — https://aoneahsan.com
 #

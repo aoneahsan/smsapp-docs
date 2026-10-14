@@ -1,57 +1,28 @@
 ---
 title: How-to guides
-description: Problem-oriented recipes that solve one specific task at a time. Each guide assumes you already know the product and need a precise answer.
+description: Task-focused instructions for devices, contacts, recipients, jobs, and troubleshooting in SMSApp.
 sidebar_position: 1
-sidebar_label: Overview
-keywords: [sms how-to, sms mobile app guide, send sms android, schedule sms recipe]
-last_update:
-  date: 2026-05-10
-  author: Ahsan Mahmood
+slug: /how-to
 ---
 
 # How-to guides
 
-A how-to is a **recipe**. You arrive with a specific problem (`How do I import contacts from a CSV?`), you find the page, you do the steps, you leave. Each guide is short, numbered, and assumes you've already used the product at least once.
+Use these guides after completing the first tutorial.
 
-If you're new, start with [Tutorials](/tutorials) instead.
+<a id="devices-and-contacts"></a>
+## Devices and contacts&nbsp;[#](#devices-and-contacts)
 
-## Authentication, devices, and contacts ✅ shipped (Batch 3)
+- [Sign in with Google](./auth-and-devices/sign-in-with-google.md)
+- [Register an Android phone](./auth-and-devices/register-your-android-device.md)
+- [Grant Android permissions](./auth-and-devices/grant-sms-permissions.md)
+- [Prepare a CSV recipient file](./auth-and-devices/import-contacts-from-csv.md)
 
-Recipes for getting your account set up, linking phones, and getting recipient data into the system.
+<a id="jobs-and-dispatch"></a>
+## Jobs and dispatch&nbsp;[#](#jobs-and-dispatch)
 
-1. [Sign in with Google](/how-to/auth-and-devices/sign-in-with-google) — OAuth flow, multi-account pitfall, popup blockers, unauthorised-domain error
-2. [Register your Android device](/how-to/auth-and-devices/register-your-android-device) — install, sign-in matching, confirm on dashboard, re-register
-3. [Manage volunteer pool participation](/how-to/auth-and-devices/manage-volunteer-pool-participation) — opt in/out, rate cap, authorised accounts list, sync between dashboard and app
-4. [Import contacts from a CSV file](/how-to/auth-and-devices/import-contacts-from-csv) — column requirements, personalisation tokens, validator output
-5. [Grant SMS and Contacts permissions](/how-to/auth-and-devices/grant-sms-permissions) — runtime prompt, recovery from decline, manual Settings path, battery optimisation
-6. [Switch SIM on a dual-SIM phone](/how-to/auth-and-devices/switch-sim-on-dual-sim) — per-device default, per-job override, OS-level fallback
-
-## Sending SMS ✅ shipped (Batch 4)
-
-Single sends, silent batch sends, templates, drafts, scheduling, retries.
-
-1. [Send a single UI-prompted SMS](/how-to/sending-sms/send-a-single-ui-prompted-sms) — when to use UI-prompted vs silent, the system-composer flow, lock-screen behaviour
-2. [Send a silent batch SMS](/how-to/sending-sms/send-a-silent-batch-sms) — the Android foreground service, why it's mandatory, rate caps, offline queueing, pause/resume/cancel
-3. [Use templates](/how-to/sending-sms/use-templates) — save reusable bodies with `{{token}}` substitution, apply to single sends or batches, edit/version/delete
-4. [Save and reuse drafts](/how-to/sending-sms/save-and-reuse-drafts) — auto-save, manual save with names, cross-device sync, draft-vs-template distinction
-5. [Schedule a recurring SMS](/how-to/sending-sms/schedule-a-recurring-sms) — Daily/Weekly/Monthly/Custom cron, end-conditions, timezone behaviour, DST handling
-6. [Retry failed messages](/how-to/sending-sms/retry-failed-messages) — transient-vs-permanent classification, exponential backoff, manual retry, when retry is the wrong fix
-
-## Admin (jobs, batches, rate control) ✅ shipped (Batch 5)
-
-Create jobs, assign batches, monitor live progress, configure the three-layer rate-limit system, handle partial-send failures, work within the 10-device cap.
-
-1. [Create a job from the admin dashboard](/how-to/admin/create-a-job-from-the-admin-dashboard) — 5 job types unified in one composer, **Create on behalf of** for admin-role accounts, immutable audit trail
-2. [Assign a batch to volunteer devices](/how-to/admin/assign-a-batch-to-volunteer-devices) — auto-assignment weighted by rate cap + freshness, manual override per device, reassign-pending mid-flight
-3. [Monitor job + batch progress](/how-to/admin/monitor-job-progress) — four monitoring views (Jobs list, Batch detail, Device detail, Audit log), live per-recipient table, aggregate metrics, filters + CSV export
-4. [Configure rate limits](/how-to/admin/configure-rate-limits) — per-batch / per-device / per-account three-layer system + auto-backoff under carrier throttling, fair-use review for raising the per-account ceiling
-5. [Handle failures and partial sends](/how-to/admin/handle-failures-and-partial-sends) — four failure-cluster patterns (per-device, per-region, per-time, per-recipient), decision tree per pattern, Salvage workflow
-6. [Enforce the 10-device cap](/how-to/admin/enforce-the-10-device-cap) — the hard ceiling on devices per batch, why it exists, what fits inside, Campaign chunking for larger workloads, fair-use review for higher caps
-
-## Voice and tone
-
-How-to guides on this site follow three rules consistently:
-
-- **Numbered steps for the doing.** Every recipe has a numbered procedure you can follow without reading the surrounding prose.
-- **Honest framing on limits.** Each page is candid about what doesn't work — Google Play SMS-permission policy, iOS API limits, ROM-specific battery management, carrier anti-spam thresholds.
-- **No fabricated UI.** When a label or path is uncertain, the recipe says so explicitly rather than inventing a confident-sounding name.
+- [Prepare an owner-managed batch](./sending-sms/send-a-silent-batch-sms.md)
+- [Create a job in the admin](./admin/create-a-job-from-the-admin-dashboard.md)
+- [Assign the selected phone](./admin/assign-a-batch-to-selected-phone.md)
+- [Monitor job progress](./admin/monitor-job-progress.md)
+- [Handle failures and uncertain outcomes](./admin/handle-failures-and-partial-sends.md)
+- [Retry only confirmed-safe failures](./sending-sms/retry-failed-messages.md)

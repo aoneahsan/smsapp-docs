@@ -1,7 +1,7 @@
 {
   "name": "smsapp-docs",
   "version": "0.1.0",
-  "description": "Public documentation for SMS Mobile App — an Android-first SMS automation app that sends from your phone's SIM card with Firebase-backed scheduling.",
+  "description": "Public documentation for SMSApp, an owner-operated Android SMS dispatch system with a web admin.",
   "homepage": "https://smsapp-docs.aoneahsan.com",
   "repository": {
     "type": "git",

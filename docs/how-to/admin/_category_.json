@@ -3,5 +3,5 @@
   "position": 3,
   "collapsible": true,
   "collapsed": true,
-  "description": "Create jobs, assign batches, configure rate limits, handle failures, enforce caps."
+  "description": "Create, assign, monitor, pause, cancel, and reconcile owner-managed jobs."
 }

@@ -1,77 +1,56 @@
 ---
-title: Get started with SMS Mobile App in 5 minutes
-description: Sign in with Google, link your Android phone, and send your first SMS through the web dashboard. Verified end-to-end on a fresh account.
+title: Get started with SMSApp
+description: Register one Android phone, sync its contacts, and prepare a reviewed SMS job in the web admin.
 sidebar_position: 1
-sidebar_label: Get started in 5 minutes
-slug: get-started-in-5-minutes
-keywords: [sms mobile app tutorial, send first sms android, smsapp sign up, smsapp google sign in, send sms from web]
-last_update:
-  date: 2026-05-10
-  author: Ahsan Mahmood
+slug: /tutorials/get-started
 ---
 
-# Get started with SMS Mobile App in 5 minutes
+# Get started with SMSApp
 
-This tutorial walks you through signing in to SMS Mobile App's web dashboard, linking your Android phone, and sending your first SMS — start to finish in roughly five minutes. Everything happens through your own Google account and your own phone's SIM card; no third-party SMS gateway is involved.
+This walkthrough connects one owner-managed Android phone to the web admin. It does not send a real message until you explicitly start a reviewed job.
 
-By the end you will have:
+<a id="before-you-start"></a>
+## Before you start&nbsp;[#](#before-you-start)
 
-- A signed-in account at `smsapp.aoneahsan.com`
-- An Android phone linked to that account as a sender device
-- A successfully delivered SMS sitting in your sent log
+You need an Android phone with an active SMS-capable SIM, an APK from the owner's verified release channel, access to the SMSApp web admin, and a Google account authorized for the project. If you plan to run a real test, use a number you own and confirm your carrier tariff first.
 
-If you don't have an Android phone right now, you can still sign in and explore the dashboard, but the actual send step needs Android — that's where the SIM-based dispatch happens.
+<a id="connect-the-phone"></a>
+## Connect the phone&nbsp;[#](#connect-the-phone)
 
-## Prerequisites
+1. [Install the APK](./04-install-the-android-app.md).
+2. Open SMSApp and sign in.
+3. Register the current Android phone.
+4. In Android settings, choose a default SMS subscription.
+5. In SMSApp settings, grant `SEND_SMS` and explicitly enable the sender. Enrollment starts off.
+6. Keep the app open while the first readiness update reaches Firebase.
 
-Five minutes of attention, a Google account you don't mind signing in with, an Android phone running Android 8 (Oreo) or newer with a working SIM card and mobile-data or Wi-Fi connectivity, and any second phone (yours or a friend's) you can text as a recipient. Carrier-standard SMS rates apply to every send — SMS Mobile App is free to use, but your operator still charges its usual per-message rate.
+The admin should show the same phone and report whether SMS permission, default-SIM selection, protocol version, and sender service are ready. A recent sign-in alone does not mean the phone is ready to send.
 
-## Step 1 — Open the dashboard
+<a id="sync-contacts"></a>
+## Sync contacts&nbsp;[#](#sync-contacts)
 
-Go to [https://smsapp.aoneahsan.com](https://smsapp.aoneahsan.com) in any modern desktop or mobile browser. The landing page introduces the product and shows a **Sign in with Google** button in the top-right corner of the header.
+1. Grant contact access on the phone.
+2. Separately choose **Sync Contacts Now**.
+3. Wait for the completed-sync timestamp.
 
-You can also open the page on your Android phone if that's all you have — the dashboard is fully responsive.
+Contact permission does not start a cloud upload on its own. The completed generation contains the minimum name and phone fields needed for this workflow and remains scoped to the signed-in owner and source phone.
 
-## Step 2 — Sign in with Google
+<a id="prepare-a-job"></a>
+## Prepare a job&nbsp;[#](#prepare-a-job)
 
-Click **Sign in with Google**. You'll be redirected to Google's standard OAuth consent screen, where you pick the Google account you want to use and approve a small set of read-only profile scopes (your name and email address — nothing more). Google sends you back to the dashboard, now signed in.
+1. Open the web admin batch import screen.
+2. Select the registered phone.
+3. Select **Synced contacts from phone** or **CSV file**.
+4. Enter one SMS message.
+5. Review eligible, excluded, and duplicate totals.
+6. Create the draft and open its detail screen.
+7. Confirm the same phone as the only sender.
 
-The dashboard creates a Firestore record under your user ID the first time you sign in. There's nothing else to set up — no phone-number verification, no payment method, no organisation onboarding.
+Only ordinary Pakistani mobile destinations in the `030`–`036` ranges remain eligible. Excluded rows cannot be overridden.
 
-## Step 3 — Compose your first message
+<a id="send-a-controlled-test"></a>
+## Send a controlled test&nbsp;[#](#send-a-controlled-test)
 
-Click **Send message** in the navigation (or visit `smsapp.aoneahsan.com/send-message` directly). You land on a single-screen composer with three fields: **recipient phone number**, **message body**, and a **send-now / schedule** toggle.
+Before a larger job, create a one-recipient batch using a safe number you own. Start dispatch once, keep the phone available, and check the recipient outcome in the batch detail. A sent callback means Android accepted the send attempt; it is not a guarantee that the carrier delivered the message.
 
-Type a recipient phone number in international format with the leading `+`. For example, a US number looks like `+15551234567` and a Pakistan number looks like `+923001234567`. Local-format numbers (without country code) will be flagged by the validator.
-
-Type a short message — `"Hi, this is a test from SMS Mobile App"` is fine. Notice the character counter under the textarea: a single SMS holds 160 characters in the Latin-only encoding, or 70 if your message contains a non-Latin character. Beyond that the message is split into multi-part SMS, billed by your carrier as multiple messages.
-
-Leave the toggle on **Send now** for this tutorial.
-
-## Step 4 — Dispatch from your Android device
-
-If you don't yet have the Android app installed, the dashboard prompts you with a link to install it (see [Install the Android app](/tutorials/install-the-android-app) for a deeper walkthrough). For the five-minute path, install the app, sign in to it with the same Google account, grant the **Send SMS** permission when Android prompts, and return to the web dashboard.
-
-With the app linked, the dashboard's **Send** button on the composer now shows your phone in a small device picker. Click **Send**. The dashboard creates a job, your phone picks it up over the live Firestore subscription, the native `SmsManager` API hands the SMS to your carrier, and the result syncs back to the dashboard within a few seconds.
-
-## Step 5 — Confirm delivery
-
-Two checks. First, look at the recipient phone — the SMS should arrive within a minute, showing your real mobile number as the sender (not a shortcode, not a proxy). Second, open `smsapp.aoneahsan.com/jobs` (or the **Jobs** entry in the navigation) and confirm your test send is listed with status **Sent**. If the carrier later returns a delivery receipt, the status updates to **Delivered**.
-
-If the recipient is using an iPhone with iMessage, your message will arrive as a regular green-bubble SMS — that is the desired behaviour and confirms the send went through the cellular network rather than any over-the-top channel.
-
-## Troubleshooting
-
-If the **Send** button is greyed out, the most common cause is that no Android device is linked yet. Open the Android app, sign in with the same Google account, and the device should appear within a few seconds.
-
-If the SMS leaves your phone (the Android notification shows it as sent) but the recipient never receives it, the carrier rejected the message. Check that the recipient number is correct, in international format, and that your account has positive SMS balance with your carrier.
-
-If signing in with Google fails with an `auth/unauthorized-domain` error, you've probably opened a non-canonical URL — the OAuth consent screen is configured for `smsapp.aoneahsan.com` only.
-
-## What you've learned
-
-You signed in to the web dashboard with Google, linked an Android phone as your sender device, dispatched an SMS through your own SIM card, and confirmed delivery in two places. The ride was zero-touch on infrastructure: no API keys, no SMS provider, no backend you have to provision.
-
-## Where to go next
-
-For sending the same message at a future time, continue to [Send your first scheduled SMS](/tutorials/send-your-first-scheduled-sms). For sending one message to many recipients, jump to [Set up a small batch send](/tutorials/set-up-a-batch-send). For a deeper dive on the Android app itself — manual SIM selection, foreground service, battery considerations — see [Install the Android app and link it](/tutorials/install-the-android-app).
+If the outcome is uncertain, stop. Reconcile the handset and carrier state before deciding whether another attempt is safe.

@@ -1,85 +1,64 @@
-# SMS Mobile App — Documentation
+# SMSApp documentation
 
-Public, comprehensive product documentation for [SMS Mobile App](https://smsapp.aoneahsan.com), an Android-first SMS automation app that sends user-authored text messages from your phone's own SIM card with Firebase-backed scheduling.
+Public documentation for SMSApp, an owner-operated Android SMS dispatch system. The web admin prepares and monitors jobs; a registered Android phone sends approved messages through its configured SIM.
 
-🌐 **Live site:** https://smsapp-docs.aoneahsan.com  
-📦 **Product site:** https://smsapp.aoneahsan.com  
-👤 **Maintainer:** [Ahsan Mahmood](https://aoneahsan.com)
+The first release is an APK sideload plus web admin. It supports one selected owner-managed phone per job, synced contacts or CSV input, and up to 5,000 unique eligible Pakistani mobile recipients. It does not provide a public device pool, cloud SMS gateway, iOS sender, desktop app, browser extension, or npm product.
 
-## Why this repo exists
+## Contents
 
-The source code for SMS Mobile App is private. This documentation repo is **public** so search engines, AI crawlers (ChatGPT, Perplexity, Claude, Gemini, Copilot), and human readers can find the product, learn what it does, and link to it.
+- [Product scope](#product-scope)
+- [Documentation sections](#documentation-sections)
+- [Local verification](#local-verification)
+- [Repository structure](#repository-structure)
+- [Deployment](#deployment)
+- [License](#license)
 
-If these docs help you, the kindest thing you can do is link to them — backlinks are how a small project becomes findable.
+<a id="product-scope"></a>
+## Product scope&nbsp;[#](#product-scope)
 
-## What's documented
+SMSApp accepts ordinary Pakistani mobile destinations in the `030`–`036` ranges. It excludes foreign numbers, landlines, short codes, premium or special-rate services, malformed values, and unrecognized ranges. Creating a draft or importing recipients does not send anything; the owner must review and start dispatch explicitly. Carrier charges and limits still apply.
 
-Following the [Diátaxis framework](https://diataxis.fr/):
+The Android app is send-only. It requests access to contacts only for an owner-initiated, device-scoped sync and does not read received SMS.
 
-| Section | Content |
+<a id="documentation-sections"></a>
+## Documentation sections&nbsp;[#](#documentation-sections)
+
+| Section | Purpose |
 |---|---|
-| **Tutorials** | End-to-end walkthroughs from sign-in to first batch send. |
-| **How-to guides** | Recipes for specific tasks: sign in, register a device, send a silent batch SMS, manage the volunteer pool. |
-| **Reference** | Routes, Android permissions, Firestore collections, env vars, quotas, security rules. |
-| **Explanation** | Why Android-only, how silent SMS works, how the volunteer device pool works, Play Store compliance. |
+| Tutorials | Install, register, sync contacts, and prepare the first batch. |
+| How-to guides | Complete one operational task. |
+| Reference | Check supported permissions, limits, routes, and data contracts. |
+| Explanation | Understand the Android, privacy, architecture, and policy choices. |
 
-## Stack
-
-- [Docusaurus](https://docusaurus.io/) v3 (classic preset, TypeScript)
-- React 19
-- Deployed to Firebase Hosting
-
-## Local development
+<a id="local-verification"></a>
+## Local verification&nbsp;[#](#local-verification)
 
 ```bash
-yarn install
-yarn start          # local dev server (port 3000 by default)
-yarn build          # one-shot static build → ./build
-yarn typecheck      # TS check
+yarn install --immutable
+yarn typecheck
+yarn build
 ```
 
-## Project structure
+This repository uses Yarn 4 through Corepack. Do not use the development server as release evidence.
 
-```
-docs/
-├── intro.md                ← landing
-├── tutorials/              ← learning-oriented
-├── how-to/                 ← problem-oriented (recipes)
-│   ├── auth-and-devices/
-│   ├── sending-sms/
-│   └── admin/
-├── reference/              ← information-oriented (lookup)
-└── explanation/            ← understanding-oriented (rationale)
+<a id="repository-structure"></a>
+## Repository structure&nbsp;[#](#repository-structure)
 
-static/
-├── robots.txt              ← AI bot allowlist + scraper denylist
-├── llms.txt                ← LLM site map
-├── ai.txt                  ← AI training/citation policy
-├── humans.txt              ← maintainer info (EEAT signal)
-└── .well-known/security.txt
+```text
+docs/             Published Docusaurus content
+src/pages/        Standalone pages
+static/           Logos and crawler-facing files
+.github/workflows GitHub Pages deployment
 ```
 
-## License
+The private sibling app repository defines product behavior. Public documentation must follow verified app behavior and release evidence.
 
-Documentation content and source: [MIT](./LICENSE) © Ahsan Mahmood.
+<a id="deployment"></a>
+## Deployment&nbsp;[#](#deployment)
 
-The product itself ("SMS Mobile App") is closed-source — only this docs repo is public.
+GitHub Actions builds and deploys this repository to GitHub Pages after a push to `main`. The custom domain is `https://smsapp-docs.aoneahsan.com`. A successful local build does not prove that DNS, GitHub Pages, or the published artifact is current.
 
-## About the developer
+<a id="license"></a>
+## License&nbsp;[#](#license)
 
-Built and maintained by **Ahsan Mahmood** — senior software engineer specialising in cross-platform mobile and web (React, Capacitor, Firebase).
-
-- Portfolio: https://aoneahsan.com
-- LinkedIn: https://linkedin.com/in/aoneahsan
-- GitHub: https://github.com/aoneahsan
-- NPM: https://npmjs.com/~aoneahsan
-- Email: aoneahsan@gmail.com
-- Phone / WhatsApp: +923046619706
-
-If you'd like to hire Ahsan or collaborate, the portfolio page has the fastest path.
-
-## Contributing
-
-Issues and PRs are welcome — please open an issue first to discuss substantial changes. Typo fixes and small clarifications can go straight to a PR.
-
-For product feedback (the app itself), use the [contact form on the main site](https://smsapp.aoneahsan.com/contact). This repo is for the docs only.
+Documentation source and content are licensed under the [MIT License](./LICENSE). The SMSApp application source is private.

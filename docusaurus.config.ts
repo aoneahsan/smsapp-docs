@@ -2,14 +2,13 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// SMS Mobile App — public documentation site
+// SMSApp — public documentation site
 // Author: Ahsan Mahmood <aoneahsan@gmail.com>
 // Source: https://github.com/aoneahsan/smsapp-docs
 // Deploys to: https://smsapp-docs.aoneahsan.com
 
 const SITE_URL = 'https://smsapp-docs.aoneahsan.com';
 const APP_URL = 'https://smsapp.aoneahsan.com';
-const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp';
 const REPO_URL = 'https://github.com/aoneahsan/smsapp-docs';
 const AUTHOR_NAME = 'Ahsan Mahmood';
 const AUTHOR_PORTFOLIO = 'https://aoneahsan.com';
@@ -17,8 +16,8 @@ const AUTHOR_LINKEDIN = 'https://linkedin.com/in/aoneahsan';
 const AUTHOR_GITHUB = 'https://github.com/aoneahsan';
 
 const config: Config = {
-  title: 'SMS Mobile App Documentation',
-  tagline: 'Android-first SMS automation that uses your phone’s SIM card.',
+  title: 'SMSApp Documentation',
+  tagline: 'Owner-operated SMS dispatch from a registered Android phone.',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -33,8 +32,13 @@ const config: Config = {
   projectName: 'smsapp-docs',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'warn',
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -57,6 +61,7 @@ const config: Config = {
             '**/*.test.{js,jsx,ts,tsx}',
             '**/__tests__/**',
             'MANUAL-TASKS.md',
+            'PROJECT-CONTEXT.md',
           ],
           routeBasePath: '/',
           editUrl: `${REPO_URL}/edit/main/`,
@@ -98,15 +103,13 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // SVG fallback until Batch 10 generates a 1200x630 PNG social card.
-    // Most platforms render SVG; Twitter falls back to no image gracefully.
-    image: 'img/logo.svg',
+    image: 'img/social-card.png',
     metadata: [
       { name: 'author', content: AUTHOR_NAME },
-      { name: 'keywords', content: 'sms automation, android sms, capacitor sms, firebase sms, sim sms sender, scheduled sms android, batch sms android, smsapp documentation' },
+      { name: 'keywords', content: 'android sms dispatch, web sms admin, pakistan mobile sms, sim sms sender, smsapp documentation' },
       { name: 'theme-color', content: '#6e56cf' },
       { property: 'og:type', content: 'website' },
-      { property: 'og:site_name', content: 'SMS Mobile App Documentation' },
+      { property: 'og:site_name', content: 'SMSApp Documentation' },
       { property: 'og:locale', content: 'en_US' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:creator', content: '@aoneahsan' },
@@ -126,18 +129,18 @@ const config: Config = {
               '@type': 'WebSite',
               '@id': `${SITE_URL}/#website`,
               url: SITE_URL,
-              name: 'SMS Mobile App Documentation',
-              description: 'Official public documentation for SMS Mobile App — an Android-first SMS automation app that sends from your phone’s own SIM card, with Firebase-backed scheduling.',
+              name: 'SMSApp Documentation',
+              description: 'Documentation for an owner-operated Android SMS dispatch system with a web administration panel.',
               inLanguage: 'en-US',
               publisher: { '@id': `${SITE_URL}/#person-author` },
             },
             {
               '@type': 'Organization',
               '@id': `${SITE_URL}/#org`,
-              name: 'SMS Mobile App',
+              name: 'SMSApp',
               url: APP_URL,
               logo: `${APP_URL}/icons/icon-512.png`,
-              sameAs: [APP_URL, PLAY_URL, REPO_URL, AUTHOR_PORTFOLIO],
+              sameAs: [APP_URL, REPO_URL, AUTHOR_PORTFOLIO],
             },
             {
               '@type': 'Person',
@@ -164,9 +167,9 @@ const config: Config = {
       },
     },
     navbar: {
-      title: 'SMS Mobile App',
+      title: 'SMSApp',
       logo: {
-        alt: 'SMS Mobile App documentation',
+        alt: 'SMSApp documentation',
         src: 'img/logo.svg',
         srcDark: 'img/logo-dark.svg',
       },
@@ -176,7 +179,6 @@ const config: Config = {
         { type: 'docSidebar', sidebarId: 'referenceSidebar', position: 'left', label: 'Reference' },
         { type: 'docSidebar', sidebarId: 'explanationSidebar', position: 'left', label: 'Explanation' },
         { href: APP_URL, label: 'Open the app', position: 'right' },
-        { href: PLAY_URL, label: 'Google Play', position: 'right' },
         { href: REPO_URL, 'aria-label': 'GitHub repository', className: 'header-github-link', position: 'right' },
       ],
     },
@@ -197,9 +199,7 @@ const config: Config = {
           title: 'The app',
           items: [
             { label: 'Open the app', href: APP_URL },
-            { label: 'Get it on Google Play', href: PLAY_URL },
-            { label: 'Apps & download', href: `${APP_URL}/apps` },
-            { label: 'Pricing', href: `${APP_URL}/pricing` },
+            { label: 'Installation', to: '/tutorials/install-the-android-app' },
             { label: 'Privacy policy', href: `${APP_URL}/privacy` },
             { label: 'Terms', href: `${APP_URL}/terms` },
           ],
@@ -223,7 +223,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} ${AUTHOR_NAME}. SMS Mobile App is built and maintained by Ahsan Mahmood. Documentation under MIT.`,
+      copyright: `© ${new Date().getFullYear()} ${AUTHOR_NAME}. SMSApp documentation under MIT.`,
     },
     prism: {
       theme: prismThemes.github,
