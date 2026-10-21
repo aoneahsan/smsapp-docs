@@ -1,8 +1,8 @@
 # SMSApp documentation — project guidance
 
-**Last Updated:** 2026-10-20
+**Last Updated:** 2026-10-21
 
-**Last updated:** 2026-10-14
+**Last updated:** 2026-10-21
 **Scope:** this public documentation repository only. Fleet-wide rules are inherited; do not copy them here.
 
 ## Start here
@@ -12,7 +12,7 @@
 3. Inspect the relevant implementation or app documentation before changing factual public claims.
 4. Read [`docs/MANUAL-TASKS.md`](docs/MANUAL-TASKS.md) before deployment, DNS, analytics, or indexing work.
 
-| Context budget last verified | 2026-10-14 — root pair reviewed; next routine pass 2026-11-13 |
+| Context budget last verified | 2026-10-21 — root pair reviewed; next routine pass 2026-11-20 |
 |---|---|
 
 ## Repository identity
@@ -21,10 +21,10 @@ This is the public Docusaurus documentation site for SMSApp. It explains install
 
 | Item | Value |
 |---|---|
-| Framework | Docusaurus 3.10.1, React 19, TypeScript ~6.0.3 |
+| Framework | Docusaurus 3.10.2, React 19, TypeScript ~6.0.3 |
 | Build accelerator | `@docusaurus/faster` |
 | Search | `@easyops-cn/docusaurus-search-local` |
-| Package manager | Yarn 4.17.1 via Corepack |
+| Package manager | Yarn 4.18.1 via Corepack |
 | Node requirement | `>=20.0` |
 | Deployment | GitHub Pages via `.github/workflows/deploy-pages.yml` |
 | Canonical site | `https://smsapp-docs.aoneahsan.com` |
@@ -79,6 +79,8 @@ The historic local-build note about a parent-workspace submodule error is not a 
 
 ## Verification
 
+**2026-10-21 maintenance gate:** immutable install, typecheck, Docusaurus build, no-source-map check, and controlled Chrome desktop/mobile rendering passed after supported package and Pages-action updates.
+
 Before publishing:
 
 - Typecheck and build pass from an immutable install.
@@ -101,6 +103,6 @@ This is a standalone repository on `main` with `origin` configured. GitHub Actio
 
 ## Stop-work Git gate
 
-<!-- RULE:stop-work-git-gate v2026-10-20 -->
+<!-- RULE:stop-work-git-gate v2026-10-21 -->
 
 Before stopping, commit every legitimate change and work-progress checkpoint in this repository and each independent nested repository, fetch and merge the designated upstream, push the documented working branch, then verify an empty worktree and `0 0` ahead/behind. Never stash, discard, reset, rebase, or force-push. If synchronization is blocked, report the exact repository, branch, blocker, and next action instead of calling the work complete. The full workflow remains authoritative in `~/.claude/rules/git-workflow.md`.
