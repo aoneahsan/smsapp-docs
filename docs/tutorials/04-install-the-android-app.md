@@ -1,13 +1,13 @@
 ---
 title: Install the Android app
-description: Install SMSApp from Google Play, or sideload a verified APK, and confirm its application identity before setup.
+description: Install SMSApp (its Google Play release is in preparation) or sideload a verified APK, and confirm its application identity before setup.
 sidebar_position: 2
 slug: /tutorials/install-the-android-app
 ---
 
 # Install the Android app
 
-The Android app `com.aoneahsan.smsapp` version 1.7.0 is live on Google Play as "SMS Mobile App" ([Google Play listing](https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp)).
+The Android app `com.aoneahsan.smsapp` ("SMS Mobile App") is being prepared for its Google Play release ([Google Play listing](https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp)).
 
 <a id="obtain-the-apk"></a>
 ## Obtain the APK&nbsp;[#](#obtain-the-apk)

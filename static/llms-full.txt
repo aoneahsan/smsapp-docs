@@ -4,7 +4,7 @@ SMSApp separates job administration from SMS transport. The web dashboard signs 
 
 ## Release limits
 
-- Distribution: Google Play, "SMS Mobile App", version 1.7.0: https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp (predates the move to Supabase; the next release runs on it)
+- Distribution: Google Play, "SMS Mobile App", release in preparation (listing: https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp); it runs on Supabase
 - Android application ID: `com.aoneahsan.smsapp`.
 - Sender: one of your own registered Android phones per job.
 - Enrollment: off by default and explicitly enabled on the phone.

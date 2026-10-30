@@ -200,7 +200,7 @@ const config: Config = {
           title: 'The app',
           items: [
             { label: 'Open the app', href: APP_URL },
-            { label: 'Get it on Google Play', href: PLAY_URL },
+            { label: 'Google Play listing', href: PLAY_URL },
             { label: 'Installation', to: '/tutorials/install-the-android-app' },
             { label: 'Privacy policy', href: `${APP_URL}/privacy` },
             { label: 'Terms', href: `${APP_URL}/terms` },

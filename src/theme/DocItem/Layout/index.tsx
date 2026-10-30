@@ -124,10 +124,8 @@ export default function DocItemLayoutWrapper(props: Record<string, unknown>) {
         applicationCategory: 'CommunicationApplication',
         operatingSystem: 'Android',
         softwareRequirements: 'Android phone with an SMS-capable SIM',
-        installUrl: 'https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp',
-        softwareVersion: '1.7.0',
         featureList: [
-          'Owner-managed Android SMS dispatch',
+          'SMS dispatch from your own Android phone',
           'Web administration panel',
           'Device-scoped contact synchronization',
           'CSV recipient import',

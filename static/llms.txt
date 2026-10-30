@@ -2,7 +2,7 @@
 
 > Public documentation for SMSApp: send reviewed SMS jobs from your own Android phone's SIM, prepared in a web dashboard. Plans: Free, Pro and Family (https://smsapp.aoneahsan.com/pricing).
 
-The Android app `com.aoneahsan.smsapp` version 1.7.0 is live on Google Play as "SMS Mobile App": https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp. The web dashboard prepares and monitors jobs. Version 1.7.0 predates the move to Supabase; the next release runs on it.
+The Android app `com.aoneahsan.smsapp` ("SMS Mobile App") is being prepared for its Google Play release: https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp. The web dashboard prepares and monitors jobs. The Play release runs on Supabase.
 
 ## Product contract
 
