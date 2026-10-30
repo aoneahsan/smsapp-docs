@@ -1,6 +1,6 @@
 ---
 title: Tutorials
-description: Guided SMSApp setup and first-batch walkthroughs for the sideloaded Android release and web admin.
+description: Guided SMSApp setup and first-batch walkthroughs for the Android app and web admin.
 sidebar_position: 1
 slug: /tutorials
 ---
@@ -10,7 +10,7 @@ slug: /tutorials
 Follow these in order for the first owner-managed release:
 
 1. [Get started with SMSApp](./01-get-started-in-5-minutes.md)
-2. [Install the Android APK](./04-install-the-android-app.md)
+2. [Install the Android app](./04-install-the-android-app.md)
 3. [Set up a contacts or CSV batch](./03-set-up-a-batch-send.md)
 
-These tutorials do not cover a public sender pool, multiple sending phones per job, dual-SIM selection, or Google Play installation because those are outside the current release target.
+These tutorials do not cover a public sender pool, multiple sending phones per job, or dual-SIM selection because those are outside the current release target.

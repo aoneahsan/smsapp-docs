@@ -2,7 +2,7 @@
 
 > Public documentation for an owner-operated Android SMS dispatch system with a web administration panel.
 
-Current release target: an owner-provided sideload APK plus the web admin. Google Play publication is not confirmed.
+The Android app `com.aoneahsan.smsapp` version 1.7.0 is live on Google Play as "SMS Mobile App": https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp. The web admin prepares and monitors jobs.
 
 ## Product contract
 
@@ -25,4 +25,6 @@ Current release target: an owner-provided sideload APK plus the web admin. Googl
 - How-to guides: https://smsapp-docs.aoneahsan.com/how-to
 - Reference: https://smsapp-docs.aoneahsan.com/reference
 - Explanation: https://smsapp-docs.aoneahsan.com/explanation
+- Sitemap: https://smsapp-docs.aoneahsan.com/sitemap
+- Feed (RSS): https://smsapp-docs.aoneahsan.com/feed.xml
 - Public repository: https://github.com/aoneahsan/smsapp-docs

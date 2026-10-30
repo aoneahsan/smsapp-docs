@@ -1,5 +1,5 @@
 /* TEAM */
-Lead developer: Ahsan Mahmood
+Team: the SMS App team
 Contact: aoneahsan [at] gmail.com
 Portfolio: https://aoneahsan.com
 GitHub: https://github.com/aoneahsan
@@ -16,6 +16,6 @@ Hosting: GitHub Pages
 /* PRODUCT */
 Product: SMSApp
 Web admin: https://smsapp.aoneahsan.com
-Distribution target: Owner-provided Android APK
+Distribution: Google Play, "SMS Mobile App", version 1.7.0: https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp
 Android application ID: com.aoneahsan.smsapp
 SMS transport: Android SmsManager through the configured SIM; no cloud SMS gateway

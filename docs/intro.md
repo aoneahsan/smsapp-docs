@@ -10,13 +10,13 @@ sidebar_position: 1
 SMSApp prepares SMS jobs in a web admin and dispatches them from an owner-managed Android phone through that phone's configured SIM. Firebase coordinates authenticated devices, synced contacts, jobs, recipients, and results; it is not the SMS transport.
 
 :::caution[First-release status]
-The current release target is a sideloaded APK plus web admin. Public Play distribution is not confirmed. Use only an APK supplied through the owner's verified release channel.
+The Android app `com.aoneahsan.smsapp` version 1.7.0 is live on Google Play as "SMS Mobile App" ([Google Play listing](https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp)). The web admin prepares and monitors jobs.
 :::
 
 <a id="first-release-workflow"></a>
 ## First-release workflow&nbsp;[#](#first-release-workflow)
 
-1. Install the Android APK and sign in.
+1. Install the Android app and sign in.
 2. Register the phone and explicitly enable it as a sender.
 3. Grant SMS permission and choose a default SMS subscription in Android.
 4. Grant contact access, then separately start cloud contact sync if contacts will be used.

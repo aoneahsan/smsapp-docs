@@ -1,8 +1,8 @@
 # SMSApp documentation — project guidance
 
-**Last Updated:** 2026-10-21
+**Last Updated:** 2026-10-30
 
-**Last updated:** 2026-10-21
+**Last updated:** 2026-10-30
 **Scope:** this public documentation repository only. Fleet-wide rules are inherited; do not copy them here.
 
 ## Start here
@@ -44,14 +44,15 @@ This is the public Docusaurus documentation site for SMSApp. It explains install
 - The initial release may require the owner to enable the Android sender deliberately. Do not claim unattended/background reliability until real-device testing proves it.
 - One default SIM is the initial release target. Do not promise dual-SIM selection before it ships.
 - Each job uses one selected phone and supports at most 5,000 unique eligible recipients from that phone's completed contact sync or a CSV up to 5 MiB.
-- Google Play availability is not confirmed. The current distribution target is an owner-provided sideload APK.
+- The Android app `com.aoneahsan.smsapp` version 1.7.0 is live on Google Play as "SMS Mobile App" (confirmed 2026-10-30). iOS: removed 2026-10-30 — re-add when an Apple Developer account exists. No browser extension exists.
+- Products speak as a team: "the SMS App team", never a personal maker line.
 - Do not describe or market a volunteer/public device pool. Historical planning content about that model is not current product truth.
 
 ## Documentation architecture
 
 The site follows Diátaxis: tutorials teach a complete learning path, how-to guides solve operational tasks, reference pages specify exact behavior, and explanation pages cover concepts and tradeoffs. Keep one clear purpose per page and maintain the sidebar when adding, moving, or removing content.
 
-SEO/AEO infrastructure includes canonical metadata, Open Graph/Twitter metadata, sitemap generation, structured data, local search, `robots.txt`, `llms.txt`, `llms-full.txt`, `ai.txt`, `humans.txt`, and a security contact file. Structured data must match visible page content. Do not refresh dates or claim freshness without a substantive review.
+SEO/AEO infrastructure includes canonical metadata, readable `/sitemap` and `/feed` pages plus RSS `/feed.xml` (`src/plugins/site-pages.ts`; feed dates are each doc's git date), Open Graph/Twitter metadata, sitemap generation, structured data, local search, `robots.txt`, `llms.txt`, `llms-full.txt`, `ai.txt`, `humans.txt`, and a security contact file. Structured data must match visible page content. Do not refresh dates or claim freshness without a substantive review.
 
 ## Commands
 
@@ -99,7 +100,7 @@ This is a standalone repository on `main` with `origin` configured. GitHub Actio
 - Canonical documentation: <https://smsapp-docs.aoneahsan.com>
 - Documentation repository: <https://github.com/aoneahsan/smsapp-docs>
 - Web app: <https://smsappai.web.app>
-- Android distribution: owner-provided sideload APK; no public Play listing is confirmed
+- Google Play: <https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp>
 
 ## Stop-work Git gate
 

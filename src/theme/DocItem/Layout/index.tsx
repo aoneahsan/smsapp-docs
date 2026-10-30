@@ -6,10 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 
 const SITE_URL = 'https://smsapp-docs.aoneahsan.com'
 const APP_URL = 'https://smsapp.aoneahsan.com'
-const AUTHOR_NAME = 'Ahsan Mahmood'
-const AUTHOR_URL = 'https://aoneahsan.com'
-const AUTHOR_LINKEDIN = 'https://linkedin.com/in/aoneahsan'
-const AUTHOR_GITHUB = 'https://github.com/aoneahsan'
+const TEAM_NAME = 'The SMS App team'
 
 type Faq = { question: string; answer: string }
 
@@ -52,7 +49,7 @@ export default function DocItemLayoutWrapper(props: Record<string, unknown>) {
 
   // Frontmatter `last_update.date` can serialise as either a string
   // (when quoted in YAML) or a JS Date object (when unquoted). Accept
-  // both. Fall back to Docusaurus' `metadata.lastUpdatedAt` (seconds)
+  // both. Fall back to Docusaurus' `metadata.lastUpdatedAt` (milliseconds)
   // when frontmatter is silent.
   function readDate(v: unknown): string | undefined {
     if (typeof v === 'string') return v
@@ -63,10 +60,8 @@ export default function DocItemLayoutWrapper(props: Record<string, unknown>) {
   const fmDate = fmLast ? readDate(fmLast.date) : undefined
   const tsLast = (metadata as LooseRecord).lastUpdatedAt
   const tsDate =
-    typeof tsLast === 'number' ? new Date(tsLast * 1000).toISOString().slice(0, 10) : undefined
+    typeof tsLast === 'number' ? new Date(tsLast).toISOString().slice(0, 10) : undefined
   const lastUpdateDate = fmDate ?? tsDate
-  const lastUpdateAuthor =
-    fmLast && typeof fmLast.author === 'string' ? (fmLast.author as string) : AUTHOR_NAME
   const datePublished = lastUpdateDate ? `${lastUpdateDate}T00:00:00.000Z` : undefined
 
   // Path-based schema selection. /how-to/* pages emit HowTo by default,
@@ -86,12 +81,7 @@ export default function DocItemLayoutWrapper(props: Record<string, unknown>) {
     inLanguage: 'en-US',
     isPartOf: { '@id': `${SITE_URL}/#website` },
     publisher: { '@id': `${SITE_URL}/#org` },
-    author: {
-      '@type': 'Person',
-      name: lastUpdateAuthor,
-      url: AUTHOR_URL,
-      sameAs: [AUTHOR_URL, AUTHOR_LINKEDIN, AUTHOR_GITHUB],
-    },
+    author: { '@id': `${SITE_URL}/#org` },
     ...(datePublished ? { datePublished, dateModified: datePublished } : {}),
     ...(keywords ? { keywords } : {}),
   }
@@ -103,7 +93,7 @@ export default function DocItemLayoutWrapper(props: Record<string, unknown>) {
         name: title,
         description,
         url,
-        author: { '@type': 'Person', name: lastUpdateAuthor, url: AUTHOR_URL },
+        author: { '@id': `${SITE_URL}/#org` },
         inLanguage: 'en-US',
       }
     : undefined
@@ -133,7 +123,9 @@ export default function DocItemLayoutWrapper(props: Record<string, unknown>) {
         url: APP_URL,
         applicationCategory: 'CommunicationApplication',
         operatingSystem: 'Android',
-        softwareRequirements: 'Owner-provided Android APK and an SMS-capable SIM',
+        softwareRequirements: 'Android phone with an SMS-capable SIM',
+        installUrl: 'https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp',
+        softwareVersion: '1.7.0',
         featureList: [
           'Owner-managed Android SMS dispatch',
           'Web administration panel',
@@ -142,7 +134,7 @@ export default function DocItemLayoutWrapper(props: Record<string, unknown>) {
           'Pakistani ordinary-mobile destination policy',
         ],
         publisher: { '@id': `${SITE_URL}/#org` },
-        author: { '@id': `${SITE_URL}/#person-author` },
+        author: { '@id': `${SITE_URL}/#org` },
       }
     : undefined
 
@@ -170,7 +162,7 @@ export default function DocItemLayoutWrapper(props: Record<string, unknown>) {
         )}
         {datePublished && <meta property="article:published_time" content={datePublished} />}
         {datePublished && <meta property="article:modified_time" content={datePublished} />}
-        <meta property="article:author" content={lastUpdateAuthor} />
+        <meta property="article:author" content={TEAM_NAME} />
 
         {/* Per-page JSON-LD: TechArticle (always) + HowTo (when applicable)
             + FAQPage (when frontmatter `faq` present) + SoftwareApplication (home only). */}

@@ -7,9 +7,9 @@ Allow-AI-Search: yes
 
 Preferred-Citation-Format: "SMSApp documentation — https://smsapp-docs.aoneahsan.com"
 Project: SMSApp
-Author: Ahsan Mahmood <aoneahsan@gmail.com>
+Author: the SMS App team
 Public-Docs-Source: https://github.com/aoneahsan/smsapp-docs
 
-# Cite the specific documentation page. Do not claim Play availability,
-# a volunteer/public sender pool, dual-SIM selection, cloud SMS transport,
-# guaranteed delivery, or received-SMS access.
+# Cite the specific documentation page. Do not claim a public sender pool,
+# dual-SIM selection, cloud SMS transport, guaranteed delivery, or
+# received-SMS access.

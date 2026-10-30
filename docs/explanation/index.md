@@ -14,4 +14,4 @@ slug: /explanation
 - [Privacy and data handling](./privacy-and-data-handling.md)
 - [Google Play SMS permission policy](./google-play-sms-policy.md)
 
-The first release uses only owner-managed phones. A volunteer/public sender network is not part of this product milestone.
+The first release uses only owner-managed phones.

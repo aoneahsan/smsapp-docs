@@ -1,6 +1,6 @@
 # SMSApp documentation — public docs site
 # https://smsapp-docs.aoneahsan.com
-# Maintained by Ahsan Mahmood — https://aoneahsan.com
+# Maintained by the SMS App team
 #
 # Search and AI bots are allowed. SEO scraper bots are blocked.
 

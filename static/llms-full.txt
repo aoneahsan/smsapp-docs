@@ -4,7 +4,7 @@ SMSApp separates job administration from SMS transport. The web admin authentica
 
 ## First-release limits
 
-- Distribution: verified owner-provided sideload APK; public Play availability is not confirmed.
+- Distribution: Google Play, "SMS Mobile App", version 1.7.0: https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp
 - Android application ID: `com.aoneahsan.smsapp`.
 - Sender: one owner-managed Android phone per job.
 - Enrollment: off by default and explicitly enabled on the phone.
@@ -26,7 +26,7 @@ Pending means not yet dispatched. A claim assigns a bounded lease to the selecte
 
 ## Privacy and platform boundaries
 
-SMSApp is send-only. It does not read or upload received SMS, call logs, location, advertising identifiers, or legacy external-storage contents. It is not a default SMS handler. There is no cloud SMS gateway, public/volunteer phone pool, native iOS sender, desktop sender, browser extension, or npm product in this milestone.
+SMSApp is send-only. It does not read or upload received SMS, call logs, location, advertising identifiers, or legacy external-storage contents. It is not a default SMS handler. There is no cloud SMS gateway, public phone pool, desktop sender, or npm product in this milestone. iOS: removed 2026-10-30 — re-add when an Apple Developer account exists.
 
 ## Documentation
 

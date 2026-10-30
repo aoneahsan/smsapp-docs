@@ -18,7 +18,7 @@ The 2026-10-14 maintenance pass passed immutable install, typecheck, production 
 
 SMSApp is an owner-operated Android SMS dispatcher with a web admin. A registered phone syncs device-scoped contacts and sends explicitly reviewed jobs through its own SIM. The initial release accepts ordinary Pakistani mobile destinations only, supports contacts or bounded CSV input, uses one default/configured SIM, never reads received SMS, and does not expose a public volunteer-device pool.
 
-The current executable application ID is `com.aoneahsan.smsapp`. The first distribution target is an owner-provided sideload APK; Google Play publication is not confirmed. Each job selects one phone, accepts at most 5,000 unique eligible recipients, and limits CSV input to 5 MiB.
+The current executable application ID is `com.aoneahsan.smsapp`. Version 1.7.0 is live on Google Play as "SMS Mobile App" (confirmed 2026-10-30). Each job selects one phone, accepts at most 5,000 unique eligible recipients, and limits CSV input to 5 MiB.
 
 Do not publish this description as a release claim until the app tracker records the corresponding implementation and device evidence. The public docs should distinguish available, beta, planned, unsupported, and historical behavior.
 

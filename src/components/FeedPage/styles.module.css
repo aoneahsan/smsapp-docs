@@ -1,0 +1,177 @@
+/*
+ * The feed page: how to follow by RSS, then every docs page newest change first, in one readable column.
+ * Colours come from the site's own tokens (src/css/custom.css), so light and dark both hold their
+ * contrast.
+ */
+
+.page {
+  /* Text on the violet fill: white in light mode, near-black on the lighter violet in dark mode. */
+  --sa-cta-ink: #fff;
+  --sa-cta-hover: var(--ifm-color-primary-darker);
+  max-width: 50rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+:global([data-theme='dark']) .page {
+  --sa-cta-ink: #120c0a;
+  --sa-cta-hover: var(--ifm-color-primary-light);
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.intro {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+.follow {
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-surface-color);
+}
+
+.followTitle {
+  margin-bottom: 0.5rem;
+}
+
+.copy {
+  margin-bottom: 1rem;
+}
+
+.copyLabel {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-weight: 700;
+}
+
+.copyLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+.url {
+  min-width: 0;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9375rem;
+  overflow-wrap: anywhere;
+}
+
+.alert {
+  margin: 0.5rem 0 0;
+  font-weight: 600;
+}
+
+.entries {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entry {
+  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+  border-left: 3px solid var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-surface-color);
+}
+
+.entryTitle {
+  margin-bottom: 0.25rem;
+  font-size: 1.375rem;
+}
+
+.entryDate {
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+.entryText {
+  margin-bottom: 1rem;
+}
+
+.entryAction {
+  margin: 0;
+}
+
+.empty {
+  padding: 2rem 1.5rem;
+  border: 1px dashed var(--ifm-color-emphasis-500);
+  border-radius: var(--ifm-global-radius);
+  text-align: center;
+}
+
+.emptyTitle {
+  margin-bottom: 0.5rem;
+}
+
+.emptyText {
+  margin: 0;
+}
+
+.button,
+.buttonOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 1.25rem;
+  border: 2px solid var(--ifm-color-primary);
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button {
+  background: var(--ifm-color-primary);
+  color: var(--sa-cta-ink);
+}
+
+.button:hover {
+  border-color: var(--sa-cta-hover);
+  background: var(--sa-cta-hover);
+}
+
+.buttonOutline {
+  background: transparent;
+  color: var(--ifm-color-primary);
+}
+
+.buttonOutline:hover {
+  background: var(--ifm-color-primary);
+  color: var(--sa-cta-ink);
+  text-decoration: none;
+}
+
+.button:focus-visible,
+.buttonOutline:focus-visible {
+  outline: 3px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

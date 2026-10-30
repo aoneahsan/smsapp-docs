@@ -2,7 +2,7 @@
 
 Public documentation for SMSApp, an owner-operated Android SMS dispatch system. The web admin prepares and monitors jobs; a registered Android phone sends approved messages through its configured SIM.
 
-The first release is an APK sideload plus web admin. It supports one selected owner-managed phone per job, synced contacts or CSV input, and up to 5,000 unique eligible Pakistani mobile recipients. It does not provide a public device pool, cloud SMS gateway, iOS sender, desktop app, browser extension, or npm product.
+The Android app `com.aoneahsan.smsapp` version 1.7.0 is live on Google Play as "SMS Mobile App": <https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp>. The web admin prepares and monitors jobs. It supports one selected owner-managed phone per job, synced contacts or CSV input, and up to 5,000 unique eligible Pakistani mobile recipients. It does not provide a public device pool, cloud SMS gateway, desktop app, or npm product. iOS: removed 2026-10-30 — re-add when an Apple Developer account exists.
 
 ## Contents
 
