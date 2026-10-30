@@ -6,7 +6,7 @@ sidebar_position: 3
 
 # Monitor job progress
 
-Use the batch detail screen to review the selected phone, parent job state, recipient counts, and per-recipient outcomes. Refresh when needed; Firestore remains the durable coordination record.
+Use the batch detail screen to review the selected phone, parent job state, recipient counts, and per-recipient outcomes. Refresh when needed; the Supabase database remains the durable coordination record.
 
 | Outcome | Meaning |
 |---|---|

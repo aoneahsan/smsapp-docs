@@ -8,7 +8,7 @@ sidebar_position: 2
 
 | Permission | Purpose |
 |---|---|
-| `INTERNET`, `ACCESS_NETWORK_STATE` | Authenticate and synchronize device, contact, job, and result state with Firebase. |
+| `INTERNET`, `ACCESS_NETWORK_STATE` | Authenticate and synchronize phone, contact, job and result state with the Supabase database. |
 | `SEND_SMS` | Send owner-authorized SMS through Android `SmsManager`. Granted at runtime. |
 | `READ_CONTACTS` | Read names and phone values for an explicit device-scoped sync. Granted at runtime. |
 | `FOREGROUND_SERVICE`, `FOREGROUND_SERVICE_DATA_SYNC` | Run the visible Android sender while work is active. |

@@ -22,7 +22,7 @@ You need an Android phone with an active SMS-capable SIM, an APK from the owner'
 3. Register the current Android phone.
 4. In Android settings, choose a default SMS subscription.
 5. In SMSApp settings, grant `SEND_SMS` and explicitly enable the sender. Enrollment starts off.
-6. Keep the app open while the first readiness update reaches Firebase.
+6. Keep the app open while the first readiness update reaches the server.
 
 The admin should show the same phone and report whether SMS permission, default-SIM selection, protocol version, and sender service are ready. A recent sign-in alone does not mean the phone is ready to send.
 

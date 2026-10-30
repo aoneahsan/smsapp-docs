@@ -7,10 +7,10 @@ sidebar_position: 1
 
 # SMSApp documentation
 
-SMSApp prepares SMS jobs in a web admin and dispatches them from an owner-managed Android phone through that phone's configured SIM. Firebase coordinates authenticated devices, synced contacts, jobs, recipients, and results; it is not the SMS transport.
+SMSApp prepares SMS jobs in a web dashboard and dispatches them from your own Android phone through that phone's configured SIM. Anyone can sign in with Google and use the Free plan; Pro and Family raise the limits ([plans](https://smsapp.aoneahsan.com/pricing)). Supabase stores accounts, registered phones, synced contacts, jobs, recipients and results; it is not the SMS transport.
 
 :::caution[First-release status]
-The Android app `com.aoneahsan.smsapp` version 1.7.0 is live on Google Play as "SMS Mobile App" ([Google Play listing](https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp)). The web admin prepares and monitors jobs.
+The Android app `com.aoneahsan.smsapp` version 1.7.0 is live on Google Play as "SMS Mobile App" ([Google Play listing](https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp)). The web dashboard prepares and monitors jobs. Version 1.7.0 predates the move from Firebase to Supabase and still uses the earlier backend; the next Play release runs on Supabase.
 :::
 
 <a id="first-release-workflow"></a>
