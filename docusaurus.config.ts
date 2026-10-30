@@ -14,7 +14,7 @@ const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.aoneahsan.sm
 
 const config: Config = {
   title: 'SMSApp Documentation',
-  tagline: 'Owner-operated SMS dispatch from a registered Android phone.',
+  tagline: 'Reviewed SMS jobs, sent from your own Android phone.',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -129,7 +129,7 @@ const config: Config = {
             '@id': `${SITE_URL}/#website`,
             url: SITE_URL,
             name: 'SMSApp Documentation',
-            description: 'Documentation for an owner-operated Android SMS dispatch system with a web administration panel.',
+            description: 'Documentation for SMSApp: reviewed SMS jobs prepared in a web dashboard and sent from your own Android phone.',
             inLanguage: 'en-US',
             publisher: { '@id': `${SITE_URL}/#org` },
           },

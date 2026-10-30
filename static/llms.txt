@@ -1,21 +1,21 @@
 # SMSApp documentation
 
-> Public documentation for an owner-operated Android SMS dispatch system with a web administration panel.
+> Public documentation for SMSApp: send reviewed SMS jobs from your own Android phone's SIM, prepared in a web dashboard. Plans: Free, Pro and Family (https://smsapp.aoneahsan.com/pricing).
 
-The Android app `com.aoneahsan.smsapp` version 1.7.0 is live on Google Play as "SMS Mobile App": https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp. The web admin prepares and monitors jobs.
+The Android app `com.aoneahsan.smsapp` version 1.7.0 is live on Google Play as "SMS Mobile App": https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp. The web dashboard prepares and monitors jobs. Version 1.7.0 predates the move to Supabase; the next release runs on it.
 
 ## Product contract
 
-- One selected, owner-managed Android phone per job.
+- Anyone signs in with Google; each account registers its own Android phone. One selected phone per job.
 - Enrollment is explicit and off by default.
 - The phone sends through one configured default SMS subscription.
 - Recipient sources are that phone's completed contact sync or a UTF-8 CSV up to 5 MiB.
-- A job contains at most 5,000 unique eligible recipients.
+- A job contains at most 5,000 unique eligible recipients; the plan can set a lower limit (Free: 100 per job, 100 messages a month).
 - Only ordinary Pakistani mobile numbers in `030`–`036` are eligible.
 - Foreign, landline, short, service/premium, malformed, and unrecognized destinations are excluded without override.
-- Firebase coordinates authenticated state; it is not an SMS gateway.
+- Supabase (Postgres with row-level security) stores authenticated state; it is not an SMS gateway.
 - The app never reads received SMS and is not a default SMS handler.
-- Android sent callbacks do not guarantee carrier delivery. Uncertain outcomes need owner reconciliation.
+- Android sent callbacks do not guarantee carrier delivery. Uncertain outcomes are never retried automatically.
 - Carrier charges, consent obligations, and platform limits still apply.
 
 ## Documentation map

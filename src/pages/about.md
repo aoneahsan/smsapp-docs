@@ -5,7 +5,7 @@ description: Product scope and maintainer information for SMSApp.
 
 # About SMSApp
 
-SMSApp is an owner-operated Android SMS dispatch system with a web administration panel. It prepares reviewed recipient batches in the browser and sends them through a registered Android phone's configured SIM.
+SMSApp sends reviewed SMS jobs from your own Android phone. You prepare a job in the web dashboard, and your registered phone sends it through its configured SIM. Anyone can sign in with Google and start on the Free plan; Pro and Family raise the limits.
 
 The first release accepts ordinary Pakistani mobile destinations in the `030`–`036` ranges, supports a completed phone contact sync or CSV input, and limits each job to 5,000 unique eligible recipients. It has no cloud SMS gateway and no public sender pool. Carrier charges and limits apply.
 
