@@ -1,0 +1,6 @@
+Contact: mailto:aoneahsan@gmail.com
+Contact: https://aoneahsan.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://smsapp-docs.aoneahsan.com/.well-known/security.txt
+Acknowledgments: https://smsapp-docs.aoneahsan.com/about

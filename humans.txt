@@ -1,0 +1,21 @@
+/* TEAM */
+Team: the SMS App team
+Contact: aoneahsan [at] gmail.com
+Portfolio: https://aoneahsan.com
+GitHub: https://github.com/aoneahsan
+Location: Karachi, Pakistan
+
+/* SITE */
+Last substantive review: 2026-09-15
+Language: English
+Generator: Docusaurus 3
+Source: https://github.com/aoneahsan/smsapp-docs
+License: MIT
+Hosting: GitHub Pages
+
+/* PRODUCT */
+Product: SMSApp
+Web admin: https://smsapp.aoneahsan.com
+Distribution: Google Play, "SMS Mobile App", release in preparation: https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp
+Android application ID: com.aoneahsan.smsapp
+SMS transport: Android SmsManager through the configured SIM; no cloud SMS gateway

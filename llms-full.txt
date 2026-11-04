@@ -1,0 +1,37 @@
+# SMSApp — release-scope reference
+
+SMSApp separates job administration from SMS transport. The web dashboard signs you in with Google, selects one of your registered phones and either its completed contact sync or a CSV, normalizes and previews recipients, snapshots one message, and requires an explicit dispatch action. Supabase (Postgres with row-level security) stores phone, contact, job, recipient, claim and outcome state; queue changes go only through database functions. The selected Android phone performs each SMS send through its configured SIM.
+
+## Release limits
+
+- Distribution: Google Play, "SMS Mobile App", release in preparation (listing: https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp); it runs on Supabase
+- Android application ID: `com.aoneahsan.smsapp`.
+- Sender: one of your own registered Android phones per job.
+- Enrollment: off by default and explicitly enabled on the phone.
+- SIM: one configured default SMS subscription; no per-job dual-SIM selector.
+- Contacts: permission plus a separate owner-initiated device-scoped cloud sync.
+- CSV: UTF-8, recognized phone header, at most 5 MiB.
+- Job: one message and at most 5,000 unique eligible destinations; plan limits apply on top (Free: 100 recipients per job and 100 messages a month; Pro and Family: 5,000 per job, no monthly cap).
+- Send rate: set per job, in messages per second, minute or hour.
+
+## Destination safety
+
+The release accepts only ordinary Pakistani mobile destinations in the `030`–`036` ranges. Unambiguous `03…`, `923…`, `00923…`, and `+923…` values normalize to E.164. Foreign numbers, landlines, short codes, service or premium destinations, malformed values, and unknown ranges are excluded. The policy runs at import, persistence/release, and Android dispatch, with no override.
+
+The prefix policy cannot prove recipient consent, number ownership, service availability, account balance, tariff, package inclusion, or delivery. The sender remains responsible for lawful sending and carrier charges.
+
+## Result semantics
+
+Pending means not yet dispatched. A claim assigns a bounded lease to the selected phone. Sent means Android returned successful sent callbacks for the message parts; it is not a delivery guarantee. A confirmed error becomes failed. If Android may have accepted the message but the result cannot be proved, the outcome is uncertain and must not be automatically retried.
+
+## Privacy and platform boundaries
+
+SMSApp is send-only. It does not read or upload received SMS, call logs, location, advertising identifiers, or legacy external-storage contents. It is not a default SMS handler. There is no cloud SMS gateway, public phone pool, desktop sender, or npm product in this milestone. iOS: removed 2026-10-30 — re-add when an Apple Developer account exists.
+
+## Documentation
+
+- https://smsapp-docs.aoneahsan.com/
+- https://smsapp-docs.aoneahsan.com/tutorials
+- https://smsapp-docs.aoneahsan.com/how-to
+- https://smsapp-docs.aoneahsan.com/reference
+- https://smsapp-docs.aoneahsan.com/explanation

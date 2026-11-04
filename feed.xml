@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SMSApp Documentation</title>
+    <link>https://smsapp-docs.aoneahsan.com/</link>
+    <description>Reviewed SMS jobs, sent from your own Android phone.</description>
+    <language>en</language>
+    <lastBuildDate>Fri, 30 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://smsapp-docs.aoneahsan.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SMSApp documentation</title>
+      <link>https://smsapp-docs.aoneahsan.com/</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Install and operate SMSApp with an owner-managed Android sender and web administration panel.</description>
+    </item>
+    <item>
+      <title>Explanation</title>
+      <link>https://smsapp-docs.aoneahsan.com/explanation</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/explanation</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>SMSApp architecture, Android dispatch, privacy, and policy choices.</description>
+    </item>
+    <item>
+      <title>Architecture overview</title>
+      <link>https://smsapp-docs.aoneahsan.com/explanation/architecture-overview</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/explanation/architecture-overview</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>How the SMSApp web dashboard, the Supabase database, and each user&apos;s own Android sender work together.</description>
+    </item>
+    <item>
+      <title>Google Play SMS permission status</title>
+      <link>https://smsapp-docs.aoneahsan.com/explanation/google-play-sms-policy</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/explanation/google-play-sms-policy</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>SMSApp&apos;s Google Play listing and how the app uses the restricted SMS permission.</description>
+    </item>
+    <item>
+      <title>Why the sender is Android-only</title>
+      <link>https://smsapp-docs.aoneahsan.com/explanation/why-android-only</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/explanation/why-android-only</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Why SMSApp uses an Android phone for native SIM-based SMS dispatch.</description>
+    </item>
+    <item>
+      <title>Monitor job progress</title>
+      <link>https://smsapp-docs.aoneahsan.com/how-to/admin/monitor-job-progress</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/how-to/admin/monitor-job-progress</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Read recipient state without overstating carrier delivery.</description>
+    </item>
+    <item>
+      <title>Reference</title>
+      <link>https://smsapp-docs.aoneahsan.com/reference</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Exact first-release SMSApp permissions, limits, routes, data, and security boundaries.</description>
+    </item>
+    <item>
+      <title>Release configuration</title>
+      <link>https://smsapp-docs.aoneahsan.com/reference/configuration-and-env</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/configuration-and-env</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Public release identity and configuration boundaries for SMSApp without credential values.</description>
+    </item>
+    <item>
+      <title>Data model</title>
+      <link>https://smsapp-docs.aoneahsan.com/reference/firestore-data-model</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/firestore-data-model</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Public overview of the account, phone, contact, job, recipient and attempt records SMSApp keeps in Supabase.</description>
+    </item>
+    <item>
+      <title>Android permissions</title>
+      <link>https://smsapp-docs.aoneahsan.com/reference/permissions</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/permissions</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Android permissions used by the SMSApp owner-managed sender and permissions deliberately absent.</description>
+    </item>
+    <item>
+      <title>Quotas and limits</title>
+      <link>https://smsapp-docs.aoneahsan.com/reference/quotas-and-limits</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/quotas-and-limits</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>SMSApp plan limits plus the fixed recipient, CSV, phone, SIM and destination limits every job follows.</description>
+    </item>
+    <item>
+      <title>Access boundaries</title>
+      <link>https://smsapp-docs.aoneahsan.com/reference/security-rules</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/security-rules</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Authorization and validation boundaries for SMSApp phones, contacts, jobs and recipients, enforced in the database.</description>
+    </item>
+    <item>
+      <title>Services and state flow</title>
+      <link>https://smsapp-docs.aoneahsan.com/reference/services-and-events</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/services-and-events</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Responsibility boundaries from web review through the Supabase database to Android SMS results.</description>
+    </item>
+    <item>
+      <title>Tutorials</title>
+      <link>https://smsapp-docs.aoneahsan.com/tutorials</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/tutorials</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Guided SMSApp setup and first-batch walkthroughs for the Android app and web admin.</description>
+    </item>
+    <item>
+      <title>Get started with SMSApp</title>
+      <link>https://smsapp-docs.aoneahsan.com/tutorials/get-started</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/tutorials/get-started</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Register one Android phone, sync its contacts, and prepare a reviewed SMS job in the web admin.</description>
+    </item>
+    <item>
+      <title>Install the Android app</title>
+      <link>https://smsapp-docs.aoneahsan.com/tutorials/install-the-android-app</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/tutorials/install-the-android-app</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Install SMSApp (its Google Play release is in preparation) or sideload a verified APK, and confirm its application identity before setup.</description>
+    </item>
+    <item>
+      <title>How Android SMS dispatch works</title>
+      <link>https://smsapp-docs.aoneahsan.com/explanation/how-silent-sms-works</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/explanation/how-silent-sms-works</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Native SMSApp dispatch, default-SIM selection, sent callbacks, pacing, and uncertain results.</description>
+    </item>
+    <item>
+      <title>Why SMSApp is not a default SMS handler</title>
+      <link>https://smsapp-docs.aoneahsan.com/explanation/not-a-default-sms-handler</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/explanation/not-a-default-sms-handler</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Why SMSApp sends approved messages without reading or managing the Android inbox.</description>
+    </item>
+    <item>
+      <title>Privacy and data handling</title>
+      <link>https://smsapp-docs.aoneahsan.com/explanation/privacy-and-data-handling</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/explanation/privacy-and-data-handling</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>What SMSApp reads, stores, sends, and deliberately excludes in the owner-managed workflow.</description>
+    </item>
+    <item>
+      <title>How-to guides</title>
+      <link>https://smsapp-docs.aoneahsan.com/how-to</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/how-to</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Task-focused instructions for devices, contacts, recipients, jobs, and troubleshooting in SMSApp.</description>
+    </item>
+    <item>
+      <title>Assign a batch to the selected phone</title>
+      <link>https://smsapp-docs.aoneahsan.com/how-to/admin/assign-a-batch-to-selected-phone</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/how-to/admin/assign-a-batch-to-selected-phone</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Assign one prepared batch to its one owner-managed Android sender.</description>
+    </item>
+    <item>
+      <title>Create a job in the admin</title>
+      <link>https://smsapp-docs.aoneahsan.com/how-to/admin/create-a-job-from-the-admin-dashboard</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/how-to/admin/create-a-job-from-the-admin-dashboard</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Create a reviewed contacts or CSV draft for one selected owner-managed phone.</description>
+    </item>
+    <item>
+      <title>Handle failures and uncertain outcomes</title>
+      <link>https://smsapp-docs.aoneahsan.com/how-to/admin/handle-failures-and-partial-sends</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/how-to/admin/handle-failures-and-partial-sends</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Diagnose readiness, carrier, and callback problems without creating duplicate SMS attempts.</description>
+    </item>
+    <item>
+      <title>Grant Android permissions</title>
+      <link>https://smsapp-docs.aoneahsan.com/how-to/auth-and-devices/grant-sms-permissions</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/how-to/auth-and-devices/grant-sms-permissions</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Grant only the SMS and contacts permissions needed for an owner-managed sending phone.</description>
+    </item>
+    <item>
+      <title>Prepare a CSV recipient file</title>
+      <link>https://smsapp-docs.aoneahsan.com/how-to/auth-and-devices/import-contacts-from-csv</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/how-to/auth-and-devices/import-contacts-from-csv</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Format and validate a bounded CSV for the first-release SMSApp batch importer.</description>
+    </item>
+    <item>
+      <title>Register an Android phone</title>
+      <link>https://smsapp-docs.aoneahsan.com/how-to/auth-and-devices/register-your-android-device</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/how-to/auth-and-devices/register-your-android-device</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Register one owner-managed Android phone and publish truthful sending readiness.</description>
+    </item>
+    <item>
+      <title>Sign in with Google</title>
+      <link>https://smsapp-docs.aoneahsan.com/how-to/auth-and-devices/sign-in-with-google</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/how-to/auth-and-devices/sign-in-with-google</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Use the same authorized Google account on the Android app and web admin.</description>
+    </item>
+    <item>
+      <title>Retry confirmed-safe failures</title>
+      <link>https://smsapp-docs.aoneahsan.com/how-to/sending-sms/retry-failed-messages</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/how-to/sending-sms/retry-failed-messages</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Retry only failures known to occur before Android accepted the SMS attempt.</description>
+    </item>
+    <item>
+      <title>Prepare an owner-managed batch</title>
+      <link>https://smsapp-docs.aoneahsan.com/how-to/sending-sms/send-a-silent-batch-sms</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/how-to/sending-sms/send-a-silent-batch-sms</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Prepare a reviewed contacts or CSV batch for one registered Android phone.</description>
+    </item>
+    <item>
+      <title>Routes and screens</title>
+      <link>https://smsapp-docs.aoneahsan.com/reference/routes-and-screens</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/routes-and-screens</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Web and Android screens used by the first owner-managed SMSApp workflow.</description>
+    </item>
+    <item>
+      <title>Set up a contacts or CSV batch</title>
+      <link>https://smsapp-docs.aoneahsan.com/tutorials/set-up-a-batch-send</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/tutorials/set-up-a-batch-send</guid>
+      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Prepare, review, assign, and start a bounded SMS job on one selected Android phone.</description>
+    </item>
+  </channel>
+</rss>
