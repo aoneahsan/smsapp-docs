@@ -29,11 +29,11 @@
       <description>How the SMSApp web dashboard, the Supabase database, and each user&apos;s own Android sender work together.</description>
     </item>
     <item>
-      <title>Google Play SMS permission status</title>
+      <title>SMS permission and Google Play</title>
       <link>https://smsapp-docs.aoneahsan.com/explanation/google-play-sms-policy</link>
       <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/explanation/google-play-sms-policy</guid>
       <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
-      <description>SMSApp&apos;s Google Play listing and how the app uses the restricted SMS permission.</description>
+      <description>Why SMSApp ships as a signed APK instead of through Google Play, and how the app uses the SMS permission.</description>
     </item>
     <item>
       <title>Why the sender is Android-only</title>
@@ -117,7 +117,7 @@
       <link>https://smsapp-docs.aoneahsan.com/tutorials/install-the-android-app</link>
       <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/tutorials/install-the-android-app</guid>
       <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
-      <description>Install SMSApp (its Google Play release is in preparation) or sideload a verified APK, and confirm its application identity before setup.</description>
+      <description>Install SMSApp from its signed APK, check the SHA-256 checksum, and confirm its application identity before setup.</description>
     </item>
     <item>
       <title>How Android SMS dispatch works</title>
