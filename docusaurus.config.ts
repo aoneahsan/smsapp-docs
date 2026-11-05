@@ -10,7 +10,7 @@ const SITE_URL = 'https://smsapp-docs.aoneahsan.com';
 const APP_URL = 'https://smsapp.aoneahsan.com';
 const REPO_URL = 'https://github.com/aoneahsan/smsapp-docs';
 const TEAM_NAME = 'the SMS App team';
-const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp';
+const APK_URL = 'https://smsapp.aoneahsan.com/apps#download';
 
 const config: Config = {
   title: 'SMSApp Documentation',
@@ -139,7 +139,7 @@ const config: Config = {
             name: 'SMSApp',
             url: APP_URL,
             logo: `${APP_URL}/icons/icon-512.png`,
-            sameAs: [APP_URL, REPO_URL, PLAY_URL],
+            sameAs: [APP_URL, REPO_URL],
           },
         ],
       }),
@@ -200,7 +200,7 @@ const config: Config = {
           title: 'The app',
           items: [
             { label: 'Open the app', href: APP_URL },
-            { label: 'Google Play listing', href: PLAY_URL },
+            { label: 'Download the Android app', href: APK_URL },
             { label: 'Installation', to: '/tutorials/install-the-android-app' },
             { label: 'Privacy policy', href: `${APP_URL}/privacy` },
             { label: 'Terms', href: `${APP_URL}/terms` },

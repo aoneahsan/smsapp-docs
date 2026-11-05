@@ -1,18 +1,18 @@
 ---
 title: Install the Android app
-description: Install SMSApp (its Google Play release is in preparation) or sideload a verified APK, and confirm its application identity before setup.
+description: Install SMSApp from its signed APK, check the SHA-256 checksum, and confirm its application identity before setup.
 sidebar_position: 2
 slug: /tutorials/install-the-android-app
 ---
 
 # Install the Android app
 
-The Android app `com.aoneahsan.smsapp` ("SMS Mobile App") is being prepared for its Google Play release ([Google Play listing](https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp)).
+The Android app `com.aoneahsan.smsapp` ("SMS Mobile App") is installed as a signed APK from the [Apps page](https://smsapp.aoneahsan.com/apps#download), not from Google Play. Updates to the app's web layer arrive inside the app.
 
 <a id="obtain-the-apk"></a>
 ## Obtain the APK&nbsp;[#](#obtain-the-apk)
 
-Use only an APK supplied through the owner's verified release channel. This documentation does not publish a download URL yet. Confirm the expected version and checksum with the owner before installing; do not use an APK from an unrelated website or message.
+Download the APK from the [Apps page](https://smsapp.aoneahsan.com/apps#download). The page shows the current version and the file's SHA-256 checksum; compare the checksum with the file you downloaded before you install it. Do not use an APK from an unrelated website or message.
 
 The current executable application ID is `com.aoneahsan.smsapp`. A future package migration would require a separately signed installation and coordinated documentation update.
 

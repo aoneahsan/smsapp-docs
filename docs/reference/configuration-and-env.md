@@ -9,13 +9,13 @@ sidebar_position: 8
 | Item | Current first-release value |
 |---|---|
 | Android application ID | `com.aoneahsan.smsapp` |
-| Distribution | Google Play, "SMS Mobile App": release in preparation ([listing](https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp)) |
+| Distribution | Signed APK from the [Apps page](https://smsapp.aoneahsan.com/apps#download), not Google Play; web-layer updates arrive inside the app |
 | Web application | `https://smsapp.aoneahsan.com` |
 | Documentation | `https://smsapp-docs.aoneahsan.com` |
 | Coordination | Supabase (Postgres with row-level security); Google sign-in through Supabase Auth |
 | SMS transport | Android `SmsManager` through the configured default SMS subscription |
 | Queue protocol | Current release protocol only; legacy jobs are not automatically replayed |
 
-The Android app `com.aoneahsan.smsapp` ("SMS Mobile App") is being prepared for its Google Play release ([Google Play listing](https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp)). References to `com.zaions.smsapp` are stale or a future migration decision until the application build, signing, backend configuration, links and release documentation change together. The Play release runs on Supabase.
+The Android app `com.aoneahsan.smsapp` ("SMS Mobile App") is installed as a signed APK from the [Apps page](https://smsapp.aoneahsan.com/apps#download), not from Google Play. Updates to the app's web layer arrive inside the app. References to `com.zaions.smsapp` are stale or a future migration decision until the application build, signing, backend configuration, links and release documentation change together. The Android app runs on Supabase.
 
 The public Supabase URL and publishable key identify the project but do not authorize privileged access by themselves; row-level security is the boundary. Server credentials, signing material, and privileged API keys must never be committed, published in this site, or included in a frontend environment variable. Operators should obtain all configuration through the project's approved secret store and release process.

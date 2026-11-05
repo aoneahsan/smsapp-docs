@@ -12,6 +12,6 @@ slug: /explanation
 - [How Android SMS dispatch works](./how-silent-sms-works.md)
 - [Why SMSApp is not a default SMS handler](./not-a-default-sms-handler.md)
 - [Privacy and data handling](./privacy-and-data-handling.md)
-- [Google Play SMS permission policy](./google-play-sms-policy.md)
+- [SMS permission and Google Play](./google-play-sms-policy.md)
 
 The first release uses only owner-managed phones.

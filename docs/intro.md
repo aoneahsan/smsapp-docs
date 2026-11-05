@@ -10,7 +10,7 @@ sidebar_position: 1
 SMSApp prepares SMS jobs in a web dashboard and dispatches them from your own Android phone through that phone's configured SIM. Anyone can sign in with Google and use the Free plan; Pro and Family raise the limits ([plans](https://smsapp.aoneahsan.com/pricing)). Supabase stores accounts, registered phones, synced contacts, jobs, recipients and results; it is not the SMS transport.
 
 :::caution[First-release status]
-The Android app `com.aoneahsan.smsapp` ("SMS Mobile App") is being prepared for its Google Play release ([Google Play listing](https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp)). The web dashboard prepares and monitors jobs. The Play release runs on Supabase, the same backend as the web dashboard.
+The Android app `com.aoneahsan.smsapp` ("SMS Mobile App") is installed as a signed APK from the [Apps page](https://smsapp.aoneahsan.com/apps#download), not from Google Play. Updates to the app's web layer arrive inside the app. The web dashboard prepares and monitors jobs. The Android app runs on Supabase, the same backend as the web dashboard.
 :::
 
 <a id="first-release-workflow"></a>
