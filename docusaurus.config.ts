@@ -179,6 +179,7 @@ const config: Config = {
         { type: 'docSidebar', sidebarId: 'howtoSidebar', position: 'left', label: 'How-to' },
         { type: 'docSidebar', sidebarId: 'referenceSidebar', position: 'left', label: 'Reference' },
         { type: 'docSidebar', sidebarId: 'explanationSidebar', position: 'left', label: 'Explanation' },
+        { type: 'docSidebar', sidebarId: 'compareSidebar', position: 'left', label: 'Moving here' },
         { href: APP_URL, label: 'Open the app', position: 'right' },
         { href: REPO_URL, 'aria-label': 'GitHub repository', className: 'header-github-link', position: 'right' },
       ],
@@ -194,6 +195,7 @@ const config: Config = {
             { label: 'How-to guides', to: '/how-to' },
             { label: 'Reference', to: '/reference' },
             { label: 'Explanation', to: '/explanation' },
+            { label: 'Moving to SMS App', to: '/compare' },
           ],
         },
         {
