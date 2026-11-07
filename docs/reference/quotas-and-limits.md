@@ -25,7 +25,10 @@ Each plan's limits are set on the plan by an admin and checked by the database w
 | Unique eligible recipients per job, on any plan | at most 5,000 |
 | CSV input size | 5 MiB |
 | Selected sending phones per job | 1 |
-| Selected SIMs per job | 1 configured Android default |
+| SIMs | a dual-SIM phone rotates across its SIMs every 50 sends |
+| Each SIM's daily cap | starts at 150, can rise to 400 as delivery reports come back |
+| Each SIM's hourly cap | a fifth of its daily cap |
+| Wait between sends in a job | at least 30 seconds |
 | Accepted Pakistani mobile prefixes | `030`–`036` |
 | Send rate | set per job: messages per second, minute or hour |
 

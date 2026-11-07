@@ -60,6 +60,7 @@ const SIDEBAR_LABELS: Readonly<Record<string, string>> = {
   howtoSidebar: 'How-to guides',
   referenceSidebar: 'Reference',
   explanationSidebar: 'Explanation',
+  compareSidebar: 'Moving to SMS App',
 };
 
 /** Each doc's date by served path, read by {@link withLastmod}. */
