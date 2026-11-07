@@ -5,21 +5,147 @@
     <link>https://smsapp-docs.aoneahsan.com/</link>
     <description>Reviewed SMS jobs, sent from your own Android phone.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://smsapp-docs.aoneahsan.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Moving to SMS App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Guides for moving from a phone gateway app or a hosted SMS provider to SMS Mobile App, with what stays behind and dated facts.</description>
+    </item>
+    <item>
+      <title>Moving from Bird (formerly MessageBird) to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/bird</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/bird</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave Bird (formerly MessageBird), the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
+    <item>
+      <title>Moving from ClickSend to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/clicksend</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/clicksend</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave ClickSend, the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
+    <item>
+      <title>Moving from httpSMS to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/httpsms</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/httpsms</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave httpSMS, the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
+    <item>
+      <title>Moving from Plivo to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/plivo</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/plivo</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave Plivo, the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
+    <item>
+      <title>Moving from Sinch to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/sinch</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/sinch</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave Sinch, the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
+    <item>
+      <title>Moving from SMSGate to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/sms-gateway-for-android</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/sms-gateway-for-android</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave SMSGate, the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
+    <item>
+      <title>Moving from SmsGateWay24 to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/smsgateway24</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/smsgateway24</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave SmsGateWay24, the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
+    <item>
+      <title>Moving from SMSMobileAPI to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/smsmobileapi</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/smsmobileapi</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave SMSMobileAPI, the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
+    <item>
+      <title>Moving from Telnyx to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/telnyx</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/telnyx</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave Telnyx, the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
+    <item>
+      <title>Moving from textbee to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/textbee</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/textbee</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave textbee, the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
+    <item>
+      <title>Moving from Textmagic to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/textmagic</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/textmagic</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave Textmagic, the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
+    <item>
+      <title>Moving from Traccar SMS Gateway to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/traccar-sms-gateway</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/traccar-sms-gateway</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave Traccar SMS Gateway, the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
+    <item>
+      <title>Moving from Twilio to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/twilio</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/twilio</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave Twilio, the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
+    <item>
+      <title>Moving from Vonage to SMS Mobile App</title>
+      <link>https://smsapp-docs.aoneahsan.com/compare/vonage</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/compare/vonage</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What stays behind when you leave Vonage, the steps to send your first reviewed job, and a dated fact table with sources.</description>
+    </item>
     <item>
       <title>SMSApp documentation</title>
       <link>https://smsapp-docs.aoneahsan.com/</link>
       <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/</guid>
-      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
       <description>Install and operate SMSApp with an owner-managed Android sender and web administration panel.</description>
     </item>
     <item>
       <title>Explanation</title>
       <link>https://smsapp-docs.aoneahsan.com/explanation</link>
       <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/explanation</guid>
-      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
       <description>SMSApp architecture, Android dispatch, privacy, and policy choices.</description>
+    </item>
+    <item>
+      <title>SMS permission and Google Play</title>
+      <link>https://smsapp-docs.aoneahsan.com/explanation/google-play-sms-policy</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/explanation/google-play-sms-policy</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Why SMSApp ships as a signed APK instead of through Google Play, and how the app uses the SMS permission.</description>
+    </item>
+    <item>
+      <title>Release configuration</title>
+      <link>https://smsapp-docs.aoneahsan.com/reference/configuration-and-env</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/configuration-and-env</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Public release identity and configuration boundaries for SMSApp without credential values.</description>
+    </item>
+    <item>
+      <title>Install the Android app</title>
+      <link>https://smsapp-docs.aoneahsan.com/tutorials/install-the-android-app</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/tutorials/install-the-android-app</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Install SMSApp from its signed APK, check the SHA-256 checksum, and confirm its application identity before setup.</description>
     </item>
     <item>
       <title>Architecture overview</title>
@@ -27,13 +153,6 @@
       <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/explanation/architecture-overview</guid>
       <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
       <description>How the SMSApp web dashboard, the Supabase database, and each user&apos;s own Android sender work together.</description>
-    </item>
-    <item>
-      <title>SMS permission and Google Play</title>
-      <link>https://smsapp-docs.aoneahsan.com/explanation/google-play-sms-policy</link>
-      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/explanation/google-play-sms-policy</guid>
-      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
-      <description>Why SMSApp ships as a signed APK instead of through Google Play, and how the app uses the SMS permission.</description>
     </item>
     <item>
       <title>Why the sender is Android-only</title>
@@ -55,13 +174,6 @@
       <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference</guid>
       <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
       <description>Exact first-release SMSApp permissions, limits, routes, data, and security boundaries.</description>
-    </item>
-    <item>
-      <title>Release configuration</title>
-      <link>https://smsapp-docs.aoneahsan.com/reference/configuration-and-env</link>
-      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/configuration-and-env</guid>
-      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
-      <description>Public release identity and configuration boundaries for SMSApp without credential values.</description>
     </item>
     <item>
       <title>Data model</title>
@@ -111,13 +223,6 @@
       <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/tutorials/get-started</guid>
       <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
       <description>Register one Android phone, sync its contacts, and prepare a reviewed SMS job in the web admin.</description>
-    </item>
-    <item>
-      <title>Install the Android app</title>
-      <link>https://smsapp-docs.aoneahsan.com/tutorials/install-the-android-app</link>
-      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/tutorials/install-the-android-app</guid>
-      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
-      <description>Install SMSApp from its signed APK, check the SHA-256 checksum, and confirm its application identity before setup.</description>
     </item>
     <item>
       <title>How Android SMS dispatch works</title>
