@@ -46,8 +46,17 @@ function priceText(price: Price): string {
   return `${amount} a ${price.period}`;
 }
 
-/** The dated fact table of one rival, from the same facts as the app's comparison page. */
-export default function RivalFacts({ slug }: { readonly slug: string }): ReactNode {
+/**
+ * The dated fact table of one rival, from the same facts as the app's comparison page.
+ * `hideNotStated` drops the rows their pages did not state; the guide says once which those were.
+ */
+export default function RivalFacts({
+  slug,
+  hideNotStated = false,
+}: {
+  readonly slug: string;
+  readonly hideNotStated?: boolean;
+}): ReactNode {
   const rival = (facts.competitors as unknown as readonly Rival[]).find((entry) => entry.slug === slug);
   if (rival === undefined) throw new Error(`RivalFacts: no rival "${slug}" in src/data/competitors.json`);
   const ours = facts.ours as Readonly<Record<string, Status>>;
@@ -83,7 +92,9 @@ export default function RivalFacts({ slug }: { readonly slug: string }): ReactNo
           <tr><th>What you might need</th><th>{rival.name}</th><th>SMS Mobile App</th></tr>
         </thead>
         <tbody>
-          {facts.features.map((feature) => {
+          {facts.features
+            .filter((feature) => !hideNotStated || rival.features[feature.key].status !== 'not-stated')
+            .map((feature) => {
             const fact = rival.features[feature.key];
             return (
               <tr key={feature.key}>

@@ -1,33 +1,36 @@
 ---
 title: Moving from SMSMobileAPI to SMS Mobile App
-description: "What stays behind when you leave SMSMobileAPI, the steps to send your first reviewed job, and a dated fact table with sources."
+description: "SMSMobileAPI bundles SMS, WhatsApp, calls and shop integrations. If plain SMS to Pakistani numbers is what you use, here is how to try the move on the Free plan first. Facts dated."
 sidebar_position: 5
 last_update:
   date: 2026-11-07
 ---
 
 import RivalFacts from '@site/src/components/RivalFacts';
-import Steps from '../_partials/compare-steps.mdx';
-import Limits from '../_partials/compare-limits.mdx';
 
 # Moving from SMSMobileAPI to SMS Mobile App
 
-SMSMobileAPI bundles SMS, WhatsApp and calls behind one subscription, with integrations for shops and CRMs. SMS Mobile App does one of those things: reviewed SMS to Pakistani numbers.
+SMSMobileAPI is a paid phone-as-gateway service for SMS, WhatsApp and calls, with a REST API and ready connections to tools like Shopify, HubSpot and Zapier. If WhatsApp, calls or those integrations are why you pay, keep it; this move would take them away.
 
-## What stays behind
+SMS Mobile App does one of those things. It sends SMS to Pakistani numbers, and nothing leaves the phone until you have read the review screen. There is a free tier to start on, and each SIM is paced for you.
 
-WhatsApp, call handling and the Shopify, HubSpot or Zapier connections stay behind. If any of those is why you pay, this is not a move to make.
+## Trying it before you cancel
 
-## Steps
+1. **Start on the Free plan.** It has one sending phone and 100 messages a month, enough to send a real message to your own team before you stop paying anyone.
+2. **Get the numbers out of the shop or CRM** that SMSMobileAPI was connected to, as a CSV with a `phone` column: [Prepare a CSV recipient file](/how-to/auth-and-devices/import-contacts-from-csv). Nothing syncs from those tools here.
+3. **Install the Android app** from the download page and compare its SHA-256: [Install the Android app](/tutorials/install-the-android-app). Then [sign in](/how-to/auth-and-devices/sign-in-with-google), [register the phone](/how-to/auth-and-devices/register-your-android-device) and [allow SMS](/how-to/auth-and-devices/grant-sms-permissions).
+4. **Write one message for everyone.** A job sends the same text to every recipient.
+5. **Read the review screen.** Customers abroad, landlines and short codes are dropped there with a reason. [Create a job](/how-to/admin/create-a-job-from-the-admin-dashboard), release it, and [follow its progress](/how-to/admin/monitor-job-progress).
 
-<Steps />
+## What you would give up
 
-## What SMS Mobile App will not do
+- **WhatsApp, calls and the shop and CRM connections.**
+- **The REST API.** There is none, and replies are not read.
+- **Anything outside Pakistan.** Only `030` to `036` mobile numbers go through.
+- **Sending without a daily cap.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back; its hourly cap is a fifth of that, and a job waits at least 30 seconds between sends. Your carrier's SMS rate is on top of any plan.
 
-<Limits />
-
-## The facts, with their dates
+## SMSMobileAPI's facts, dated
 
 <RivalFacts slug="smsmobileapi" />
 
-The [comparison page](https://smsapp.aoneahsan.com/compare/smsmobileapi) sets out who each one suits better.
+Compared side by side: [SMS Mobile App vs SMSMobileAPI](https://smsapp.aoneahsan.com/compare/smsmobileapi).
