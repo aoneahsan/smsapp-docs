@@ -148,6 +148,7 @@ const config: Config = {
   themeConfig: {
     image: 'img/social-card.png',
     metadata: [
+      { name: 'yandex-verification', content: 'bfb02722189028cf' },
       { name: 'author', content: TEAM_NAME },
       { name: 'keywords', content: 'android sms dispatch, web sms admin, pakistan mobile sms, sim sms sender, smsapp documentation' },
       { name: 'theme-color', content: '#6e56cf' },
