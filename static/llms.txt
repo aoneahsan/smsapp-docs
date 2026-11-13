@@ -2,7 +2,7 @@
 
 > Public documentation for SMSApp: send reviewed SMS jobs from your own Android phone's SIM, prepared in a web dashboard. Plans: Free, Pro and Family (https://smsapp.aoneahsan.com/pricing).
 
-The Android app `com.aoneahsan.smsapp` ("SMS Mobile App") is being prepared for its Google Play release: https://play.google.com/store/apps/details?id=com.aoneahsan.smsapp. The web dashboard prepares and monitors jobs. The Play release runs on Supabase.
+The Android app `com.aoneahsan.smsapp` ("SMS Mobile App") is installed as a signed APK from https://smsapp.aoneahsan.com/apps#download, not from Google Play. The web dashboard prepares and monitors jobs. The Android app runs on Supabase.
 
 ## Product contract
 
@@ -25,6 +25,18 @@ The Android app `com.aoneahsan.smsapp` ("SMS Mobile App") is being prepared for 
 - How-to guides: https://smsapp-docs.aoneahsan.com/how-to
 - Reference: https://smsapp-docs.aoneahsan.com/reference
 - Explanation: https://smsapp-docs.aoneahsan.com/explanation
+- White-label & licensing: https://smsapp-docs.aoneahsan.com/white-label
 - Sitemap: https://smsapp-docs.aoneahsan.com/sitemap
 - Feed (RSS): https://smsapp-docs.aoneahsan.com/feed.xml
 - Public repository: https://github.com/aoneahsan/smsapp-docs
+
+## White-label & licensing
+
+A business can run SMS Mobile App under its own name (we host, brand and update it; no source code) or buy the source outright. It covers the Android app, delivered as the buyer's own signed APK and not through Google Play, with the web dashboard and backend. There is no iOS build. The buyer owns recipient consent and carrier compliance; no delivery, carrier approval or bulk-sending right is promised. Prices: https://smsapp.aoneahsan.com/white-label/pricing
+
+- Overview: https://smsapp-docs.aoneahsan.com/white-label
+- What is delivered: https://smsapp-docs.aoneahsan.com/white-label/what-is-delivered
+- Setting up a licensed copy: https://smsapp-docs.aoneahsan.com/white-label/setup
+- Updates and renewals: https://smsapp-docs.aoneahsan.com/white-label/updates-and-renewals
+- Checking a licence: https://smsapp-docs.aoneahsan.com/white-label/verify-a-licence
+- Questions: https://smsapp-docs.aoneahsan.com/white-label/faq

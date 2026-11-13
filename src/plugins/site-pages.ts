@@ -61,6 +61,7 @@ const SIDEBAR_LABELS: Readonly<Record<string, string>> = {
   referenceSidebar: 'Reference',
   explanationSidebar: 'Explanation',
   compareSidebar: 'Moving to SMS App',
+  whiteLabelSidebar: 'White-label & licensing',
 };
 
 /** Each doc's date by served path, read by {@link withLastmod}. */
