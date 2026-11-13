@@ -5,8 +5,50 @@
     <link>https://smsapp-docs.aoneahsan.com/</link>
     <description>Reviewed SMS jobs, sent from your own Android phone.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://smsapp-docs.aoneahsan.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>White-label &amp; licensing</title>
+      <link>https://smsapp-docs.aoneahsan.com/white-label</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/white-label</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <description>How a business runs SMS Mobile App under its own name, or buys it outright, and what stays the same in a licensed copy.</description>
+    </item>
+    <item>
+      <title>White-label questions</title>
+      <link>https://smsapp-docs.aoneahsan.com/white-label/faq</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/white-label/faq</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Answers to what buyers ask about licensing SMS Mobile App under their own name, from Google Play to iPhones to who pays for the messages.</description>
+    </item>
+    <item>
+      <title>Setting up a licensed copy</title>
+      <link>https://smsapp-docs.aoneahsan.com/white-label/setup</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/white-label/setup</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <description>The order of work from a white-label request to a branded SMS Mobile App running on the buyer&apos;s domain and their customers&apos; phones.</description>
+    </item>
+    <item>
+      <title>Updates and renewals for a licensed copy</title>
+      <link>https://smsapp-docs.aoneahsan.com/white-label/updates-and-renewals</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/white-label/updates-and-renewals</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <description>What counts as an update to a white-label copy of SMS Mobile App, the six months included, and how a renewal extends them.</description>
+    </item>
+    <item>
+      <title>Checking a white-label licence</title>
+      <link>https://smsapp-docs.aoneahsan.com/white-label/verify-a-licence</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/white-label/verify-a-licence</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <description>How anyone can check that a copy of SMS Mobile App is licensed, by its licence key or by the website it runs on.</description>
+    </item>
+    <item>
+      <title>What a white-label licence delivers</title>
+      <link>https://smsapp-docs.aoneahsan.com/white-label/what-is-delivered</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/white-label/what-is-delivered</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <description>The Android app, the dashboard and the backend a licensed copy of SMS Mobile App runs on, and what a buyout hands over instead.</description>
+    </item>
     <item>
       <title>Moving to SMS App</title>
       <link>https://smsapp-docs.aoneahsan.com/compare</link>
