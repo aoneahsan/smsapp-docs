@@ -14,7 +14,7 @@ A business can run SMS Mobile App under its own name instead of building an SMS 
 There are two ways to have it:
 
 - **A white-label licence.** We run the branded copy. The buyer gets no source code, and we may license the same product to other buyers until someone buys it outright.
-- **A buyout.** The buyer receives the source of every repository that builds SMS Mobile App, with six months of updates, and we stop selling it to anyone else.
+- **A buyout.** The buyer receives the source of every repository that builds SMS Mobile App, with six months of updates, and we stop selling it to anyone else. The buyer pays us a 7% royalty on the gross revenue it earns, for as long as it earns ([how it works](./what-is-delivered.md#a-buyout-instead)).
 
 Prices are on the [white-label price page](https://smsapp.aoneahsan.com/white-label/pricing), which reads them from our licensing service. This documentation does not repeat them.
 

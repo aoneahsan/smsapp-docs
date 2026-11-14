@@ -26,7 +26,7 @@ Not as it stands. The number policy accepts ordinary Pakistani mobile numbers on
 
 ## Do I get the code?
 
-Not with a licence. A [buyout](./what-is-delivered.md#a-buyout-instead) hands over the source of the Android app, the dashboard and the backend.
+Not with a licence. A [buyout](./what-is-delivered.md#a-buyout-instead) hands over the source of the Android app, the dashboard and the backend, and carries a 7% royalty on the gross revenue the product earns, paid quarterly for as long as it earns.
 
 ## Who is responsible for consent and carrier rules?
 

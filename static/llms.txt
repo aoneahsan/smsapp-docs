@@ -32,7 +32,7 @@ The Android app `com.aoneahsan.smsapp` ("SMS Mobile App") is installed as a sign
 
 ## White-label & licensing
 
-A business can run SMS Mobile App under its own name (we host, brand and update it; no source code) or buy the source outright. It covers the Android app, delivered as the buyer's own signed APK and not through Google Play, with the web dashboard and backend. There is no iOS build. The buyer owns recipient consent and carrier compliance; no delivery, carrier approval or bulk-sending right is promised. Prices: https://smsapp.aoneahsan.com/white-label/pricing
+A business can run SMS Mobile App under its own name (we host, brand and update it; no source code) or buy the source outright (a buyout carries a 7% royalty on the gross revenue the product earns, for as long as it earns). It covers the Android app, delivered as the buyer's own signed APK and not through Google Play, with the web dashboard and backend. There is no iOS build. The buyer owns recipient consent and carrier compliance; no delivery, carrier approval or bulk-sending right is promised. Prices: https://smsapp.aoneahsan.com/white-label/pricing
 
 - Overview: https://smsapp-docs.aoneahsan.com/white-label
 - What is delivered: https://smsapp-docs.aoneahsan.com/white-label/what-is-delivered

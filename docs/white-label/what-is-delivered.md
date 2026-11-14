@@ -25,6 +25,8 @@ SMS Mobile App sells one platform group: the Android app. It comes with the two 
 
 ## A buyout instead
 
-A buyout hands over the source code of every repository that builds SMS Mobile App: the Android app, the web dashboard, and the database schema, migrations and server functions behind them. Six months of our updates follow, delivered as code to merge. After a buyout the product is sold to nobody else; licences sold before it keep their terms. The buyer then runs and pays for their own hosting, signing key and accounts. See [the buyout page](https://smsapp.aoneahsan.com/white-label/buyout).
+A buyout hands over the source code of every repository that builds SMS Mobile App: the Android app, the web dashboard, and the database schema, migrations and server functions behind them. Six months of our updates follow, delivered as code to merge. After a buyout the product is sold to nobody else; licences sold before it keep their terms. The buyer then runs and pays for their own hosting, signing key and accounts.
+
+The buyout agreement also carries a royalty. The buyer pays us 7% of the gross revenue SMS Mobile App earns, leaving out any sales tax or VAT collected, every quarter with a revenue statement. It runs for as long as the product earns revenue, and it is still owed after the product is sold on. The [licence terms](https://smsapp.aoneahsan.com/white-label/license-terms) set it out. See [the buyout page](https://smsapp.aoneahsan.com/white-label/buyout).
 
 Changes made only for one buyer, such as another country's numbering rules, are custom work, quoted separately: [tell us what you need](https://smsapp.aoneahsan.com/white-label/custom-work).
