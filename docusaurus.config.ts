@@ -58,6 +58,8 @@ const config: Config = {
             '**/__tests__/**',
             'MANUAL-TASKS.md',
             'PROJECT-CONTEXT.md',
+            // docs/PACKAGES.md is the fleet's fixed-path dependency record, never a published page.
+            'PACKAGES.md',
           ],
           routeBasePath: '/',
           editUrl: `${REPO_URL}/edit/main/`,

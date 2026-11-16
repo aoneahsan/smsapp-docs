@@ -2,6 +2,8 @@
 
 **Last Updated:** 2026-10-30
 
+<!-- fleet:node-26-13-1 v1 --> Node 26.13.1 LTS (.nvmrc), packages latest — 2026-11-16
+
 **Last updated:** 2026-10-30
 **Scope:** this public documentation repository only. Fleet-wide rules are inherited; do not copy them here.
 
