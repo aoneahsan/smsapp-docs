@@ -27,7 +27,7 @@ SMS Mobile App suits a narrower case: your people are in Pakistan, you would rat
 
 - **Your Twilio number, the API and any OTP flow.**
 - **Every destination outside Pakistan.**
-- **High volume.** Besides the caps above, a job waits at least 30 seconds between sends, and the Free plan stops at 100 messages a month.
+- **High volume.** Besides the caps above, a job waits at least 30 seconds between sends, and the Free plan sends 10 messages on day 1, rising by 10 each day you keep sending to 70 a day.
 - **Delivery is up to your SIM and carrier,** and their SMS rate is yours to pay on top of any plan.
 
 ## Twilio's facts, dated

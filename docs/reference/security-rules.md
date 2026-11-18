@@ -13,7 +13,7 @@ Row-level security and database functions in Supabase enforce these boundaries:
 - Recipient destinations must match the normalized ordinary Pakistani mobile policy.
 - Releasing, pausing and cancelling a job, claiming recipients and reporting results happen only through database functions, never as direct table writes.
 - Message, destination, phone and source snapshots cannot be rewritten after release.
-- The plan's limits (recipients per job, messages a month) are checked when a job is released.
+- The plan's job limits (recipients per job) are checked when a job is released, and the Free daily allowance each time a phone claims its next messages; past it, the phone is told to wait until midnight Pakistan time.
 - Admin access does not bypass destination safety.
 
 Phones on the same account share that account's sign-in. SMSApp checks the selected phone and the claim lease, but does not claim cryptographic per-phone identity isolation.

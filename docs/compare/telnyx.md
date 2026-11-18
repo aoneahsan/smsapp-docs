@@ -26,7 +26,7 @@ SMS Mobile App is for people who are not building software. If your recipients a
 ## What you lose
 
 - **The API, inbound messages and every non-Pakistani route.**
-- **Very high volume.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back; the hourly cap is a fifth of that, and a job waits at least 30 seconds between sends. Free stops at 100 messages a month.
+- **Very high volume.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back; the hourly cap is a fifth of that, and a job waits at least 30 seconds between sends. Free sends 10 messages on day 1, rising by 10 each day you keep sending to 70 a day.
 - **Delivery is up to your carrier,** and its SMS rate applies on top of the plan.
 
 ## Telnyx's facts, dated

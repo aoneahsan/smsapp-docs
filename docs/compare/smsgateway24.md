@@ -27,7 +27,7 @@ SMS Mobile App sends reviewed SMS to Pakistani mobile numbers and nothing else a
 - **No WhatsApp, chats, team inbox, orders or invoices.**
 - **No API,** and replies are not read.
 - **Pakistani mobile numbers only.**
-- **Capped, not unlimited.** SmsGateWay24 lists unlimited outgoing SMS through your phone. Here a SIM starts at 150 messages a day and can rise to 400 as delivery reports come back, with an hourly cap of a fifth of that and at least 30 seconds between sends. Free stops at 100 messages a month, and your carrier's rate applies on top.
+- **Capped, not unlimited.** SmsGateWay24 lists unlimited outgoing SMS through your phone. Here a SIM starts at 150 messages a day and can rise to 400 as delivery reports come back, with an hourly cap of a fifth of that and at least 30 seconds between sends. Free sends 10 messages on day 1, rising by 10 each day you keep sending to 70 a day, and your carrier's rate applies on top.
 
 ## SmsGateWay24's facts, dated
 

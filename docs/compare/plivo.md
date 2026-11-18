@@ -26,7 +26,7 @@ SMS Mobile App fits when the job is a few hundred reviewed messages a day from y
 ## What stays on Plivo
 
 - **The API, OTP and Plivo's queueing.**
-- **Volume a hosted route carries.** Each job also waits at least 30 seconds between sends, and the Free plan stops at 100 messages a month.
+- **Volume a hosted route carries.** Each job also waits at least 30 seconds between sends, and the Free plan sends 10 messages on day 1, rising by 10 each day you keep sending to 70 a day.
 - **Anything outside Pakistan's mobile ranges.**
 - **Delivery is in your carrier's hands.** Whether a message arrives depends on your SIM and carrier, and their SMS rate is yours to pay.
 

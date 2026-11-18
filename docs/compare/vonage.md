@@ -26,7 +26,7 @@ SMS Mobile App is for sending to Pakistani numbers from a SIM you already own, o
 
 - **The rented numbers, two-way SMS and the API.**
 - **Destinations outside Pakistan.**
-- **Volume beyond one SIM.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back; the hourly cap is a fifth of that, with at least 30 seconds between sends. Free stops at 100 messages a month.
+- **Volume beyond one SIM.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back; the hourly cap is a fifth of that, with at least 30 seconds between sends. Free sends 10 messages on day 1, rising by 10 each day you keep sending to 70 a day.
 - **Your carrier's SMS rate** is paid on top of any plan, and the carrier decides delivery.
 
 ## Vonage's facts, dated

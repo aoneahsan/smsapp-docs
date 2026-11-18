@@ -30,7 +30,7 @@ Open the scripts that call SMSGate. Anything that fires on its own (an order ale
 - **The REST API, webhooks and replies.** None of these exist here, and received messages are never read.
 - **Open source.** SMSGate's code is public; ours is not.
 - **Foreign numbers.** Only Pakistani mobile numbers are accepted.
-- **Unpaced sending.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back, with an hourly cap of a fifth of that and at least 30 seconds between sends. The Free plan stops at 100 messages a month, and your carrier's SMS rate is yours to pay on top.
+- **Unpaced sending.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back, with an hourly cap of a fifth of that and at least 30 seconds between sends. The Free plan sends 10 messages on day 1, rising by 10 each day you keep sending to 70 a day, and your carrier's SMS rate is yours to pay on top.
 
 ## SMSGate's facts, dated
 

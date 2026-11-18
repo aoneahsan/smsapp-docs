@@ -27,7 +27,7 @@ SMS Mobile App suits someone sending to Pakistani numbers from a dashboard rathe
 - **The API and anything that calls it.** SMS Mobile App has no HTTP API.
 - **Replies.** It sends only; received messages are never read or uploaded.
 - **Destinations outside Pakistan,** and any number outside the `030` to `036` mobile ranges.
-- **Sending past a SIM's caps.** A SIM starts at 150 a day and can rise to 400 as delivery reports come back; the hourly cap is a fifth of that, with at least 30 seconds between sends. Free stops at 100 messages a month, and your carrier's SMS rate applies to every message.
+- **Sending past a SIM's caps.** A SIM starts at 150 a day and can rise to 400 as delivery reports come back; the hourly cap is a fifth of that, with at least 30 seconds between sends. Free sends 10 messages on day 1, rising by 10 each day you keep sending to 70 a day, and your carrier's SMS rate applies to every message.
 
 ## httpSMS's facts, dated
 

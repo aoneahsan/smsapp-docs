@@ -28,7 +28,7 @@ SMS Mobile App is built around one job: a reviewed message to people in Pakistan
 - **Replies.** Received messages are never read.
 - **Open source.** textbee's code is public; ours is not.
 - **Numbers outside Pakistan.** Foreign numbers, landlines and short codes are refused.
-- **Unlimited pace.** A SIM starts at 150 messages a day (textbee's Free plan stops at 50) and can rise to 400 as delivery reports come back. Its hourly cap is a fifth of that, with at least 30 seconds between sends. Our Free plan stops at 100 messages a month, and your carrier's rate applies on top.
+- **Unlimited pace.** A SIM starts at 150 messages a day (textbee's Free plan stops at 50) and can rise to 400 as delivery reports come back. Its hourly cap is a fifth of that, with at least 30 seconds between sends. Our Free plan sends 10 messages on day 1, rising by 10 each day you keep sending to 70 a day, and your carrier's rate applies on top.
 
 ## textbee's facts, dated
 

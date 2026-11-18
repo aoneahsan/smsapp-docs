@@ -8,15 +8,24 @@ sidebar_position: 3
 
 ## Plan limits
 
-Each plan's limits are set on the plan by an admin and checked by the database when a job is released. The current values are on the [pricing page](https://smsapp.aoneahsan.com/pricing).
+Each plan's limits are set on the plan by an admin and checked by the database: job limits when a job is released, the daily allowance each time a phone asks for its next message. The current values are on the [pricing page](https://smsapp.aoneahsan.com/pricing).
 
 | Limit | Free | Pro | Family (per seat, 3 seats minimum) |
 |---|---:|---:|---:|
 | Sending phones | 1 | 3 | 4 |
 | Stored contacts | 100 | 25,000 | 28,750 |
-| Messages a month | 100 | no monthly cap | no monthly cap |
+| Messages a day | 10 on day 1, +10 each day you send in a row, 70 from day 7 | no plan limit | no plan limit |
 | Recipients in one job | 100 | 5,000 | 5,000 |
 | Job history | 90 days | 1 year | 1 year |
+
+### The Free daily allowance
+
+- A day is a Pakistan calendar day, and it counts once at least one message goes out.
+- Day 1 allows 10 messages. Each day in a row with a send adds 10, up to 70 from day 7. Keep sending every day and it stays at 70.
+- Miss a day and the next day is day 1 again: 10 messages.
+- A campaign bigger than what is left today is accepted. The phone sends what today allows, waits until 12:00 am Pakistan time and carries on by itself.
+- Messages sent from the send page on the phone count too.
+- Without an account, a phone can send 10 messages once. They do not refill; signing in starts the daily allowance.
 
 ## Limits every job follows
 

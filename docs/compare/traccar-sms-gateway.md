@@ -26,7 +26,7 @@ Keep your Traccar alerts where they are. If you also need to text a list of driv
 ## Limits to know first
 
 - **Pakistani mobile numbers only.** Foreign numbers, landlines and short codes are refused.
-- **Paced per SIM.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back; the hourly cap is a fifth of that, with at least 30 seconds between sends. The Free plan stops at 100 messages a month.
+- **Paced per SIM.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back; the hourly cap is a fifth of that, with at least 30 seconds between sends. The Free plan sends 10 messages on day 1, rising by 10 each day you keep sending to 70 a day.
 - **Your carrier still decides delivery,** and its SMS rate is yours to pay on top of any plan.
 
 ## Traccar SMS Gateway's facts, dated

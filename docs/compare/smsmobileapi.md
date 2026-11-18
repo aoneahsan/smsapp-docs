@@ -16,7 +16,7 @@ SMS Mobile App does one of those things. It sends SMS to Pakistani numbers, and 
 
 ## Trying it before you cancel
 
-1. **Start on the Free plan.** It has one sending phone and 100 messages a month, enough to send a real message to your own team before you stop paying anyone.
+1. **Start on the Free plan.** It has one sending phone and 10 messages on day 1, rising to 70 a day as you keep sending, enough to send a real message to your own team before you stop paying anyone.
 2. **Get the numbers out of the shop or CRM** that SMSMobileAPI was connected to, as a CSV with a `phone` column: [Prepare a CSV recipient file](/how-to/auth-and-devices/import-contacts-from-csv). Nothing syncs from those tools here.
 3. **Install the Android app** from the download page and compare its SHA-256: [Install the Android app](/tutorials/install-the-android-app). Then [sign in](/how-to/auth-and-devices/sign-in-with-google), [register the phone](/how-to/auth-and-devices/register-your-android-device) and [allow SMS](/how-to/auth-and-devices/grant-sms-permissions).
 4. **Write one message for everyone.** A job sends the same text to every recipient.

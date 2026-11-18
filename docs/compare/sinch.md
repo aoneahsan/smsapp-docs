@@ -26,7 +26,7 @@ SMS Mobile App suits someone who wants to see the whole cost before starting: a 
 
 - **Every channel except SMS,** and the API.
 - **Numbers outside Pakistan.**
-- **Sending without caps.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back, with an hourly cap of a fifth of that and at least 30 seconds between sends. Free stops at 100 messages a month.
+- **Sending without caps.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back, with an hourly cap of a fifth of that and at least 30 seconds between sends. Free sends 10 messages on day 1, rising by 10 each day you keep sending to 70 a day.
 - **Delivery is up to your SIM and carrier,** and their SMS rate is yours to pay.
 
 ## Sinch's facts, dated

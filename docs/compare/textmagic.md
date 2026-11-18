@@ -26,7 +26,7 @@ SMS Mobile App suits contacts in Pakistan who already know your number, and some
 
 - **The rented number and its inbound replies.** Replies to your SIM go to the phone's own messaging app; SMS Mobile App does not read them.
 - **Every contact outside Pakistan.**
-- **Uncapped sending.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back; its hourly cap is a fifth of that, with at least 30 seconds between sends. Free stops at 100 messages a month.
+- **Uncapped sending.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back; its hourly cap is a fifth of that, with at least 30 seconds between sends. Free sends 10 messages on day 1, rising by 10 each day you keep sending to 70 a day.
 - **Your carrier's rate** applies to every message, on top of the plan.
 
 ## Textmagic's facts, dated

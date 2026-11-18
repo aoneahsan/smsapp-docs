@@ -27,7 +27,7 @@ SMS Mobile App is SMS only: your own number on each message to people in Pakista
 
 - **The balance, rented numbers, inbox, other channels and API access.**
 - **Numbers outside Pakistan,** landlines and short codes.
-- **Unpaced volume.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back, with an hourly cap of a fifth of that and at least 30 seconds between sends. Free stops at 100 messages a month, and your carrier's SMS rate applies on top.
+- **Unpaced volume.** A SIM starts at 150 messages a day and can rise to 400 as delivery reports come back, with an hourly cap of a fifth of that and at least 30 seconds between sends. Free sends 10 messages on day 1, rising by 10 each day you keep sending to 70 a day, and your carrier's SMS rate applies on top.
 
 ## Bird's facts, dated
 
