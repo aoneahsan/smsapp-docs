@@ -5,8 +5,29 @@
     <link>https://smsapp-docs.aoneahsan.com/</link>
     <description>Reviewed SMS jobs, sent from your own Android phone.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://smsapp-docs.aoneahsan.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SMSApp documentation</title>
+      <link>https://smsapp-docs.aoneahsan.com/</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Install and operate SMSApp with an owner-managed Android sender and web administration panel.</description>
+    </item>
+    <item>
+      <title>Quotas and limits</title>
+      <link>https://smsapp-docs.aoneahsan.com/reference/quotas-and-limits</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/quotas-and-limits</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 GMT</pubDate>
+      <description>SMSApp plan limits plus the fixed recipient, CSV, phone, SIM and destination limits every job follows.</description>
+    </item>
+    <item>
+      <title>Access boundaries</title>
+      <link>https://smsapp-docs.aoneahsan.com/reference/security-rules</link>
+      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/security-rules</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Authorization and validation boundaries for SMSApp phones, contacts, jobs and recipients, enforced in the database.</description>
+    </item>
     <item>
       <title>White-label &amp; licensing</title>
       <link>https://smsapp-docs.aoneahsan.com/white-label</link>
@@ -155,20 +176,6 @@
       <description>Vonage rents virtual numbers and prices each message by country. Moving Pakistani sends to a SIM you own: the number change, replies, and the steps. Facts dated.</description>
     </item>
     <item>
-      <title>Quotas and limits</title>
-      <link>https://smsapp-docs.aoneahsan.com/reference/quotas-and-limits</link>
-      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/quotas-and-limits</guid>
-      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
-      <description>SMSApp plan limits plus the fixed recipient, CSV, phone, SIM and destination limits every job follows.</description>
-    </item>
-    <item>
-      <title>SMSApp documentation</title>
-      <link>https://smsapp-docs.aoneahsan.com/</link>
-      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <description>Install and operate SMSApp with an owner-managed Android sender and web administration panel.</description>
-    </item>
-    <item>
       <title>Explanation</title>
       <link>https://smsapp-docs.aoneahsan.com/explanation</link>
       <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/explanation</guid>
@@ -237,13 +244,6 @@
       <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/permissions</guid>
       <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
       <description>Android permissions used by the SMSApp owner-managed sender and permissions deliberately absent.</description>
-    </item>
-    <item>
-      <title>Access boundaries</title>
-      <link>https://smsapp-docs.aoneahsan.com/reference/security-rules</link>
-      <guid isPermaLink="true">https://smsapp-docs.aoneahsan.com/reference/security-rules</guid>
-      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
-      <description>Authorization and validation boundaries for SMSApp phones, contacts, jobs and recipients, enforced in the database.</description>
     </item>
     <item>
       <title>Services and state flow</title>
