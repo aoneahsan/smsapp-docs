@@ -10,6 +10,7 @@ import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import type { LoadedContent as DocsContent } from '@docusaurus/plugin-content-docs';
 import type { AllContent, LoadContext, Plugin } from '@docusaurus/types';
+import { APPS_LASTMOD } from '../data/platforms';
 
 /** One page as its `/sitemap` card shows it. */
 export interface SitePage {
@@ -211,6 +212,7 @@ export function withLastmod<Item extends { readonly url: string }>(items: readon
   return items.map((item) => {
     const pathname = new URL(item.url).pathname;
     const lastmod =
+      (pathname === '/apps' ? APPS_LASTMOD : undefined) ??
       datedPages.get(pathname) ??
       (listsEverything.has(pathname) ? newest(() => true) : newest((doc) => doc.startsWith(`${pathname}/`)));
     if (lastmod === undefined) throw new Error(`site-pages: ${item.url} has no date and lists no dated doc.`);

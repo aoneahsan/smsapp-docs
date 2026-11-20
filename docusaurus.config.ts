@@ -1,16 +1,16 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import { OTHER_PLATFORMS, platformHref } from './src/data/platforms';
 
 // SMSApp — public documentation site, by the SMS App team
 // Source: https://github.com/aoneahsan/smsapp-docs
 // Deploys to: https://smsapp-docs.aoneahsan.com
 
 const SITE_URL = 'https://smsapp-docs.aoneahsan.com';
-const APP_URL = 'https://smsapp.aoneahsan.com';
+const APP_URL = platformHref('web');
 const REPO_URL = 'https://github.com/aoneahsan/smsapp-docs';
 const TEAM_NAME = 'the SMS App team';
-const APK_URL = 'https://smsapp.aoneahsan.com/apps#download';
 
 const config: Config = {
   title: 'SMSApp Documentation',
@@ -182,15 +182,31 @@ const config: Config = {
         { type: 'docSidebar', sidebarId: 'howtoSidebar', position: 'left', label: 'How-to' },
         { type: 'docSidebar', sidebarId: 'referenceSidebar', position: 'left', label: 'Reference' },
         { type: 'docSidebar', sidebarId: 'explanationSidebar', position: 'left', label: 'Explanation' },
-        { type: 'docSidebar', sidebarId: 'compareSidebar', position: 'left', label: 'Moving here' },
-        { type: 'docSidebar', sidebarId: 'whiteLabelSidebar', position: 'left', label: 'White-label' },
-        { href: APP_URL, label: 'Open the app', position: 'right' },
+        // Both are in the footer too; they step out between the phone menu and 1200 px so the bar fits.
+        { type: 'docSidebar', sidebarId: 'compareSidebar', position: 'left', label: 'Moving here', className: 'nav-step-out' },
+        { type: 'docSidebar', sidebarId: 'whiteLabelSidebar', position: 'left', label: 'White-label', className: 'nav-step-out' },
+        {
+          type: 'dropdown',
+          label: 'Get SMS App',
+          position: 'right',
+          items: [
+            ...OTHER_PLATFORMS.map((platform) => ({ label: platform.name, href: platform.href })),
+            { label: 'All apps', to: '/apps' },
+          ],
+        },
         { href: REPO_URL, 'aria-label': 'GitHub repository', className: 'header-github-link', position: 'right' },
       ],
     },
     footer: {
       style: 'dark',
       links: [
+        {
+          title: 'Get SMS App',
+          items: [
+            ...OTHER_PLATFORMS.map((platform) => ({ label: platform.name, href: platform.href })),
+            { label: 'All apps', to: '/apps' },
+          ],
+        },
         {
           title: 'Documentation',
           items: [
@@ -206,8 +222,6 @@ const config: Config = {
         {
           title: 'The app',
           items: [
-            { label: 'Open the app', href: APP_URL },
-            { label: 'Download the Android app', href: APK_URL },
             { label: 'Installation', to: '/tutorials/install-the-android-app' },
             { label: 'Privacy policy', href: `${APP_URL}/privacy` },
             { label: 'Terms', href: `${APP_URL}/terms` },

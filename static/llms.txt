@@ -4,6 +4,13 @@
 
 The Android app `com.aoneahsan.smsapp` ("SMS Mobile App") is installed as a signed APK from https://smsapp.aoneahsan.com/apps#download, not from Google Play. The web dashboard prepares and monitors jobs. The Android app runs on Supabase.
 
+
+## Get SMS App
+
+- [All apps](https://smsapp-docs.aoneahsan.com/apps): every released surface of SMS App.
+- [Web dashboard](https://smsapp.aoneahsan.com)
+- [Android app, signed APK](https://smsapp.aoneahsan.com/apps#download): not on Google Play.
+
 ## Product contract
 
 - Anyone signs in with Google; each account registers its own Android phone. One selected phone per job.
